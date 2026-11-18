@@ -1,0 +1,30 @@
+---
+import BrandMark from './BrandMark.astro';
+import ThemeToggle from './ThemeToggle.astro';
+const base = import.meta.env.BASE_URL;
+---
+<header class="site-header" data-site-header>
+  <div class="site-header__inner container">
+    <BrandMark />
+    <nav class="desktop-nav" aria-label="Primary navigation">
+      <a class="nav-link is-current" href={`${base}#top`}>Home</a>
+      <a class="nav-link" href={`${base}#applications`}>Applications</a>
+      <a class="nav-link" href={`${base}#studio`}>Studio</a>
+      <a class="nav-link" href={`${base}#contact`}>Contact</a>
+    </nav>
+    <div class="site-header__actions">
+      <ThemeToggle />
+      <a class="button button--small button--nav" href={`${base}#applications`}>Explore apps <span aria-hidden="true">↗</span></a>
+      <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-navigation" data-menu-toggle>
+        <span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <nav class="mobile-nav container" id="mobile-navigation" aria-label="Mobile navigation" data-mobile-nav inert>
+    <a href={`${base}#top`}>Home <span>01</span></a>
+    <a href={`${base}#applications`}>Applications <span>02</span></a>
+    <a href={`${base}#studio`}>Studio <span>03</span></a>
+    <a href={`${base}#contact`}>Contact <span>04</span></a>
+    <p>Thoughtful technology. Extraordinary experiences.</p>
+  </nav>
+</header>

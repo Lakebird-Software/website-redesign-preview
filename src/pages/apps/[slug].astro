@@ -1,0 +1,38 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+interface AppPage {
+  slug: string;
+  name: string;
+  descriptor: string;
+  status: string;
+  message: string;
+  play?: string;
+}
+
+const pages: AppPage[] = [
+  { slug: 'finly', name: 'FINLY', descriptor: 'A clearer view of your money.', status: 'Live on Google Play', message: 'The dedicated FINLY product page is being designed next. In the meantime, you can download the app directly from Google Play.', play: 'https://play.google.com/store/apps/details?id=com.prithveeshbhat.finly&hl=en' },
+  { slug: 'gps-camera', name: 'GPS CAMERA', descriptor: 'Capture more than a photograph.', status: 'Live on Google Play', message: 'The dedicated GPS Camera product page is being designed next. Visit the Google Play developer listing to find the published app.', play: 'https://play.google.com/store/search?q=GPS%20Camera%20Lakebird%20Software&c=apps' },
+  { slug: 'filtra', name: 'FILTRA', descriptor: 'Something new is taking shape.', status: 'In development', message: 'The dedicated Filtra product page will be added when its product story and approved feature details are ready.' },
+];
+export function getStaticPaths() {
+  return pages.map((page) => ({ params: { slug: page.slug }, props: { page } }));
+}
+const { page } = Astro.props;
+const base = import.meta.env.BASE_URL;
+const statusClass = page.status === 'In development' ? 'availability availability--soon' : 'availability availability--live';
+---
+<BaseLayout title={`${page.name} — Lakebird Software`} description={page.descriptor} canonicalPath={`/apps/${page.slug}/`}>
+  <section class="placeholder-page section-pad">
+    <div class="container placeholder-page__inner">
+      <span class="eyebrow">LAKEBIRD SOFTWARE / APPLICATION</span>
+      <span class={statusClass}>{page.status}</span>
+      <h1>{page.name}</h1>
+      <h2>{page.descriptor}</h2>
+      <p>{page.message}</p>
+      {page.play && <a class="button button--primary" href={page.play} target="_blank" rel="noopener noreferrer">View on Google Play <span aria-hidden="true">↗</span></a>}
+      <a class="text-link" href={`${base}#applications`}>← Back to all applications</a>
+      <p class="placeholder-page__notice">This is a temporary route so the homepage links work. The full product page will replace this placeholder during the next design stage.</p>
+    </div>
+  </section>
+</BaseLayout>
