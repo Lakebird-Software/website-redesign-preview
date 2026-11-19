@@ -1,0 +1,40 @@
+---
+const sections = [
+  { id: 'top', label: 'Hero', number: '01', icon: 'sparkles' },
+  { id: 'studio', label: 'Studio introduction', number: '02', icon: 'feather' },
+  { id: 'applications', label: 'Applications', number: '03', icon: 'grid' },
+  { id: 'experience', label: 'Product experience', number: '04', icon: 'device' },
+  { id: 'philosophy', label: 'Our philosophy', number: '05', icon: 'compass' },
+  { id: 'contact', label: 'Contact', number: '06', icon: 'mail' },
+  { id: 'footer', label: 'Footer', number: '07', icon: 'footer' },
+];
+---
+<nav class="section-navigator" aria-label="Homepage section navigation" data-section-navigator style="--active-index: 0">
+  <span class="section-navigator__track" aria-hidden="true"></span>
+  <span class="section-navigator__progress" aria-hidden="true"></span>
+  <span class="section-navigator__active" aria-hidden="true"></span>
+  <div class="section-navigator__items">
+    {sections.map((section, index) => (
+      <a
+        class:list={['section-navigator__link', index === 0 && 'is-active']}
+        href={`#${section.id}`}
+        aria-label={`Go to ${section.label}`}
+        aria-current={index === 0 ? 'location' : undefined}
+        data-section-link
+        data-section-index={index}
+      >
+        <span class="section-navigator__icon" aria-hidden="true">
+          {section.icon === 'sparkles' && <svg viewBox="0 0 24 24"><path d="m12 2 1.8 6.2L20 10l-6.2 1.8L12 18l-1.8-6.2L4 10l6.2-1.8L12 2Z"/><path d="m19 15 .9 2.1L22 18l-2.1.9L19 21l-.9-2.1L16 18l2.1-.9L19 15Z"/></svg>}
+          {section.icon === 'feather' && <svg viewBox="0 0 24 24"><path d="M20.5 3.5C13 3 7 7.1 5 13.4c-.7 2.1-.2 4.7-1.8 6.6 2.2-.8 4.1-1.6 5.8-2.8C15.4 16.6 20.7 11 20.5 3.5Z"/><path d="M4 20 14 10m-7 6 1 3m3-6 3 1"/></svg>}
+          {section.icon === 'grid' && <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>}
+          {section.icon === 'device' && <svg viewBox="0 0 24 24"><rect x="6" y="2.5" width="12" height="19" rx="2.5"/><path d="M10 5h4m-2 13.5h.01"/></svg>}
+          {section.icon === 'compass' && <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m15.8 8.2-2.3 5.3-5.3 2.3 2.3-5.3 5.3-2.3Z"/></svg>}
+          {section.icon === 'mail' && <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg>}
+          {section.icon === 'footer' && <svg viewBox="0 0 24 24"><path d="M4 5h16v14H4zM4 14h16"/><path d="M8 17h.01M12 17h.01M16 17h.01"/></svg>}
+        </span>
+        <span class="section-navigator__tooltip" role="tooltip">{section.number} — {section.label}</span>
+      </a>
+    ))}
+  </div>
+  <span class="section-navigator__count" data-section-count aria-live="off">01 / 07</span>
+</nav>

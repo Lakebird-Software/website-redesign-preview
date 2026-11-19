@@ -1,0 +1,27 @@
+---
+import AppScreen from './AppScreen.astro';
+const base = import.meta.env.BASE_URL;
+---
+<section class="experience section-pad" id="experience" aria-labelledby="experience-title">
+  <div class="container">
+    <div class="section-heading section-heading--center" data-reveal>
+      <span class="eyebrow"><span>04</span> / BUILT AROUND REAL LIFE</span>
+      <h2 id="experience-title">Useful by nature.<br /><em>Thoughtful by design.</em></h2>
+      <p>Different applications. One shared belief: technology should make everyday tasks feel simpler.</p>
+    </div>
+    <div class="experience-grid">
+      <article class="experience-card experience-card--large" data-reveal data-tilt-card>
+        <div class="experience-card__top"><span class="eyebrow">FINLY / CLARITY</span><span class="experience-card__index">01</span></div>
+        <div class="experience-card__copy"><h3>See your money<br />more clearly.</h3><p>Track income and spending, understand your habits and keep your financial records organised — even offline.</p><a href={`${base}apps/finly/`} class="underlined-link">Discover Finly <span>↗</span></a></div>
+        <div class="experience-card__screen"><AppScreen app="finly" compact /></div>
+        <div class="experience-card__glow" aria-hidden="true"></div>
+      </article>
+      <article class="experience-card experience-card--small" data-reveal data-tilt-card>
+        <div class="experience-card__top"><span class="eyebrow">GPS CAMERA / CONTEXT</span><span class="experience-card__index">02</span></div>
+        <div class="experience-card__copy"><h3>Keep the details<br />that matter.</h3><p>Location-aware captures and useful records for work in the field.</p><a href={`${base}apps/gps-camera/`} class="underlined-link">Discover GPS Camera <span>↗</span></a></div>
+        <div class="experience-card__screen experience-card__screen--gps"><AppScreen app="gps" compact /></div>
+        <div class="experience-card__glow" aria-hidden="true"></div>
+      </article>
+    </div>
+  </div>
+</section>
