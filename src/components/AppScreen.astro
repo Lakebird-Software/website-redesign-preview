@@ -1,0 +1,48 @@
+---
+interface Props { app: 'finly' | 'gps' | 'filtra'; compact?: boolean; }
+const { app, compact = false } = Astro.props;
+const appNames = { finly: 'FINLY', gps: 'GPS CAMERA', filtra: 'FILTRA' };
+---
+<div class:list={[`app-screen app-screen--${app}`, compact && 'app-screen--compact']} aria-label={`${appNames[app]} illustrative screen placeholder`} role="img">
+  <div class="app-screen__scale">
+    <div class="app-screen__status"><span>9:41</span><span>● ▰</span></div>
+    <div class="app-screen__header">
+      <span class="app-screen__app-icon">{app === 'finly' ? '◒' : app === 'gps' ? '⌖' : '✳'}</span>
+      <span>{appNames[app]}</span><span class="app-screen__dots">•••</span>
+    </div>
+    {app === 'finly' && (
+      <div class="app-screen__content app-screen__content--finly">
+      <span class="app-screen__eyebrow">YOUR FINANCIAL OVERVIEW</span>
+      <strong class="app-screen__balance">₹ 24,850.00</strong>
+      <span class="app-screen__muted">Total balance · illustrative</span>
+      <div class="app-screen__mini-stats"><div><i></i><span>INCOME</span><b>₹ 32,400</b></div><div><i></i><span>EXPENSES</span><b>₹ 7,550</b></div></div>
+      <div class="app-screen__chart"><div class="app-screen__chart-lines"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+      <div class="app-screen__section-title"><b>Recent activity</b><span>View all</span></div>
+      <div class="app-screen__transaction"><i>↗</i><span>Groceries<small>Today · Essentials</small></span><b>− ₹840</b></div>
+      <div class="app-screen__transaction"><i>⌁</i><span>Transport<small>Yesterday</small></span><b>− ₹220</b></div>
+      </div>
+    )}
+    {app === 'gps' && (
+      <div class="app-screen__content app-screen__content--gps">
+      <div class="app-screen__photo"><span class="app-screen__sun"></span><span class="app-screen__hill app-screen__hill--back"></span><span class="app-screen__hill app-screen__hill--front"></span><div class="app-screen__photo-stamp"><b>GPS CAMERA</b><span>18 NOV 2026 · 09:41 AM</span><span>12.9716° N · 77.5946° E</span></div></div>
+      <div class="app-screen__section-title"><b>Capture details</b><span>•••</span></div>
+      <div class="app-screen__gps-row"><i>⌖</i><span>Location recorded<small>Coordinates and timestamp</small></span></div>
+      <div class="app-screen__gps-map"><span></span><i>⌖</i></div>
+      <div class="app-screen__thumbs"><i></i><i></i><i></i></div>
+      </div>
+    )}
+    {app === 'filtra' && (
+      <div class="app-screen__content app-screen__content--filtra">
+      <span class="app-screen__eyebrow">A NEW EXPERIENCE</span>
+      <div class="app-screen__filtra-mark">✳</div>
+      <strong class="app-screen__filtra-title">Something new<br/>is taking shape.</strong>
+      <span class="app-screen__muted">Preview artwork placeholder</span>
+      <div class="app-screen__notification"><i></i><span><b>Preview card</b><small>Replace with approved app screen</small></span></div>
+      <div class="app-screen__notification"><i></i><span><b>Another preview</b><small>Feature details to be confirmed</small></span></div>
+      <span class="app-screen__coming">IN DEVELOPMENT</span>
+      </div>
+    )}
+  </div>
+  <div class="app-screen__home-indicator"></div>
+  <span class="app-screen__placeholder-tag">ILLUSTRATIVE PLACEHOLDER</span>
+</div>
