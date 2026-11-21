@@ -1,0 +1,20 @@
+---
+const base = import.meta.env.BASE_URL;
+---
+<section class="brand-closing" aria-labelledby="brand-closing-title">
+  <div class="brand-closing__atmosphere" aria-hidden="true">
+    <span class="brand-closing__beam brand-closing__beam--one"></span>
+    <span class="brand-closing__beam brand-closing__beam--two"></span>
+    <span class="brand-closing__beam brand-closing__beam--three"></span>
+    <span class="brand-closing__spark brand-closing__spark--one"></span>
+    <span class="brand-closing__spark brand-closing__spark--two"></span>
+    <span class="brand-closing__spark brand-closing__spark--three"></span>
+  </div>
+  <div class="container brand-closing__inner" data-reveal>
+    <div class="brand-closing__copy">
+      <span class="eyebrow">LAKEBIRD SOFTWARE</span>
+      <h2 id="brand-closing-title">Thoughtful technology.<br /><em>Extraordinary experiences.</em></h2>
+    </div>
+    <a class="brand-closing__link" href={`${base}#applications`}><span class="brand-closing__link-label">Explore our applications</span><span class="brand-closing__link-arrow" aria-hidden="true">↗</span></a>
+  </div>
+</section>

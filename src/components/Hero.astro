@@ -1,0 +1,40 @@
+---
+import AppScreen from './AppScreen.astro';
+---
+<section class="hero" id="top" aria-labelledby="hero-title">
+  <div class="hero__ambient hero__ambient--aqua" aria-hidden="true"></div>
+  <div class="hero__ambient hero__ambient--indigo" aria-hidden="true"></div>
+  <div class="container hero__container">
+    <div class="hero__copy">
+      <div class="hero__kicker" data-hero-reveal><span class="status-pulse"></span> INDEPENDENT ANDROID APP STUDIO</div>
+      <h1 id="hero-title" data-hero-title>Thoughtful technology.<br /><span>Extraordinary</span> experiences.</h1>
+      <p class="hero__description" data-hero-reveal>We create purposeful Android applications where thoughtful engineering meets intuitive design and attention to every detail.</p>
+      <div class="hero__actions" data-hero-reveal>
+        <a class="button button--primary" href="#applications">Explore applications <span aria-hidden="true">↗</span></a>
+        <a class="text-link" href="#studio">Discover our studio <span aria-hidden="true">↓</span></a>
+      </div>
+      <div class="hero__proof" data-hero-reveal>
+        <div class="hero__avatars" role="img" aria-label="Finly, GPS Camera and Filtra"><span>F</span><span>G</span><span>F</span></div>
+        <div class="hero__proof-copy">
+          <strong>3 products in our product portfolio</strong>
+          <div class="hero__proof-stats"><span>2 published</span><span class="hero__proof-separator" aria-hidden="true">·</span><span>1 in development</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero__visual" aria-label="Conceptual device previews for Lakebird Software applications">
+      <div class="hero__visual-glow" aria-hidden="true"></div>
+      <div class="hero__orbit hero__orbit--one" aria-hidden="true"></div>
+      <div class="hero__orbit hero__orbit--two" aria-hidden="true"></div>
+      <div class="hero__device hero__device--gps" data-float="gps"><div class="device-notch"></div><AppScreen app="gps" compact /></div>
+      <div class="hero__device hero__device--filtra" data-float="filtra"><div class="device-notch"></div><AppScreen app="filtra" compact /></div>
+      <div class="hero__device hero__device--finly" data-float="finly"><div class="device-notch"></div><AppScreen app="finly" /></div>
+      <div class="hero__floating-label hero__floating-label--one"><span class="label-dot label-dot--aqua"></span><span>FINLY <small>FINANCE</small></span></div>
+      <div class="hero__floating-label hero__floating-label--two"><span class="label-dot label-dot--indigo"></span><span>GPS CAMERA <small>LOCATION</small></span></div>
+    </div>
+  </div>
+  <div class="hero__bottom container">
+    <span class="hero__scroll-label"><span class="scroll-line"></span> SCROLL TO EXPLORE</span>
+  </div>
+  <div class="hero__edge-glow" aria-hidden="true"></div>
+</section>

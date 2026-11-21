@@ -1,0 +1,35 @@
+---
+import AmbientParticlesController from './AmbientParticlesController.jsx';
+---
+<div class="ambient-particles-overlay" data-ambient-overlay aria-hidden="true">
+  <AmbientParticlesController
+    client:load
+    particleColors={['#219EBC', '#8ECAE6', '#219EBC', '#8ECAE6', '#FFB703', '#FB8500']}
+    particleCount={200}
+    particleSpread={10}
+    speed={0.1}
+    moveParticlesOnHover
+    particleHoverFactor={1}
+    alphaParticles={false}
+    particleBaseSize={100}
+    sizeRandomness={1}
+    cameraDistance={20}
+    disableRotation={false}
+    shape="circle"
+    glow={0.5}
+    twinkle={0.3}
+    depthOfField={0}
+    connections={false}
+    connectionDistance={110}
+    hoverEffect="parallax"
+    hoverRadius={140}
+    clickBurst
+    drift="none"
+    driftSpeed={1}
+    variation={0}
+    intro
+    opacity={1}
+    lightMode={false}
+    className="ambient-particles-host"
+  />
+</div>
