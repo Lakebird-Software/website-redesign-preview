@@ -545,14 +545,14 @@ img { height: auto; }
   position: absolute;
   top: 0;
   left: auto;
-  right: -8em;
+  right: -12em;
   bottom: 0;
   margin: auto;
   content: '';
   border-radius: 50%;
   display: block;
-  width: 20em;
-  height: 20em;
+  width: 28em;
+  height: 28em;
   text-align: center;
   transition: box-shadow .5s ease-out;
   z-index: -1;
