@@ -544,8 +544,8 @@ img { height: auto; }
 .brand-closing__link::before {
   position: absolute;
   top: 0;
-  left: -5em;
-  right: 0;
+  left: auto;
+  right: -8em;
   bottom: 0;
   margin: auto;
   content: '';
