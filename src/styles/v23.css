@@ -569,7 +569,7 @@ img { height: auto; }
   border: 1px solid var(--closing-button-border);
 }
 .brand-closing__link:hover::before {
-  box-shadow: inset 0 0 0 10em var(--closing-button-fill);
+  box-shadow: inset 0 0 0 14em var(--closing-button-fill);
 }
 .brand-closing__link:focus-visible,
 .brand-closing__link:active {
@@ -580,7 +580,7 @@ img { height: auto; }
 }
 .brand-closing__link:focus-visible::before,
 .brand-closing__link:active::before {
-  box-shadow: inset 0 0 0 10em var(--closing-button-fill);
+  box-shadow: inset 0 0 0 14em var(--closing-button-fill);
 }
 .brand-closing__link-label,
 .brand-closing__link-arrow {
