@@ -1,0 +1,148 @@
+---
+import PrivacyBanner from './PrivacyBanner.astro';
+---
+<section class="privacy-app-page" data-privacy-app="gps-camera">
+  <div class="container privacy-app-container">
+    <PrivacyBanner
+      appName="GPS CAMERA"
+      accent="gps-camera"
+      updated="22 NOVEMBER 2026"
+      intro="Your photos and location-tagged captures are personal. GPS Camera keeps the content you create on your device, while using Google AdMob to display advertisements as described below."
+      highlights={['NO APP ACCOUNT', 'CAPTURES STORED LOCALLY', 'GOOGLE ADMOB ADS']}
+      panelTitle="Your captures stay local."
+      panelLines={['No account or login is required to use GPS Camera.', 'Photos, videos and location details are stored on your device.', 'Google AdMob processes separate advertising-related information.']}
+    />
+
+    <div class="privacy-app-glance" aria-label="GPS Camera privacy summary">
+      <div><span class="privacy-app-glance__label">ACCOUNT</span><strong>Not required</strong><small>Use the app without registration or login.</small></div>
+      <div><span class="privacy-app-glance__label">CAPTURES</span><strong>On your device</strong><small>No automatic upload of your captures to Lakebird servers.</small></div>
+      <div><span class="privacy-app-glance__label">ADVERTISING</span><strong>Google AdMob</strong><small>Ad-related data is handled by Google's SDK.</small></div>
+    </div>
+
+    <div class="privacy-app-layout">
+      <nav class="privacy-app-toc" aria-label="GPS Camera privacy policy contents">
+        <span class="eyebrow">IN THIS POLICY</span>
+        <a href="#gps-overview">Overview</a>
+        <a href="#gps-permissions">Permissions and app data</a>
+        <a href="#gps-local-storage">Local storage and uploads</a>
+        <a href="#gps-ads">Google AdMob</a>
+        <a href="#gps-ad-settings">Ad choices and settings</a>
+        <a href="#gps-sharing">Sharing and third parties</a>
+        <a href="#gps-retention">Retention and deletion</a>
+        <a href="#gps-security">Security</a>
+        <a href="#gps-rights">Your choices and rights</a>
+        <a href="#gps-children">Children's privacy</a>
+        <a href="#gps-changes">Policy changes</a>
+        <a href="#gps-contact">Contact</a>
+      </nav>
+
+      <article class="privacy-document privacy-app-document">
+        <section id="gps-overview">
+          <span class="privacy-document__number">01 / OVERVIEW</span>
+          <h2>What this policy covers</h2>
+          <p>GPS Camera is an Android application from Lakebird Software. It does not require you to create an account or log in. This policy explains how the app uses device permissions, how photos and location-related content are handled, and how Google AdMob processes information to provide advertisements.</p>
+          <p>The content you capture or select in GPS Camera is stored locally on your device. Lakebird Software does not automatically upload your photos, videos or GPS information to its own servers.</p>
+        </section>
+
+        <section id="gps-permissions">
+          <span class="privacy-document__number">02 / PERMISSIONS & APP DATA</span>
+          <h2>Camera, photos and location</h2>
+          <p>Depending on the features you use, GPS Camera may request permission to access:</p>
+          <ul>
+            <li><strong>Camera:</strong> to capture photos or videos within the app.</li>
+            <li><strong>Location:</strong> to obtain location information for location-related camera features, when you grant permission.</li>
+            <li><strong>Photos or media:</strong> to access images or other media on your device when you choose to use them with the app.</li>
+          </ul>
+          <p>Location information and camera or media content are used to provide the features you choose to use. You can manage or revoke app permissions through your Android device settings. Some features may not work as intended if a required permission is disabled.</p>
+        </section>
+
+        <section id="gps-local-storage">
+          <span class="privacy-document__number">03 / LOCAL STORAGE</span>
+          <h2>Your photos and location data stay on your device</h2>
+          <p>Photos, videos and GPS-related information handled by GPS Camera are stored locally on your device. The app does not automatically upload these captures or their location information to Lakebird Software's servers.</p>
+          <p>If you choose to share or export a photo, video or other content using Android's sharing features or another app, the destination you select will receive the content you chose to share. That destination's own privacy policy and practices will apply.</p>
+          <p>This local-storage statement concerns the content you create or select in GPS Camera. It does not mean that no information is processed over the internet: Google AdMob processes certain advertising-related information as explained in the next section.</p>
+        </section>
+
+        <section id="gps-ads">
+          <span class="privacy-document__number">04 / GOOGLE ADMOB ADVERTISING</span>
+          <h2>How advertising data is handled</h2>
+          <p>GPS Camera uses Google AdMob, a third-party advertising service, to display ads. The Google Mobile Ads SDK may automatically collect and share certain information for advertising, analytics and fraud-prevention purposes. This processing is separate from the photos, videos and GPS content stored locally by GPS Camera.</p>
+          <p>Depending on the Google Mobile Ads SDK version and features in use, information may include:</p>
+          <ul>
+            <li><strong>IP address:</strong> which may be used to estimate a device's general location.</li>
+            <li><strong>App interactions:</strong> such as app launches, taps and video views.</li>
+            <li><strong>Diagnostic information:</strong> such as app or SDK performance information, app launch time, hang rate and energy usage.</li>
+            <li><strong>Device and advertising identifiers:</strong> such as the Android Advertising ID and App Set ID, and other identifiers where applicable.</li>
+          </ul>
+          <p>Google states that information collected by its Mobile Ads SDK is encrypted in transit using Transport Layer Security (TLS). Google may process this information for ad delivery, measurement, analytics, security and fraud prevention under its own policies and terms.</p>
+          <p>For more information, review Google's <a href="https://developers.google.com/admob/android/next-gen/privacy/play-data-disclosure" target="_blank" rel="noopener noreferrer">Google Play data disclosure for the Mobile Ads SDK</a> and <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google's Privacy Policy</a>.</p>
+        </section>
+
+        <section id="gps-ad-settings">
+          <span class="privacy-document__number">05 / AD CHOICES & SETTINGS</span>
+          <h2>Personalized and non-personalized ads</h2>
+          <p>The type of ads shown may vary depending on your location, applicable legal requirements, available consent signals, Google account and device settings, and the advertising configuration used by the app. Depending on those factors, Google may provide personalized, non-personalized or limited ads. Lakebird Software does not control all of Google's independent processing or ad-selection systems.</p>
+          <p>You can review available advertising controls in your Android device settings, including controls for resetting or deleting the Android Advertising ID where available. You can also review Google's <a href="https://adssettings.google.com/" target="_blank" rel="noopener noreferrer">Ad Settings</a>. The availability and effect of these controls may vary by device, account, region and Google service.</p>
+          <p>Google's advertising and privacy requirements can vary by region. The ad type shown may therefore differ between users and over time; this policy does not promise that a particular ad type will be shown in every session.</p>
+        </section>
+
+        <section id="gps-sharing">
+          <span class="privacy-document__number">06 / SHARING & THIRD PARTIES</span>
+          <h2>Who may process information</h2>
+          <p>Lakebird Software does not automatically receive your captured photos, videos or GPS information. Google AdMob is integrated to serve advertisements and may receive the advertising-related information described above. Google handles that information under its own privacy terms.</p>
+          <p>If you follow an external link or choose to share content with another app or service, that third party handles the information you provide under its own policies. We do not control third-party services or their data practices.</p>
+          <p>Information may also be disclosed if required by applicable law or in response to valid legal process.</p>
+        </section>
+
+        <section id="gps-retention">
+          <span class="privacy-document__number">07 / RETENTION & DELETION</span>
+          <h2>Managing your content</h2>
+          <p>Photos, videos and other app content stored locally remain on your device until you delete them or remove the relevant app or device data. The exact effect of clearing app storage or uninstalling the app may depend on Android and your device settings.</p>
+          <p>Google determines the retention of information processed through AdMob under its own policies, product settings and applicable requirements. Lakebird Software does not control Google's independent retention systems.</p>
+        </section>
+
+        <section id="gps-security">
+          <span class="privacy-document__number">08 / SECURITY</span>
+          <h2>Protecting your content</h2>
+          <p>Your locally stored photos, videos and location-related content are subject to the security of your device and its operating system. We recommend using a secure screen lock, installing Android security updates and carefully reviewing which apps you allow to access your photos and location.</p>
+          <p>No electronic storage or transmission method can be guaranteed to be completely secure. Data transmitted by Google Mobile Ads SDK is subject to Google's security measures, including encryption in transit as described in its documentation.</p>
+        </section>
+
+        <section id="gps-rights">
+          <span class="privacy-document__number">09 / YOUR CHOICES & RIGHTS</span>
+          <h2>Permissions and privacy choices</h2>
+          <ul>
+            <li>You can grant or revoke camera, location and media permissions in Android settings.</li>
+            <li>You can choose which photos or videos to create, access, keep, delete or share.</li>
+            <li>You can review advertising controls in Android settings and Google's Ad Settings.</li>
+            <li>You can contact Lakebird Software with questions or privacy-related requests.</li>
+          </ul>
+          <p>Privacy rights depend on your location and applicable law. Where a request concerns information processed independently by Google through AdMob, you may need to exercise the relevant choices or rights directly with Google.</p>
+        </section>
+
+        <section id="gps-children">
+          <span class="privacy-document__number">10 / CHILDREN'S PRIVACY</span>
+          <h2>Children and advertising</h2>
+          <p>GPS Camera does not require account creation or registration. The app does include Google AdMob, which may process advertising-related information as described in this policy. Advertising and data practices for younger users can be subject to additional legal and platform requirements.</p>
+          <p>If you are a parent or guardian with a question about information handled by Lakebird Software, please contact us. For information processed by Google through its advertising services, please also review Google's privacy resources.</p>
+        </section>
+
+        <section id="gps-changes">
+          <span class="privacy-document__number">11 / POLICY CHANGES</span>
+          <h2>Updates to this policy</h2>
+          <p>We may update this policy when GPS Camera's features, advertising integrations, data practices or applicable requirements change. The revised policy will be published on this page with an updated date. Please review it periodically.</p>
+        </section>
+
+        <section id="gps-contact">
+          <span class="privacy-document__number">12 / CONTACT</span>
+          <h2>Contact Lakebird Software</h2>
+          <p>For questions about GPS Camera or this privacy policy, contact:</p>
+          <a class="privacy-contact" href="mailto:support.pbandroidapps@gmail.com">support.pbandroidapps@gmail.com <span aria-hidden="true">↗</span></a>
+          <p class="privacy-page__note">Google AdMob is a third-party service. Google's data handling is governed by Google's own privacy policy and service terms.</p>
+        </section>
+      </article>
+    </div>
+    <div class="privacy-app-back"><a class="text-link" href={`${import.meta.env.BASE_URL}#applications`}>← Back to applications</a><a class="text-link" href={`${import.meta.env.BASE_URL}privacy/`}>Website privacy policy ↗</a></div>
+  </div>
+</section>

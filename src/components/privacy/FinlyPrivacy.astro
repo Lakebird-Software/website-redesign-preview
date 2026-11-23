@@ -1,0 +1,126 @@
+---
+import PrivacyBanner from './PrivacyBanner.astro';
+---
+<section class="privacy-app-page" data-privacy-app="finly">
+  <div class="container privacy-app-container">
+    <PrivacyBanner
+      appName="FINLY"
+      accent="finly"
+      updated="22 NOVEMBER 2026"
+      intro="Your finances are personal. FINLY is designed to keep the financial information you enter on your device, with an optional Google Drive backup that you control."
+      highlights={['NO FINLY ACCOUNT', 'LOCAL-FIRST STORAGE', 'OPTIONAL DRIVE BACKUP']}
+      panelTitle="Your records stay with you."
+      panelLines={['No account or login is required to use FINLY.', 'Your finance records are stored locally on your device.', 'Google Drive backup is optional and user-controlled.']}
+    />
+
+    <div class="privacy-app-glance" aria-label="FINLY privacy summary">
+      <div><span class="privacy-app-glance__label">ACCOUNT</span><strong>Not required</strong><small>Use FINLY without registering or signing in.</small></div>
+      <div><span class="privacy-app-glance__label">STORAGE</span><strong>On your device</strong><small>Your entries remain in the app's local storage.</small></div>
+      <div><span class="privacy-app-glance__label">BACKUP</span><strong>Your choice</strong><small>Optional backup to your own Google Drive.</small></div>
+    </div>
+
+    <div class="privacy-app-layout">
+      <nav class="privacy-app-toc" aria-label="FINLY privacy policy contents">
+        <span class="eyebrow">IN THIS POLICY</span>
+        <a href="#finly-overview">Overview</a>
+        <a href="#finly-information">Information in FINLY</a>
+        <a href="#finly-local-storage">Local storage</a>
+        <a href="#finly-drive">Google Drive backup</a>
+        <a href="#finly-ads">Advertising and analytics</a>
+        <a href="#finly-sharing">Sharing and third parties</a>
+        <a href="#finly-retention">Retention and deletion</a>
+        <a href="#finly-security">Security</a>
+        <a href="#finly-rights">Your choices and rights</a>
+        <a href="#finly-changes">Policy changes</a>
+        <a href="#finly-contact">Contact</a>
+      </nav>
+
+      <article class="privacy-document privacy-app-document">
+        <section id="finly-overview">
+          <span class="privacy-document__number">01 / OVERVIEW</span>
+          <h2>Privacy, by design</h2>
+          <p>FINLY is a personal finance application from Lakebird Software. You can use the app without creating an account or logging in. The income, expense, budget and other financial information you enter is stored locally on your device.</p>
+          <p>Lakebird Software does not operate a FINLY account service or a server that receives your day-to-day financial records. The only optional cloud feature described in this policy is the Google Drive backup that you choose to enable.</p>
+        </section>
+
+        <section id="finly-information">
+          <span class="privacy-document__number">02 / INFORMATION IN FINLY</span>
+          <h2>Information you choose to enter</h2>
+          <p>Depending on the features you use, information stored in FINLY may include income and expense entries, transaction amounts and dates, categories, budgets, notes, recurring transaction details, and receipt information or images you choose to add.</p>
+          <p>This information is provided by you and is used within the app to display your records, summaries, budgets and reports. It is not automatically sent to Lakebird Software.</p>
+          <p>FINLY does not require your name, email address, phone number or an in-app user profile to operate.</p>
+        </section>
+
+        <section id="finly-local-storage">
+          <span class="privacy-document__number">03 / LOCAL STORAGE</span>
+          <h2>Your data stays on your device</h2>
+          <p>FINLY stores the financial information you create in the app's local storage on your device. Lakebird Software does not routinely receive, host or access those records through its own servers.</p>
+          <p>Your device's operating system, security settings, encryption, backups and anyone with access to your unlocked device may affect the protection of locally stored information. We recommend using your device's screen lock and keeping your operating system up to date.</p>
+        </section>
+
+        <section id="finly-drive">
+          <span class="privacy-document__number">04 / OPTIONAL GOOGLE DRIVE BACKUP</span>
+          <h2>Backup is your choice</h2>
+          <p>FINLY offers an optional Google Drive backup. It is not required to use the app. You decide whether to enable the backup setting, and you can change that setting later.</p>
+          <ul>
+            <li>When you enable the feature and authorize the requested Google Drive access, FINLY uploads the backup to your own Google Drive account.</li>
+            <li>The backup is intended to let you preserve and restore your FINLY records. It is stored in your Google Drive, not in a Lakebird-operated FINLY account.</li>
+            <li>Google processes information associated with your Drive account and the backup service under Google's own terms and privacy policy.</li>
+            <li>Turning the feature off stops future backups initiated through that setting. It does not necessarily delete a backup that was already created in Google Drive; review and delete existing backup files in Drive if you no longer want them.</li>
+          </ul>
+          <p>You may need to authorize a Google account for this optional backup. This is separate from creating an account with or logging in to FINLY. You can review Google's <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Privacy Policy</a> for information about Google's handling of data.</p>
+        </section>
+
+        <section id="finly-ads">
+          <span class="privacy-document__number">05 / ADVERTISING & ANALYTICS</span>
+          <h2>No ads or analytics SDKs</h2>
+          <p>FINLY does not display advertisements. It does not include advertising SDKs, analytics SDKs or third-party tracking tools. Lakebird Software does not use FINLY to build advertising profiles or track your activity across other apps or services.</p>
+        </section>
+
+        <section id="finly-sharing">
+          <span class="privacy-document__number">06 / SHARING & THIRD PARTIES</span>
+          <h2>When information leaves your device</h2>
+          <p>FINLY does not automatically transmit your financial entries to Lakebird Software or share them with advertisers. The optional Google Drive backup is the exception: when you choose to use it, the backup data is sent to your own Google Drive account through Google's service.</p>
+          <p>If you independently export, share or otherwise send information using Android or another app, the information you choose to share will be handled by the destination app or service under its own terms and privacy practices.</p>
+        </section>
+
+        <section id="finly-retention">
+          <span class="privacy-document__number">07 / RETENTION & DELETION</span>
+          <h2>You manage your records</h2>
+          <p>Your FINLY records remain in local app storage until you delete them or remove the app's data. The exact effect of clearing app storage or uninstalling FINLY may depend on Android and your device settings. Consider creating a backup first if you want to keep your records.</p>
+          <p>Backups already created in Google Drive are managed separately from the local copy. You can review or delete those files through your Google Drive account.</p>
+          <p>Because FINLY does not maintain a user account or a Lakebird-hosted copy of your local records, Lakebird Software generally cannot retrieve or remotely delete information stored only on your device.</p>
+        </section>
+
+        <section id="finly-security">
+          <span class="privacy-document__number">08 / SECURITY</span>
+          <h2>Protecting your information</h2>
+          <p>FINLY is designed around local storage and user-controlled backup. You are responsible for securing your device and the Google account you choose to use for backup. Use a strong device passcode, protect your Google account and avoid sharing backup files with people you do not trust.</p>
+          <p>No method of electronic storage or transmission is completely secure. Google Drive backup transmission and storage are also subject to Google's security practices and service terms.</p>
+        </section>
+
+        <section id="finly-rights">
+          <span class="privacy-document__number">09 / YOUR CHOICES & RIGHTS</span>
+          <h2>Control over your information</h2>
+          <p>You can choose what information to enter into FINLY, whether to enable Google Drive backup, and whether to keep or delete local records and Drive backup files. You can revoke or change Google account permissions through the relevant Google account settings, subject to the way Google provides those controls.</p>
+          <p>Privacy rights vary by location. If you have a question about this policy or want to make a privacy-related request concerning information you have sent directly to Lakebird Software, contact us using the details below. We may need to verify your request and may retain information where required by law.</p>
+        </section>
+
+        <section id="finly-changes">
+          <span class="privacy-document__number">10 / POLICY CHANGES</span>
+          <h2>Updates to this policy</h2>
+          <p>We may update this policy when FINLY's features, data practices or applicable requirements change. The revised policy will be published on this page with an updated date. Please review it periodically.</p>
+        </section>
+
+        <section id="finly-contact">
+          <span class="privacy-document__number">11 / CONTACT</span>
+          <h2>Contact Lakebird Software</h2>
+          <p>For questions about FINLY or this privacy policy, contact:</p>
+          <a class="privacy-contact" href="mailto:support.pbandroidapps@gmail.com">support.pbandroidapps@gmail.com <span aria-hidden="true">↗</span></a>
+          <p class="privacy-page__note">This policy describes FINLY's app-specific privacy practices. Google Drive is a third-party service and is governed by Google's own terms and privacy policy.</p>
+        </section>
+      </article>
+    </div>
+    <div class="privacy-app-back"><a class="text-link" href={`${import.meta.env.BASE_URL}#applications`}>← Back to applications</a><a class="text-link" href={`${import.meta.env.BASE_URL}privacy/`}>Website privacy policy ↗</a></div>
+  </div>
+</section>

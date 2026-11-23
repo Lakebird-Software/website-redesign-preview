@@ -544,15 +544,15 @@ img { height: auto; }
 .brand-closing__link::before {
   position: absolute;
   top: 0;
-  left: auto;
-  right: -12em;
+  left: -5em;
+  right: 0;
   bottom: 0;
   margin: auto;
   content: '';
   border-radius: 50%;
   display: block;
-  width: 28em;
-  height: 28em;
+  width: 20em;
+  height: 20em;
   text-align: center;
   transition: box-shadow .5s ease-out;
   z-index: -1;
@@ -569,7 +569,7 @@ img { height: auto; }
   border: 1px solid var(--closing-button-border);
 }
 .brand-closing__link:hover::before {
-  box-shadow: inset 0 0 0 14em var(--closing-button-fill);
+  box-shadow: inset 0 0 0 10em var(--closing-button-fill);
 }
 .brand-closing__link:focus-visible,
 .brand-closing__link:active {
@@ -580,7 +580,7 @@ img { height: auto; }
 }
 .brand-closing__link:focus-visible::before,
 .brand-closing__link:active::before {
-  box-shadow: inset 0 0 0 14em var(--closing-button-fill);
+  box-shadow: inset 0 0 0 10em var(--closing-button-fill);
 }
 .brand-closing__link-label,
 .brand-closing__link-arrow {
@@ -911,4 +911,237 @@ html[data-theme='light'] .google-play-badge {
   .brand-closing__link,
   .brand-closing__link::before,
   .footer-wordmark::after { transition: none !important; animation: none !important; }
+}
+
+/* ---------------------------------------------------------------------
+   8. App privacy pages — shared homepage chrome, no Hero/particle layer
+------------------------------------------------------------------------ */
+.privacy-app-page {
+  min-height: 100vh;
+  padding: 156px 0 104px;
+  background:
+    radial-gradient(ellipse at 84% 4%, rgba(33,158,188,.12), transparent 34%),
+    var(--ink);
+}
+.privacy-app-container { max-width: 1160px; }
+.privacy-app-banner {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0,1.45fr) minmax(250px,.7fr);
+  gap: clamp(28px,5vw,64px);
+  align-items: center;
+  overflow: hidden;
+  padding: clamp(28px,5vw,58px);
+  border: 1px solid var(--line-strong);
+  border-radius: 28px;
+  background: linear-gradient(118deg, rgba(6,56,79,.96), rgba(3,48,71,.82) 58%, rgba(10,67,91,.9));
+  box-shadow: var(--shadow-soft);
+}
+.privacy-app-banner::before {
+  position: absolute;
+  inset: auto -10% -75% 28%;
+  height: 260px;
+  border: 1px solid rgba(142,202,230,.12);
+  border-radius: 50%;
+  content: '';
+  pointer-events: none;
+}
+.privacy-app-banner__copy { position: relative; z-index: 1; min-width: 0; }
+.privacy-app-banner__product {
+  margin: 25px 0 2px;
+  color: var(--aqua);
+  font-family: 'JetBrains Mono',monospace;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .28em;
+}
+.privacy-app-banner h1 {
+  margin: 0;
+  color: #F4FAFD;
+  font-family: 'Sora',sans-serif;
+  font-size: clamp(42px,6.5vw,76px);
+  font-weight: 700;
+  letter-spacing: -.075em;
+  line-height: 1.04;
+}
+.privacy-app-banner h1 em { color: #8ECAE6; font-style: normal; }
+.privacy-app-banner__intro {
+  max-width: 650px;
+  margin: 20px 0 0;
+  color: #B8D9E7;
+  font-size: clamp(14px,1.35vw,17px);
+  line-height: 1.85;
+}
+.privacy-app-banner__tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 25px; }
+.privacy-app-banner__tags span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 29px;
+  padding: 5px 10px;
+  border: 1px solid rgba(142,202,230,.24);
+  border-radius: 999px;
+  color: #C9E6F0;
+  font-family: 'JetBrains Mono',monospace;
+  font-size: 9px;
+  letter-spacing: .06em;
+}
+.privacy-app-banner__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 22px;
+  margin-top: 29px;
+  color: #8ECAE6;
+  font-family: 'JetBrains Mono',monospace;
+  font-size: 9px;
+  letter-spacing: .06em;
+}
+.privacy-app-banner__panel {
+  position: relative;
+  z-index: 1;
+  padding: 25px 23px 22px;
+  border: 1px solid rgba(142,202,230,.2);
+  border-radius: 20px;
+  background: rgba(1,29,44,.46);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+.privacy-app-banner__panel-kicker,
+.privacy-app-banner__panel-foot {
+  color: #8ECAE6;
+  font-family: 'JetBrains Mono',monospace;
+  font-size: 8px;
+  letter-spacing: .14em;
+}
+.privacy-app-banner__panel-mark {
+  display: grid;
+  place-items: center;
+  width: 58px;
+  height: 58px;
+  margin: 23px 0 16px;
+  border: 1px solid rgba(33,158,188,.42);
+  border-radius: 17px;
+  background: rgba(33,158,188,.12);
+  color: #8ECAE6;
+}
+.privacy-app-banner__panel-mark svg { width: 38px; height: 38px; }
+.privacy-app-banner__panel h2 {
+  margin: 0 0 12px;
+  color: #F4FAFD;
+  font-family: 'Sora',sans-serif;
+  font-size: clamp(19px,2vw,24px);
+  letter-spacing: -.04em;
+}
+.privacy-app-banner__panel ul { display: grid; gap: 9px; padding: 0 0 0 17px; margin: 0 0 22px; }
+.privacy-app-banner__panel li { color: #B8D9E7; font-size: 11px; line-height: 1.65; }
+.privacy-app-banner__panel li::marker { color: #219EBC; }
+.privacy-app-banner__panel-foot { display: block; padding-top: 14px; border-top: 1px solid rgba(142,202,230,.16); }
+
+/* Product-specific accent treatment. */
+.privacy-app-page[data-privacy-app='finly'] .privacy-app-banner__product,
+.privacy-app-page[data-privacy-app='finly'] .privacy-app-banner__panel-mark { color: #FFB703; }
+.privacy-app-page[data-privacy-app='finly'] .privacy-app-banner__panel-mark { border-color: rgba(255,183,3,.38); background: rgba(255,183,3,.1); }
+.privacy-app-page[data-privacy-app='gps-camera'] .privacy-app-banner__product,
+.privacy-app-page[data-privacy-app='gps-camera'] .privacy-app-banner__panel-mark { color: #BB86FC; }
+.privacy-app-page[data-privacy-app='gps-camera'] .privacy-app-banner__panel-mark { border-color: rgba(187,134,252,.4); background: rgba(187,134,252,.11); }
+.privacy-app-page[data-privacy-app='gps-camera'] .privacy-app-banner__panel li::marker { color: #BB86FC; }
+
+.privacy-app-glance {
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: 12px;
+  margin: 18px 0 0;
+}
+.privacy-app-glance > div {
+  display: grid;
+  gap: 5px;
+  min-width: 0;
+  padding: 18px 19px;
+  border: 1px solid var(--line);
+  border-radius: 15px;
+  background: var(--surface);
+}
+.privacy-app-glance__label { color: var(--text-faint); font-family: 'JetBrains Mono',monospace; font-size: 9px; letter-spacing: .13em; }
+.privacy-app-glance strong { color: var(--text); font-family: 'Sora',sans-serif; font-size: 16px; letter-spacing: -.025em; }
+.privacy-app-glance small { color: var(--text-soft); font-size: 11px; line-height: 1.55; }
+.privacy-app-layout {
+  display: grid;
+  grid-template-columns: 235px minmax(0,1fr);
+  align-items: start;
+  gap: clamp(30px,5.5vw,76px);
+  padding-top: 58px;
+}
+.privacy-app-toc {
+  position: sticky;
+  top: 110px;
+  display: grid;
+  gap: 11px;
+  padding: 20px 17px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--surface);
+}
+.privacy-app-toc .eyebrow { margin-bottom: 4px; color: var(--aqua); }
+.privacy-app-toc a { color: var(--text-soft); font-size: 11px; line-height: 1.5; transition: color .2s ease, transform .2s ease; }
+.privacy-app-toc a:hover { color: var(--amber); transform: translateX(3px); }
+.privacy-app-document { min-width: 0; }
+.privacy-app-document section { scroll-margin-top: 112px; }
+.privacy-app-document .privacy-page__note { margin-top: 14px; }
+.privacy-app-back { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; padding-top: 25px; border-top: 1px solid var(--line); }
+
+html[data-theme='light'] .privacy-app-banner {
+  border-color: rgba(38,33,92,.14);
+  background: linear-gradient(118deg,#E9F4F8,#FFFFFF 57%,#EEEDFE);
+}
+html[data-theme='light'] .privacy-app-banner h1 { color: #26215C; }
+html[data-theme='light'] .privacy-app-banner h1 em { color: #08758F; }
+html[data-theme='light'] .privacy-app-banner__intro { color: #534AB7; }
+html[data-theme='light'] .privacy-app-banner__tags span { border-color: rgba(38,33,92,.16); color: #47427F; }
+html[data-theme='light'] .privacy-app-banner__meta { color: #534AB7; }
+html[data-theme='light'] .privacy-app-banner__panel { border-color: rgba(38,33,92,.14); background: rgba(255,255,255,.72); }
+html[data-theme='light'] .privacy-app-banner__panel-kicker,
+html[data-theme='light'] .privacy-app-banner__panel-foot { color: #534AB7; }
+html[data-theme='light'] .privacy-app-banner__panel h2 { color: #26215C; }
+html[data-theme='light'] .privacy-app-banner__panel li { color: #534AB7; }
+html[data-theme='light'] .privacy-app-page[data-privacy-app='finly'] .privacy-app-banner__product { color: #986000; }
+html[data-theme='light'] .privacy-app-page[data-privacy-app='gps-camera'] .privacy-app-banner__product { color: #534AB7; }
+html[data-theme='light'] .privacy-app-toc { background: #FFFFFF; }
+html[data-theme='light'] .privacy-app-glance > div { background: #FFFFFF; }
+
+@media (max-width: 900px) {
+  .privacy-app-banner { grid-template-columns: minmax(0,1fr) minmax(220px,.68fr); gap: 25px; }
+  .privacy-app-layout { grid-template-columns: 200px minmax(0,1fr); gap: 28px; }
+}
+@media (max-width: 720px) {
+  .privacy-app-page { padding-top: 130px; padding-bottom: 76px; }
+  .privacy-app-banner { grid-template-columns: 1fr; padding: 27px 23px; border-radius: 22px; }
+  .privacy-app-banner__product { margin-top: 21px; }
+  .privacy-app-banner__panel { display: grid; grid-template-columns: auto 1fr; column-gap: 17px; align-items: center; padding: 18px; }
+  .privacy-app-banner__panel-kicker, .privacy-app-banner__panel-foot { grid-column: 1 / -1; }
+  .privacy-app-banner__panel-mark { grid-column: 1; grid-row: 2 / span 2; width: 48px; height: 48px; margin: 12px 0; }
+  .privacy-app-banner__panel h2 { grid-column: 2; align-self: end; margin: 10px 0 3px; }
+  .privacy-app-banner__panel ul { grid-column: 2; align-self: start; margin: 0 0 10px; }
+  .privacy-app-banner__panel-foot { margin-top: 8px; }
+  .privacy-app-glance { grid-template-columns: 1fr; gap: 8px; }
+  .privacy-app-glance > div { grid-template-columns: minmax(95px,.45fr) 1fr; align-items: center; padding: 13px 15px; }
+  .privacy-app-glance__label { grid-row: 1 / span 2; }
+  .privacy-app-glance small { grid-column: 2; }
+  .privacy-app-layout { grid-template-columns: 1fr; gap: 28px; padding-top: 34px; }
+  .privacy-app-toc { position: static; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 10px 14px; padding: 17px 15px; }
+  .privacy-app-toc .eyebrow { grid-column: 1 / -1; }
+  .privacy-app-document p, .privacy-app-document li { font-size: 13px; }
+}
+@media (max-width: 390px) {
+  .privacy-app-banner { padding: 23px 18px; }
+  .privacy-app-banner h1 { font-size: clamp(38px,11vw,52px); }
+  .privacy-app-banner__tags span { font-size: 8px; }
+  .privacy-app-banner__panel { grid-template-columns: 1fr; }
+  .privacy-app-banner__panel-kicker, .privacy-app-banner__panel-foot,
+  .privacy-app-banner__panel-mark, .privacy-app-banner__panel h2, .privacy-app-banner__panel ul { grid-column: 1; grid-row: auto; }
+  .privacy-app-banner__panel-mark { margin: 13px 0 7px; }
+  .privacy-app-banner__panel h2 { margin: 0 0 8px; }
+  .privacy-app-glance > div { grid-template-columns: 1fr; }
+  .privacy-app-glance__label, .privacy-app-glance small { grid-column: 1; grid-row: auto; }
+  .privacy-app-toc { grid-template-columns: 1fr 1fr; }
+  .privacy-app-toc a { font-size: 10px; }
+  .privacy-app-back { flex-direction: column; }
 }
