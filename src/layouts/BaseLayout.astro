@@ -4,6 +4,7 @@ import '../styles/v2.css';
 import '../styles/v21.css';
 import '../styles/v22.css';
 import '../styles/v23.css';
+
 import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 
@@ -13,61 +14,112 @@ interface Props {
   canonicalPath?: string;
   showHeader?: boolean;
   showFooter?: boolean;
+  forceDarkTheme?: boolean;
 }
+
 const {
   title = 'Lakebird Software — Thoughtful technology. Extraordinary experiences.',
   description = 'Lakebird Software creates purposeful Android applications with thoughtful design, useful functionality and attention to every detail.',
   canonicalPath = '/',
   showHeader = true,
   showFooter = true,
+  forceDarkTheme = false,
 } = Astro.props;
+
 const siteUrl = Astro.site ?? new URL('https://lakebird-software.github.io');
 const base = import.meta.env.BASE_URL;
-const canonical = new URL(`${base}${canonicalPath.replace(/^\//, '')}`, siteUrl);
+
+const canonical = new URL(
+  `${base}${canonicalPath.replace(/^\//, '')}`,
+  siteUrl
+);
+
 const socialImage = new URL(`${base}social-preview.svg`, siteUrl);
 ---
+
 <!doctype html>
-<html lang="en" data-theme="dark">
+<html
+  lang="en"
+  data-theme="dark"
+  data-page-theme={forceDarkTheme ? 'finly' : undefined}
+>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="color-scheme" content="dark light" />
-    <meta name="theme-color" content="#023047" />
+
+    <meta
+      name="color-scheme"
+      content={forceDarkTheme ? 'dark' : 'dark light'}
+    />
+
+    <meta
+      name="theme-color"
+      content={forceDarkTheme ? '#011825' : '#023047'}
+    />
+
     <meta name="description" content={description} />
     <meta name="author" content="Lakebird Software" />
     <meta name="robots" content="noindex,nofollow" />
+
     <link rel="canonical" href={canonical} />
     <link rel="icon" type="image/svg+xml" href={`${base}favicon.svg`} />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin="anonymous"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Sora:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Lakebird Software" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
     <meta property="og:image" content={socialImage} />
+
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
+
     <title>{title}</title>
+
     <script is:inline>
       (() => {
+        const root = document.documentElement;
+
         try {
-          const saved = localStorage.getItem('lakebird-theme');
-          document.documentElement.dataset.theme = saved === 'light' ? 'light' : 'dark';
+          if (root.dataset.pageTheme === 'finly') {
+            root.dataset.theme = 'dark';
+          } else {
+            const saved = localStorage.getItem('lakebird-theme');
+            root.dataset.theme = saved === 'light' ? 'light' : 'dark';
+          }
         } catch {
-          document.documentElement.dataset.theme = 'dark';
+          root.dataset.theme = 'dark';
         }
       })();
     </script>
   </head>
+
   <body>
     <a class="skip-link" href="#main-content">Skip to content</a>
+
     {showHeader && <SiteHeader />}
-    <main id="main-content"><slot /></main>
+
+    <main id="main-content">
+      <slot />
+    </main>
+
     {showFooter && <SiteFooter />}
+
     <div class="page-grain" aria-hidden="true"></div>
+
     <script>
       import '../scripts/site.ts';
     </script>
