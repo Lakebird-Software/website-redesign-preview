@@ -1,0 +1,700 @@
+---
+import '../../styles/finly.css';
+
+const playUrl = 'https://play.google.com/store/apps/details?id=com.prithveeshbhat.finly&hl=en';
+---
+
+<div class="finly-page" data-finly-page>
+
+  <!-- HERO -->
+  <section class="finly-hero" id="finly-top">
+    <div class="finly-hero__ambient finly-hero__ambient--one"></div>
+    <div class="finly-hero__ambient finly-hero__ambient--two"></div>
+    <div class="finly-hero__grid"></div>
+
+    <div class="container finly-hero__inner">
+
+      <div class="finly-hero__copy">
+        <span class="finly-eyebrow" data-finly-kicker>
+          <i></i> FINLY / PERSONAL FINANCE
+        </span>
+
+        <h1 data-finly-title>
+          A clearer view
+          <span>of your money.</span>
+        </h1>
+
+        <p class="finly-hero__description" data-finly-intro>
+          Bring your income, expenses, budgets and financial records
+          together in one thoughtfully organised place.
+          Understand your everyday spending without unnecessary complexity.
+        </p>
+
+        <div class="finly-hero__actions" data-finly-actions>
+          <a
+            class="finly-cta"
+            href={playUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M5 3.8v16.4L19.5 12 5 3.8Z" fill="currentColor"/>
+            </svg>
+            Get Finly on Google Play
+            <span aria-hidden="true">↗</span>
+          </a>
+
+          <a class="finly-text-link" href="#finly-features">
+            Explore features <span aria-hidden="true">↓</span>
+          </a>
+        </div>
+
+        <div class="finly-hero__assurances" data-finly-assurances>
+          <span>No account required</span>
+          <i></i>
+          <span>Works offline</span>
+          <i></i>
+          <span>Ad-free</span>
+        </div>
+      </div>
+
+      <!-- Illustrative product visual, not a screenshot of the app -->
+      <div class="finly-hero__visual" aria-label="Illustrative Finly financial dashboard visual">
+        <div class="finly-orbit finly-orbit--one"></div>
+        <div class="finly-orbit finly-orbit--two"></div>
+        <div class="finly-hero__glow"></div>
+
+        <div class="finly-floating finly-floating--income">
+          <span class="finly-floating__icon finly-floating__icon--income">↗</span>
+          <span>
+            <small>INCOME</small>
+            <strong>Stay organised</strong>
+          </span>
+        </div>
+
+        <div class="finly-floating finly-floating--expense">
+          <span class="finly-floating__icon finly-floating__icon--expense">↘</span>
+          <span>
+            <small>EXPENSES</small>
+            <strong>Understand spending</strong>
+          </span>
+        </div>
+
+        <div class="finly-device" data-finly-float>
+          <div class="finly-device__frame">
+            <div class="finly-device__notch"></div>
+
+            <div class="finly-device__screen">
+              <div class="finly-screen__top">
+                <span>FINLY</span>
+                <span class="finly-screen__menu">•••</span>
+              </div>
+
+              <div class="finly-screen__welcome">
+                <small>YOUR FINANCES</small>
+                <strong>A little more clarity.</strong>
+              </div>
+
+              <div class="finly-screen__balance">
+                <span>Financial overview</span>
+                <strong>— — —</strong>
+                <small>Illustrative preview</small>
+              </div>
+
+              <div class="finly-screen__chart-heading">
+                <strong>Spending overview</strong>
+                <span>Categories</span>
+              </div>
+
+              <div class="finly-screen__chart">
+                <svg viewBox="0 0 120 120" role="img" aria-label="Illustrative multi-colour category chart">
+                  <circle cx="60" cy="60" r="43" fill="none" stroke="#12394B" stroke-width="11"/>
+                  <circle cx="60" cy="60" r="43" fill="none" stroke="#219EBC" stroke-width="11" stroke-dasharray="100 270" transform="rotate(-90 60 60)"/>
+                  <circle cx="60" cy="60" r="43" fill="none" stroke="#FB8500" stroke-width="11" stroke-dasharray="68 270" stroke-dashoffset="-106" transform="rotate(-90 60 60)"/>
+                  <circle cx="60" cy="60" r="43" fill="none" stroke="#FFB703" stroke-width="11" stroke-dasharray="48 270" stroke-dashoffset="-180" transform="rotate(-90 60 60)"/>
+                  <circle cx="60" cy="60" r="43" fill="none" stroke="#2A9D8F" stroke-width="11" stroke-dasharray="30 270" stroke-dashoffset="-234" transform="rotate(-90 60 60)"/>
+                  <text x="60" y="57" text-anchor="middle" fill="#FFFFFF" font-size="9">Overview</text>
+                  <text x="60" y="69" text-anchor="middle" fill="#8ECAE6" font-size="6">Illustrative</text>
+                </svg>
+              </div>
+
+              <div class="finly-screen__legend">
+                <span><i class="legend-blue"></i> Categories</span>
+                <span><i class="legend-orange"></i> Spending</span>
+              </div>
+
+              <div class="finly-screen__mini-bars">
+                <span></span><span></span><span></span>
+                <span></span><span></span><span></span>
+                <span></span><span></span><span></span>
+                <span></span><span></span><span></span>
+              </div>
+
+              <div class="finly-screen__bottom">
+                <i></i><i></i><i></i><i></i>
+              </div>
+            </div>
+          </div>
+
+          <span class="finly-device__caption">FINANCIAL CLARITY, IN ONE PLACE</span>
+        </div>
+
+        <span class="finly-visual-note">ILLUSTRATIVE VISUAL · NOT AN APP SCREENSHOT</span>
+      </div>
+    </div>
+
+    <div class="finly-hero__bottom">
+      <span>PERSONAL FINANCE, MADE SIMPLE</span>
+      <a href="#finly-features">SCROLL TO EXPLORE ↓</a>
+    </div>
+  </section>
+
+  <!-- INTRODUCTION -->
+  <section class="finly-intro finly-section" id="finly-features">
+    <div class="container">
+
+      <div class="finly-section-heading" data-finly-reveal>
+        <span class="finly-eyebrow">A MORE ORGANised APPROACH</span>
+        <h2>
+          Everything comes together.
+          <span>Nothing feels complicated.</span>
+        </h2>
+        <p>
+          Good money management starts with knowing what's happening.
+          Finly brings your everyday financial activity into a clear,
+          organised experience.
+        </p>
+      </div>
+
+      <div class="finly-feature-grid">
+
+        <article class="finly-feature-card" data-finly-reveal>
+          <div class="finly-feature-card__icon finly-icon--blue">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M5 7h14M5 12h14M5 17h9" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+              <circle cx="3" cy="7" r="1" fill="currentColor"/>
+              <circle cx="3" cy="12" r="1" fill="currentColor"/>
+              <circle cx="3" cy="17" r="1" fill="currentColor"/>
+            </svg>
+          </div>
+          <span class="finly-card-index">01 / RECORD</span>
+          <h3>Keep every transaction organised.</h3>
+          <p>
+            Record daily income and expenses, organise transactions
+            into categories and keep receipts alongside the records
+            that matter.
+          </p>
+          <span class="finly-card-accent"></span>
+        </article>
+
+        <article class="finly-feature-card" data-finly-reveal>
+          <div class="finly-feature-card__icon finly-icon--amber">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4 19V5m0 14h16M7 15l4-5 3 2 5-7" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <span class="finly-card-index">02 / UNDERSTAND</span>
+          <h3>See your spending patterns.</h3>
+          <p>
+            Explore category breakdowns, visual analytics and budget
+            limits to understand how your expenses are distributed.
+          </p>
+          <span class="finly-card-accent"></span>
+        </article>
+
+        <article class="finly-feature-card" data-finly-reveal>
+          <div class="finly-feature-card__icon finly-icon--orange">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M6 3h9l4 4v14H6zM15 3v5h4M9 13h7M9 17h7" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <span class="finly-card-index">03 / TAKE CONTROL</span>
+          <h3>Your records, ready when needed.</h3>
+          <p>
+            Export your financial ledgers in PDF or CSV format
+            and keep a convenient copy for your own reference.
+          </p>
+          <span class="finly-card-accent"></span>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- TRANSACTIONS AND BUDGETS -->
+  <section class="finly-story finly-section">
+    <div class="container">
+
+      <div class="finly-section-heading finly-section-heading--left" data-finly-reveal>
+        <span class="finly-eyebrow">BUILT AROUND EVERYDAY FINANCES</span>
+        <h2>
+          From everyday records
+          <span>to a clearer picture.</span>
+        </h2>
+        <p>
+          A thoughtful set of tools to help you record, organise
+          and understand your financial activity.
+        </p>
+      </div>
+
+      <div class="finly-story-grid">
+
+        <div class="finly-story-copy">
+          <article class="finly-story-item" data-finly-reveal>
+            <span class="finly-story-number">01</span>
+            <div>
+              <span class="finly-eyebrow">DAILY TRANSACTIONS</span>
+              <h3>Stay on top of the everyday.</h3>
+              <p>
+                Keep income and expenses organised, add custom
+                categories and attach receipts to your records.
+              </p>
+            </div>
+          </article>
+
+          <article class="finly-story-item" data-finly-reveal>
+            <span class="finly-story-number">02</span>
+            <div>
+              <span class="finly-eyebrow">PLAN AHEAD</span>
+              <h3>Make room for what's coming.</h3>
+              <p>
+                Keep future and recurring transactions in view
+                alongside the financial activity you've already recorded.
+              </p>
+            </div>
+          </article>
+
+          <article class="finly-story-item" data-finly-reveal>
+            <span class="finly-story-number">03</span>
+            <div>
+              <span class="finly-eyebrow">BUDGET MANAGEMENT</span>
+              <h3>Give your spending some structure.</h3>
+              <p>
+                Set budget limits, monitor category spending and
+                receive alerts to stay aware of your budgets.
+              </p>
+            </div>
+          </article>
+        </div>
+
+        <div class="finly-story-visual" data-finly-reveal>
+          <div class="finly-story-visual__top">
+            <span>FINLY / FINANCIAL OVERVIEW</span>
+            <i></i>
+          </div>
+
+          <div class="finly-story-visual__body">
+            <span class="finly-visual-label">YOUR FINANCIAL ACTIVITY</span>
+            <div class="finly-visual-balance">Organised.<br/><em>At a glance.</em></div>
+
+            <div class="finly-mini-analytics">
+              <div class="finly-mini-analytics__row">
+                <span>Income</span><i></i><b>↗</b>
+              </div>
+              <div class="finly-mini-analytics__row">
+                <span>Expenses</span><i></i><b>↘</b>
+              </div>
+              <div class="finly-mini-analytics__row">
+                <span>Budgets</span><i></i><b>◌</b>
+              </div>
+            </div>
+
+            <div class="finly-visual-footer">
+              <span>DAILY RECORDS</span>
+              <span>PLANNING AHEAD</span>
+            </div>
+          </div>
+
+          <span class="finly-story-visual__caption">ILLUSTRATIVE PRODUCT VISUAL</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FINANCIAL VISUALISATIONS -->
+  <section class="finly-analytics finly-section" id="finly-analytics">
+    <div class="container">
+
+      <div class="finly-section-heading" data-finly-reveal>
+        <span class="finly-eyebrow">SEE THE BIGGER PICTURE</span>
+        <h2>
+          Financial details,
+          <span>made easier to understand.</span>
+        </h2>
+        <p>
+          Visual breakdowns help bring income, expenses and category
+          activity into focus.
+        </p>
+      </div>
+
+      <div class="finly-chart-grid">
+
+        <!-- Donut chart -->
+        <article class="finly-chart-card" data-finly-chart data-finly-reveal>
+          <div class="finly-chart-card__header">
+            <div>
+              <span class="finly-chart-kicker">CATEGORY ANALYTICS</span>
+              <h3>A view of your categories.</h3>
+            </div>
+            <span class="finly-chart-mark">01</span>
+          </div>
+
+          <div class="finly-donut-layout">
+            <svg class="finly-donut" viewBox="0 0 120 120" role="img" aria-label="Illustrative multi-colour category distribution chart">
+              <circle class="finly-donut__track" cx="60" cy="60" r="52"/>
+              <circle class="finly-donut__segment" cx="60" cy="60" r="52" stroke="#219EBC" stroke-dasharray="78 327" stroke-dashoffset="0" data-finly-segment data-offset="0"/>
+              <circle class="finly-donut__segment" cx="60" cy="60" r="52" stroke="#FB8500" stroke-dasharray="64 327" stroke-dashoffset="-82" data-finly-segment data-offset="-82"/>
+              <circle class="finly-donut__segment" cx="60" cy="60" r="52" stroke="#FFB703" stroke-dasharray="53 327" stroke-dashoffset="-150" data-finly-segment data-offset="-150"/>
+              <circle class="finly-donut__segment" cx="60" cy="60" r="52" stroke="#2A9D8F" stroke-dasharray="42 327" stroke-dashoffset="-207" data-finly-segment data-offset="-207"/>
+              <circle class="finly-donut__segment" cx="60" cy="60" r="52" stroke="#E76F51" stroke-dasharray="35 327" stroke-dashoffset="-253" data-finly-segment data-offset="-253"/>
+              <circle class="finly-donut__segment" cx="60" cy="60" r="52" stroke="#8ECAE6" stroke-dasharray="32 327" stroke-dashoffset="-292" data-finly-segment data-offset="-292"/>
+            </svg>
+
+            <div class="finly-donut-legend">
+              <span><i style="--legend:#219EBC"></i> Category 01</span>
+              <span><i style="--legend:#FB8500"></i> Category 02</span>
+              <span><i style="--legend:#FFB703"></i> Category 03</span>
+              <span><i style="--legend:#2A9D8F"></i> Category 04</span>
+              <span><i style="--legend:#E76F51"></i> Category 05</span>
+              <span><i style="--legend:#8ECAE6"></i> Category 06</span>
+            </div>
+          </div>
+
+          <p class="finly-chart-note">
+            Illustrative category distribution — not actual account data.
+          </p>
+        </article>
+
+        <!-- Bar chart -->
+        <article class="finly-chart-card" data-finly-chart data-finly-reveal>
+          <div class="finly-chart-card__header">
+            <div>
+              <span class="finly-chart-kicker">CASH FLOW</span>
+              <h3>Compare financial activity.</h3>
+            </div>
+            <span class="finly-chart-mark">02</span>
+          </div>
+
+          <div class="finly-bar-chart" role="img" aria-label="Illustrative income and expense comparison bar chart">
+            <div class="finly-bar-chart__grid">
+              <i></i><i></i><i></i><i></i>
+            </div>
+
+            <div class="finly-bar-chart__columns">
+              <div class="finly-bar-group">
+                <div class="finly-bar finly-bar--income" data-finly-bar style="height:48%"></div>
+                <div class="finly-bar finly-bar--expense" data-finly-bar style="height:69%"></div>
+                <span>01</span>
+              </div>
+              <div class="finly-bar-group">
+                <div class="finly-bar finly-bar--income" data-finly-bar style="height:78%"></div>
+                <div class="finly-bar finly-bar--expense" data-finly-bar style="height:42%"></div>
+                <span>02</span>
+              </div>
+              <div class="finly-bar-group">
+                <div class="finly-bar finly-bar--income" data-finly-bar style="height:61%"></div>
+                <div class="finly-bar finly-bar--expense" data-finly-bar style="height:83%"></div>
+                <span>03</span>
+              </div>
+              <div class="finly-bar-group">
+                <div class="finly-bar finly-bar--income" data-finly-bar style="height:90%"></div>
+                <div class="finly-bar finly-bar--expense" data-finly-bar style="height:58%"></div>
+                <span>04</span>
+              </div>
+              <div class="finly-bar-group">
+                <div class="finly-bar finly-bar--income" data-finly-bar style="height:72%"></div>
+                <div class="finly-bar finly-bar--expense" data-finly-bar style="height:52%"></div>
+                <span>05</span>
+              </div>
+              <div class="finly-bar-group">
+                <div class="finly-bar finly-bar--income" data-finly-bar style="height:84%"></div>
+                <div class="finly-bar finly-bar--expense" data-finly-bar style="height:66%"></div>
+                <span>06</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="finly-chart-legend">
+            <span><i style="--legend:#219EBC"></i> Income</span>
+            <span><i style="--legend:#FB8500"></i> Expenses</span>
+          </div>
+
+          <p class="finly-chart-note">
+            Illustrative comparison — not actual account data.
+          </p>
+        </article>
+
+        <!-- Trend chart -->
+        <article class="finly-chart-card finly-chart-card--wide" data-finly-chart data-finly-reveal>
+          <div class="finly-chart-card__header">
+            <div>
+              <span class="finly-chart-kicker">FINANCIAL TRENDS</span>
+              <h3>Follow the movement, not just the numbers.</h3>
+            </div>
+            <span class="finly-chart-mark">03</span>
+          </div>
+
+          <div class="finly-line-chart">
+            <div class="finly-line-chart__grid">
+              <i></i><i></i><i></i><i></i>
+            </div>
+
+            <svg viewBox="0 0 700 190" preserveAspectRatio="none" role="img" aria-label="Illustrative income and expense trend lines">
+              <defs>
+                <linearGradient id="finly-line-fill" x1="0" x2="0" y1="0" y2="1">
+                  <stop offset="0%" stop-color="#219EBC" stop-opacity=".22"/>
+                  <stop offset="100%" stop-color="#219EBC" stop-opacity="0"/>
+                </linearGradient>
+              </defs>
+              <path d="M0 125 C55 116 65 62 125 80 S195 143 250 96 S325 43 380 75 S475 105 520 53 S620 37 700 16 L700 190 L0 190Z" fill="url(#finly-line-fill)"/>
+              <path class="finly-line-chart__path" data-finly-line d="M0 125 C55 116 65 62 125 80 S195 143 250 96 S325 43 380 75 S475 105 520 53 S620 37 700 16" fill="none" stroke="#219EBC" stroke-width="4" stroke-linecap="round"/>
+              <path class="finly-line-chart__path" data-finly-line d="M0 151 C55 133 75 147 125 132 S195 107 250 128 S325 105 380 119 S475 83 520 105 S620 78 700 88" fill="none" stroke="#FB8500" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          </div>
+
+          <div class="finly-chart-legend">
+            <span><i style="--legend:#219EBC"></i> Income trend</span>
+            <span><i style="--legend:#FB8500"></i> Expense trend</span>
+          </div>
+
+          <p class="finly-chart-note">
+            Illustrative trend lines — not actual account data.
+          </p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- REPORTS -->
+  <section class="finly-reports finly-section">
+    <div class="container finly-reports__inner">
+
+      <div class="finly-reports__copy" data-finly-reveal>
+        <span class="finly-eyebrow">YOUR RECORDS, YOUR WAY</span>
+        <h2>
+          Useful records.
+          <span>Flexible formats.</span>
+        </h2>
+        <p>
+          Your financial records should remain useful beyond the app.
+          Export your ledgers as PDF or CSV files whenever you need
+          a convenient copy.
+        </p>
+      </div>
+
+      <div class="finly-export-visual" data-finly-reveal>
+        <div class="finly-export-card">
+          <div class="finly-export-card__top">
+            <span>FINLY / EXPORT</span>
+            <span>↗</span>
+          </div>
+          <div class="finly-export-card__title">
+            Your financial records.
+          </div>
+          <div class="finly-export-card__formats">
+            <div>
+              <strong>PDF</strong>
+              <span>Portable document</span>
+            </div>
+            <div>
+              <strong>CSV</strong>
+              <span>Spreadsheet data</span>
+            </div>
+          </div>
+          <div class="finly-export-card__line"></div>
+          <span class="finly-export-card__caption">EXPORT WHEN YOU NEED IT</span>
+        </div>
+        <div class="finly-export-glow"></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PRIVACY -->
+  <section class="finly-privacy finly-section" id="finly-privacy">
+    <div class="container">
+
+      <div class="finly-privacy__heading" data-finly-reveal>
+        <span class="finly-eyebrow">PRIVACY BY DESIGN</span>
+        <h2>
+          Your finances.
+          <span>Your device. Your choice.</span>
+        </h2>
+        <p>
+          Managing your money should not require handing over more
+          personal information than necessary.
+        </p>
+      </div>
+
+      <div class="finly-privacy-grid">
+
+        <article class="finly-privacy-card finly-privacy-card--main" data-finly-reveal>
+          <span class="finly-privacy-icon">◇</span>
+          <span class="finly-eyebrow">NO ACCOUNT. NO LOGIN.</span>
+          <h3>Start using Finly without creating an account.</h3>
+          <p>
+            Finly is fully usable without registration or a login.
+            Open the app and organise your financial records.
+          </p>
+        </article>
+
+        <article class="finly-privacy-card" data-finly-reveal>
+          <span class="finly-privacy-icon">⌂</span>
+          <span class="finly-eyebrow">LOCAL STORAGE</span>
+          <h3>Your records stay on your device.</h3>
+          <p>
+            Your financial records are stored locally rather than
+            on Lakebird Software's servers.
+          </p>
+        </article>
+
+        <article class="finly-privacy-card" data-finly-reveal>
+          <span class="finly-privacy-icon">↗</span>
+          <span class="finly-eyebrow">OPTIONAL GOOGLE DRIVE BACKUP</span>
+          <h3>Backup is your decision.</h3>
+          <p>
+            Enable Google Drive backup manually when you choose.
+            Your records are uploaded to your own Google Drive
+            with your permission.
+          </p>
+        </article>
+
+        <article class="finly-privacy-card" data-finly-reveal>
+          <span class="finly-privacy-icon">✳</span>
+          <span class="finly-eyebrow">A FOCUSED EXPERIENCE</span>
+          <h3>No advertisements. No third-party tracking.</h3>
+          <p>
+            Finly is completely ad-free and does not use
+            third-party tracking.
+          </p>
+        </article>
+
+        <article class="finly-privacy-card" data-finly-reveal>
+          <span class="finly-privacy-icon">⌑</span>
+          <span class="finly-eyebrow">EVERYDAY PRIVACY</span>
+          <h3>Keep sensitive details out of view.</h3>
+          <p>
+            Use the app lock and hide-balance options for
+            additional privacy when using the app.
+          </p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="finly-faq finly-section" id="finly-faq">
+    <div class="container finly-faq__grid">
+
+      <div class="finly-faq__intro" data-finly-reveal>
+        <span class="finly-eyebrow">GOOD TO KNOW</span>
+        <h2>Questions, <span>answered.</span></h2>
+        <p>
+          A few things worth knowing before you get started with Finly.
+        </p>
+        <a class="finly-text-link" href="mailto:support.pbandroidapps@gmail.com">
+          Contact support <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+
+      <div class="finly-faq__list" data-finly-reveal>
+
+        <details class="finly-faq-item">
+          <summary>Do I need to create an account?</summary>
+          <p>
+            No. Finly is fully usable without creating an account
+            or logging in.
+          </p>
+        </details>
+
+        <details class="finly-faq-item">
+          <summary>Can I use Finly offline?</summary>
+          <p>
+            Yes. You can manage your everyday financial records
+            offline on your device.
+          </p>
+        </details>
+
+        <details class="finly-faq-item">
+          <summary>Where are my financial records stored?</summary>
+          <p>
+            Your records are stored locally on your device.
+            They are not stored on Lakebird Software's servers.
+          </p>
+        </details>
+
+        <details class="finly-faq-item">
+          <summary>Is Google Drive backup mandatory?</summary>
+          <p>
+            No. Google Drive backup is optional and controlled
+            through a manual setting. Turning it off stops future
+            backups. Existing copies in your Google Drive remain
+            under your control.
+          </p>
+        </details>
+
+        <details class="finly-faq-item">
+          <summary>Can I export my financial records?</summary>
+          <p>
+            Yes. Finly supports exporting financial ledgers in
+            PDF and CSV formats.
+          </p>
+        </details>
+
+        <details class="finly-faq-item">
+          <summary>Does Finly display advertisements?</summary>
+          <p>
+            No. Finly is completely ad-free.
+          </p>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL DOWNLOAD -->
+  <section class="finly-final finly-section" id="finly-download">
+    <div class="container">
+
+      <div class="finly-final__panel" data-finly-reveal>
+        <div class="finly-final__glow"></div>
+
+        <div class="finly-final__content">
+          <span class="finly-eyebrow">MAKE EVERYDAY MONEY MANAGEMENT SIMPLER</span>
+          <h2>
+            Take a clearer view
+            <span>of your money.</span>
+          </h2>
+          <p>
+            Organise your income, understand your expenses and keep
+            your financial records close at hand.
+          </p>
+          <a
+            class="finly-cta finly-cta--final"
+            href={playUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Get Finly on Google Play
+            <span aria-hidden="true">↗</span>
+          </a>
+          <small>No account. No login. No advertisements.</small>
+        </div>
+
+        <div class="finly-final__mark" aria-hidden="true">
+          <span>F</span>
+          <i></i><i></i><i></i>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</div>
+
+<script>
+  import '../../scripts/finly.ts';
+</script>
