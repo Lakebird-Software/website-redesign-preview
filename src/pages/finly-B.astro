@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 
 const playUrl = 'https://play.google.com/store/apps/details?id=com.prithveeshbhat.finly&hl=en';
+const finlyLogoUrl = 'https://play-lh.googleusercontent.com/FLUJjiYrZX8m3xpjAPgSGzc-vU6p6yF4tmamA467q7fUZh3PBaOzX0npMDVNTgIJQE5fWJ4He-H18UbA8-4-vA=w240-h480-rw';
 const privacyUrl = `${import.meta.env.BASE_URL}privacy/finly/`;
 ---
 
@@ -192,7 +193,7 @@ const privacyUrl = `${import.meta.env.BASE_URL}privacy/finly/`;
                 </div>
 
                 <!-- State 2: category analytics -->
-                <div class="fb-state fb-state--analytics" data-fb-state="1" aria-hidden="true">
+                <div class="fb-state fb-state--analytics" data-fb-state="1" aria-hidden="true" hidden>
                   <div class="fb-state__head"><span class="fb-state__eyebrow">VISUAL ANALYTICS</span><strong>Patterns, brought into focus.</strong><small>ILLUSTRATIVE CATEGORY VISUAL</small></div>
                   <div class="fb-analysis-layout">
                     <div class="fb-large-donut-wrap">
@@ -221,7 +222,7 @@ const privacyUrl = `${import.meta.env.BASE_URL}privacy/finly/`;
                 </div>
 
                 <!-- State 3: budgets -->
-                <div class="fb-state fb-state--budgets" data-fb-state="2" aria-hidden="true">
+                <div class="fb-state fb-state--budgets" data-fb-state="2" aria-hidden="true" hidden>
                   <div class="fb-state__head"><span class="fb-state__eyebrow">BUDGETS & PLANNING</span><strong>Make your limits visible.</strong><small>ILLUSTRATIVE BUDGET UI</small></div>
                   <div class="fb-budget-list">
                     <div class="fb-budget-row"><div><span>Monthly budget</span><b>Keep a clear limit</b></div><strong class="fb-budget-value">72%</strong><div class="fb-progress"><i data-fb-progress="72" style="--fb-progress:72%"></i></div></div>
@@ -233,7 +234,7 @@ const privacyUrl = `${import.meta.env.BASE_URL}privacy/finly/`;
                 </div>
 
                 <!-- State 4: privacy and exports -->
-                <div class="fb-state fb-state--control" data-fb-state="3" aria-hidden="true">
+                <div class="fb-state fb-state--control" data-fb-state="3" aria-hidden="true" hidden>
                   <div class="fb-state__head"><span class="fb-state__eyebrow">YOUR RECORDS, YOUR CHOICE</span><strong>Keep control of your information.</strong><small>FINLY PRIVACY APPROACH</small></div>
                   <div class="fb-control-stack">
                     <div class="fb-control-row"><span class="fb-control-icon is-blue">⌂</span><span><b>Local records</b><small>Stored on your device</small></span><em>ON DEVICE</em></div>
@@ -344,32 +345,88 @@ const privacyUrl = `${import.meta.env.BASE_URL}privacy/finly/`;
         </div>
 
         <div class="fb-capability-grid">
-          <article class="fb-capability fb-capability--large" data-fb-reveal>
-            <div class="fb-capability__top"><span>01 / RECORD</span><span class="fb-capability__icon">↗</span></div>
-            <div class="fb-capability__copy"><h3>Everyday transactions,<br/><em>thoughtfully arranged.</em></h3><p>Record income and expenses, add custom categories and keep receipts alongside the entries they belong to.</p></div>
+          <article class="fb-capability fb-capability--record" data-fb-reveal>
+            <div class="fb-capability__top">
+              <span>TRANSACTION MANAGEMENT</span>
+              <span class="fb-capability__icon fb-capability__icon--record" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M7 3.8h8l3 3V20H7zM15 4v4h4M10 12h5M10 16h5"/><path d="m3.5 12 1.8 1.8 3-3.5"/></svg>
+              </span>
+            </div>
+            <div class="fb-capability__copy">
+              <h3>Everyday transactions,<br/><em>thoughtfully arranged.</em></h3>
+              <p>Record income and expenses, add custom categories and keep receipts alongside the entries they belong to.</p>
+            </div>
             <div class="fb-transaction-art" aria-hidden="true">
               <div class="fb-transaction-art__row"><i class="is-blue">↗</i><span><b>Income</b><small>Keep records together</small></span><strong class="is-blue-text">••••</strong></div>
               <div class="fb-transaction-art__row"><i class="is-orange">↘</i><span><b>Expense</b><small>Organised by category</small></span><strong class="is-orange-text">••••</strong></div>
               <div class="fb-transaction-art__row"><i class="is-sky">◇</i><span><b>Receipt</b><small>Attached to a record</small></span><strong class="is-sky-text">↗</strong></div>
+              <span class="fb-transaction-art__scan"></span>
             </div>
           </article>
 
           <article class="fb-capability fb-capability--future" data-fb-reveal>
-            <div class="fb-capability__top"><span>02 / PLAN AHEAD</span><span class="fb-capability__icon">◷</span></div>
-            <div class="fb-capability__copy"><h3>What comes next<br/><em>still has a place.</em></h3><p>Keep future and recurring transactions in view alongside today's activity.</p></div>
-            <div class="fb-future-art" aria-hidden="true"><span>UPCOMING</span><i></i><i></i><i></i><b>↗</b></div>
+            <div class="fb-capability__top">
+              <span>FUTURE & RECURRING</span>
+              <span class="fb-capability__icon fb-capability__icon--future" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7v5l3 2M18.5 5.5l1.8-1.8"/></svg>
+              </span>
+            </div>
+            <div class="fb-capability__copy">
+              <h3>What comes next<br/><em>still has a place.</em></h3>
+              <p>Keep future and recurring transactions in view alongside today's activity.</p>
+            </div>
+            <div class="fb-future-art" aria-hidden="true">
+              <div class="fb-future-art__clock"><i></i><b></b><span></span></div>
+              <div class="fb-future-art__timeline">
+                <div><i></i><span><b>Upcoming entry</b><small>Future transaction</small></span><em></em></div>
+                <div><i></i><span><b>Recurring item</b><small>Repeating schedule</small></span><em></em></div>
+                <div><i></i><span><b>Planned activity</b><small>Keep it in view</small></span><em></em></div>
+              </div>
+            </div>
           </article>
 
           <article class="fb-capability fb-capability--budget" data-fb-reveal>
-            <div class="fb-capability__top"><span>03 / BUDGET</span><span class="fb-capability__icon">◌</span></div>
-            <div class="fb-capability__copy"><h3>Make your limits<br/><em>easier to follow.</em></h3><p>Set budget limits and receive alerts to stay aware of category spending.</p></div>
-            <div class="fb-budget-art" aria-hidden="true"><div><span>MONTHLY LIMIT</span><b></b><i></i></div><div><span>CATEGORY LIMIT</span><b></b><i></i></div></div>
+            <div class="fb-capability__top">
+              <span>BUDGETS & ALERTS</span>
+              <span class="fb-capability__icon fb-capability__icon--budget" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M4 19a8 8 0 1 1 16 0M12 11l4-3M12 19h.01"/><path d="M7 19h10"/></svg>
+              </span>
+            </div>
+            <div class="fb-capability__copy">
+              <h3>Make your limits<br/><em>easier to follow.</em></h3>
+              <p>Set budget limits and receive alerts to stay aware of category spending.</p>
+            </div>
+            <div class="fb-budget-art" aria-hidden="true">
+              <div class="fb-budget-art__item"><span>MONTHLY LIMIT</span><div class="fb-budget-art__track"><i></i></div><small>Budget indicator</small></div>
+              <div class="fb-budget-art__item fb-budget-art__item--second"><span>CATEGORY LIMIT</span><div class="fb-budget-art__track"><i></i></div><small>Spending awareness</small></div>
+              <div class="fb-budget-art__pulse"></div>
+            </div>
           </article>
 
           <article class="fb-capability fb-capability--export" data-fb-reveal>
-            <div class="fb-capability__top"><span>04 / EXPORT</span><span class="fb-capability__icon">⇩</span></div>
-            <div class="fb-capability__copy"><h3>Your records,<br/><em>ready when needed.</em></h3><p>Export financial ledgers in PDF or CSV format for convenient access beyond the app.</p></div>
-            <div class="fb-file-art" aria-hidden="true"><div><b>PDF</b><span>PORTABLE DOCUMENT</span></div><div><b>CSV</b><span>SPREADSHEET DATA</span></div></div>
+            <div class="fb-capability__top">
+              <span>PDF & CSV EXPORTS</span>
+              <span class="fb-capability__icon fb-capability__icon--export" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M12 3v11m-4-4 4 4 4-4M5 16v4h14v-4"/></svg>
+              </span>
+            </div>
+            <div class="fb-capability__copy">
+              <h3>Your records,<br/><em>ready when needed.</em></h3>
+              <p>Export financial ledgers in PDF or CSV format for convenient access beyond the app.</p>
+            </div>
+            <div class="fb-file-art" aria-hidden="true">
+              <div class="fb-file-art__document fb-file-art__document--pdf">
+                <span class="fb-file-art__type">PDF</span>
+                <i></i><i></i><i></i>
+                <b>↓</b>
+              </div>
+              <div class="fb-file-art__document fb-file-art__document--csv">
+                <span class="fb-file-art__type">CSV</span>
+                <div class="fb-file-art__mini-chart"><i></i><i></i><i></i><i></i><i></i></div>
+                <b>↓</b>
+              </div>
+              <div class="fb-file-art__status"><i></i><span>EXPORT FORMATS</span><em></em></div>
+            </div>
           </article>
         </div>
       </div>
@@ -389,10 +446,24 @@ const privacyUrl = `${import.meta.env.BASE_URL}privacy/finly/`;
         <div class="fb-privacy-composition">
           <div class="fb-privacy-visual" data-fb-reveal>
             <div class="fb-privacy-visual__aura" aria-hidden="true"></div>
-            <div class="fb-privacy-orbit fb-privacy-orbit--a" aria-hidden="true"></div>
-            <div class="fb-privacy-orbit fb-privacy-orbit--b" aria-hidden="true"></div>
-            <div class="fb-privacy-core"><span>F</span><i></i><b></b></div>
-            <div class="fb-privacy-caption"><i></i> LOCAL-FIRST EXPERIENCE</div>
+            <!-- Original inline fingerprint-scan animation, based on the requested biometric visual direction. -->
+            <div class="fb-biometric" role="img" aria-label="Animated biometric fingerprint scan illustration">
+              <svg viewBox="0 0 240 240" aria-hidden="true">
+                <defs>
+                  <linearGradient id="fb-bio-stroke" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0" stop-color="#8ECAE6"/>
+                    <stop offset=".55" stop-color="#219EBC"/>
+                    <stop offset="1" stop-color="#FFB703"/>
+                  </linearGradient>
+                </defs>
+                <path class="fb-biometric__frame" d="M66 48H48v18M174 48h18v18M48 174v18h18M192 174v18h-18"/>
+                <path class="fb-biometric__fingerprint" d="M120 60c-34 0-62 28-62 62 0 29 9 53 25 72M120 77c-25 0-45 20-45 45 0 30 10 56 27 73M120 94c-16 0-29 13-29 29 0 36 12 64 29 79M120 60c34 0 62 28 62 62 0 29-9 53-25 72M120 77c25 0 45 20 45 45 0 30-10 56-27 73M120 94c16 0 29 13 29 29 0 36-12 64-29 79M120 111v63M58 132c2 42 22 72 62 91M182 132c-2 42-22 72-62 91"/>
+                <path class="fb-biometric__core" d="M107 123c0-7 6-13 13-13s13 6 13 13v42c0 8-6 14-13 14s-13-6-13-14z"/>
+              </svg>
+              <span class="fb-biometric__scanline"></span>
+              <span class="fb-biometric__scan-glow"></span>
+            </div>
+            <div class="fb-privacy-caption"><i></i> PRIVACY BY DESIGN</div>
           </div>
 
           <div class="fb-privacy-points">
@@ -445,7 +516,13 @@ const privacyUrl = `${import.meta.env.BASE_URL}privacy/finly/`;
             <a class="fb-button fb-button--primary" href={playUrl} target="_blank" rel="noopener noreferrer"><span>Get Finly on Google Play</span><span class="fb-button__arrow" aria-hidden="true">↗</span></a>
             <small>No account. No login. No advertisements.</small>
           </div>
-          <div class="fb-cta-art" aria-hidden="true"><div class="fb-cta-art__ring"></div><div class="fb-cta-art__ring fb-cta-art__ring--two"></div><span>F</span><i></i><b></b></div>
+          <div class="fb-cta-art" role="img" aria-label="Finly app logo">
+            <div class="fb-cta-art__glow" aria-hidden="true"></div>
+            <div class="fb-cta-art__tile">
+              <img src={finlyLogoUrl} alt="Finly app logo" width="240" height="480" loading="lazy" decoding="async" />
+            </div>
+            <span class="fb-cta-art__label">FINLY / PERSONAL FINANCE</span>
+          </div>
           <div class="fb-cta-panel__footer"><span>FINLY / PERSONAL FINANCE</span><a href="#finly-b-top">BACK TO TOP ↑</a></div>
         </div>
       </div>
@@ -611,9 +688,9 @@ html[data-page-theme="finly"] .site-footer { background: #061F2D; }
 .fb-story__heading h2 { margin: 22px 0 0; color: var(--fb-white); font-size: clamp(46px, 6vw, 78px); font-weight: 500; letter-spacing: -.06em; line-height: 1.02; }
 .fb-story__heading h2 em { color: var(--fb-sky); font-style: normal; }
 .fb-story__heading p { max-width: 560px; margin: 22px 0 0; color: var(--fb-text); font-size: 15px; line-height: 1.9; }
-.fb-story__layout { display: grid; grid-template-columns: minmax(0, .82fr) minmax(0, 1.18fr); align-items: start; gap: clamp(50px, 8vw, 110px); }
+.fb-story__layout { display: grid; grid-template-columns: minmax(0, .82fr) minmax(0, 1.18fr); align-items: stretch; gap: clamp(50px, 8vw, 110px); }
 .fb-story__steps { position: relative; }
-.fb-story-step { position: relative; min-height: 62vh; display: flex; flex-direction: column; justify-content: center; padding: 40px 0; border-top: 1px solid var(--fb-border); opacity: .42; transition: opacity .45s ease; }
+.fb-story-step { position: relative; min-height: 66vh; display: flex; flex-direction: column; justify-content: center; padding: 40px 0; border-top: 1px solid var(--fb-border); opacity: .38; transition: opacity .4s ease; }
 .fb-story-step:last-child { border-bottom: 1px solid var(--fb-border); }
 .fb-story-step.is-active { opacity: 1; }
 .fb-story-step__number { display: flex; align-items: center; gap: 14px; color: var(--fb-amber); font-size: 11px; font-weight: 700; letter-spacing: .11em; }
@@ -627,9 +704,10 @@ html[data-page-theme="finly"] .site-footer { background: #061F2D; }
 .fb-story__visual-top, .fb-story__visual-bottom { display: flex; align-items: center; justify-content: space-between; gap: 15px; padding: 18px 22px; color: #8ECAE6; font-size: 8px; font-weight: 600; letter-spacing: .13em; }
 .fb-story__visual-top { border-bottom: 1px solid rgba(142,202,230,.13); }
 .fb-live-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--fb-green); box-shadow: 0 0 12px var(--fb-green); }
-.fb-story-stage { position: relative; min-height: 520px; padding: 30px clamp(22px, 3vw, 38px); }
-.fb-state { position: absolute; inset: 30px clamp(22px, 3vw, 38px); display: flex; flex-direction: column; justify-content: center; opacity: 0; visibility: hidden; transform: translateY(22px) scale(.985); pointer-events: none; }
-.fb-state.is-active { opacity: 1; visibility: visible; transform: translateY(0) scale(1); pointer-events: auto; }
+.fb-story-stage { position: relative; height: 540px; min-height: 540px; overflow: hidden; padding: 30px clamp(22px, 3vw, 38px); }
+.fb-state { position: absolute; inset: 30px clamp(22px, 3vw, 38px); display: none; flex-direction: column; justify-content: center; opacity: 0; visibility: hidden; transform: translateY(16px) scale(.99); pointer-events: none; }
+.fb-state[hidden] { display: none !important; }
+.fb-state.is-active:not([hidden]) { display: flex; opacity: 1; visibility: visible; transform: translateY(0) scale(1); pointer-events: auto; }
 .fb-state__head { display: grid; gap: 8px; }
 .fb-state__eyebrow { color: var(--fb-sky); font-size: 8px; font-weight: 700; letter-spacing: .14em; }
 .fb-state__head strong { color: var(--fb-white); font-family: 'Instrument Sans', sans-serif; font-size: clamp(23px, 2.5vw, 32px); font-weight: 500; letter-spacing: -.04em; }
@@ -722,19 +800,93 @@ html[data-page-theme="finly"] .site-footer { background: #061F2D; }
 .fb-budget-visual__labels { display: flex; justify-content: space-between; color: #7899A9; font-size: 8px; }
 .fb-dashboard__foot { margin: 0 -1px -2px; padding: 19px 8px 5px; border-top: 1px solid rgba(142,202,230,.12); }
 
-/* CAPABILITIES */
+/* CAPABILITIES — four balanced text + animated-visual cards */
 .fb-capabilities { padding: clamp(100px, 11vw, 155px) 0; background: var(--fb-bg); }
-.fb-capabilities__intro { max-width: 810px; margin-bottom: 56px; }.fb-capabilities__intro > p { max-width: 510px; margin: 22px 0 0; color: var(--fb-text); font-size: 15px; line-height: 1.9; }
-.fb-capability-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-.fb-capability { position: relative; min-height: 445px; display: flex; flex-direction: column; overflow: hidden; padding: 27px; border: 1px solid rgba(142,202,230,.15); border-radius: 22px; background: linear-gradient(145deg, #073047, #032638 80%); isolation: isolate; transition: border-color .35s ease, transform .35s ease; }
-.fb-capability:hover { transform: translateY(-5px); border-color: rgba(33,158,188,.38); }
-.fb-capability--large { min-height: 545px; grid-row: span 2; }.fb-capability--future { background: radial-gradient(ellipse at 90% 90%, rgba(255,183,3,.08), transparent 48%), linear-gradient(145deg, #073047, #032638); }.fb-capability--budget { background: radial-gradient(ellipse at 100% 100%, rgba(33,158,188,.11), transparent 48%), linear-gradient(145deg, #073047, #032638); }.fb-capability--export { min-height: 400px; grid-column: 1 / -1; background: radial-gradient(ellipse at 90% 40%, rgba(251,133,0,.08), transparent 42%), linear-gradient(145deg, #073047, #032638); }
-.fb-capability__top { display: flex; justify-content: space-between; align-items: center; color: #8ECAE6; font-size: 8px; font-weight: 700; letter-spacing: .14em; }.fb-capability__icon { display: grid; width: 34px; height: 34px; place-items: center; border: 1px solid rgba(142,202,230,.2); border-radius: 10px; color: var(--fb-amber); font-size: 16px; }
-.fb-capability__copy { position: relative; z-index: 2; max-width: 490px; margin-top: 40px; }.fb-capability__copy h3 { margin: 0; color: #F5FAFC; font-size: clamp(28px, 3vw, 39px); font-weight: 500; letter-spacing: -.05em; line-height: 1.08; }.fb-capability__copy h3 em { color: var(--fb-sky); font-style: normal; }.fb-capability__copy p { max-width: 440px; margin: 15px 0 0; color: #A4BBC7; font-size: 13px; line-height: 1.9; }
-.fb-transaction-art { display: grid; gap: 10px; margin-top: auto; padding-top: 48px; }.fb-transaction-art__row { display: flex; align-items: center; gap: 12px; padding: 15px; border: 1px solid rgba(142,202,230,.13); border-radius: 12px; background: rgba(255,255,255,.025); }.fb-transaction-art__row > i { display: grid; width: 34px; height: 34px; place-items: center; border-radius: 9px; font-style: normal; }.fb-transaction-art__row > i.is-blue { background: rgba(33,158,188,.15); color: #219EBC; }.fb-transaction-art__row > i.is-orange { background: rgba(251,133,0,.14); color: #FB8500; }.fb-transaction-art__row > i.is-sky { background: rgba(142,202,230,.14); color: #8ECAE6; }.fb-transaction-art__row span { flex: 1; }.fb-transaction-art__row b { display: block; color: #F5FAFC; font-size: 10px; }.fb-transaction-art__row small { display: block; margin-top: 3px; color: #7899A9; font-size: 8px; }.fb-transaction-art__row strong { font-size: 9px; letter-spacing: .12em; }
-.fb-future-art { position: relative; display: grid; gap: 9px; margin-top: auto; padding-top: 35px; }.fb-future-art > span { margin-bottom: 3px; color: #8ECAE6; font-size: 7px; letter-spacing: .13em; }.fb-future-art > i { display: block; height: 30px; border: 1px solid rgba(142,202,230,.14); border-radius: 8px; background: linear-gradient(90deg, rgba(33,158,188,.16), rgba(255,255,255,.02)); }.fb-future-art > i:nth-of-type(2) { width: 82%; }.fb-future-art > i:nth-of-type(3) { width: 63%; }.fb-future-art > b { position: absolute; right: 5px; bottom: 8px; color: #FFB703; font-size: 25px; }
-.fb-budget-art { display: grid; gap: 18px; margin-top: auto; padding-top: 35px; }.fb-budget-art > div { display: grid; gap: 8px; }.fb-budget-art span { color: #8ECAE6; font-size: 7px; letter-spacing: .12em; }.fb-budget-art b { display: block; width: 100%; height: 10px; border-radius: 20px; background: linear-gradient(90deg, #FFB703 0 68%, #163F51 68%); }.fb-budget-art > div:nth-child(2) b { background: linear-gradient(90deg, #219EBC 0 43%, #163F51 43%); }.fb-budget-art > div > i { display: block; width: 70%; height: 1px; background: rgba(142,202,230,.12); }
-.fb-file-art { display: flex; gap: 13px; max-width: 475px; margin-top: auto; padding-top: 32px; }.fb-file-art > div { flex: 1; display: flex; align-items: center; gap: 13px; padding: 18px; border: 1px solid rgba(142,202,230,.15); border-radius: 13px; background: rgba(255,255,255,.025); }.fb-file-art b { color: var(--fb-amber); font-size: 22px; }.fb-file-art > div:nth-child(2) b { color: var(--fb-blue); }.fb-file-art span { color: #8EA8B6; font-size: 8px; letter-spacing: .08em; }
+.fb-capabilities__intro { max-width: 810px; margin-bottom: 56px; }
+.fb-capabilities__intro > p { max-width: 510px; margin: 22px 0 0; color: var(--fb-text); font-size: 15px; line-height: 1.9; }
+.fb-capability-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 17px; align-items: stretch; }
+.fb-capability { position: relative; min-width: 0; min-height: 365px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(150px, .82fr); grid-template-rows: auto 1fr; align-items: center; gap: 16px 22px; overflow: hidden; padding: 27px; border: 1px solid rgba(142,202,230,.15); border-radius: 22px; background: linear-gradient(145deg, #073047, #032638 80%); isolation: isolate; transition: border-color .35s ease, transform .35s ease, box-shadow .35s ease; }
+.fb-capability::after { position: absolute; z-index: -1; right: -20%; bottom: -45%; width: 75%; aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle, rgba(33,158,188,.11), transparent 70%); content: ''; pointer-events: none; }
+.fb-capability:hover { transform: translateY(-5px); border-color: rgba(33,158,188,.38); box-shadow: 0 24px 55px rgba(0,0,0,.18); }
+.fb-capability--record { background: radial-gradient(ellipse at 100% 60%, rgba(33,158,188,.09), transparent 45%), linear-gradient(145deg, #073047, #032638 80%); }
+.fb-capability--future { background: radial-gradient(ellipse at 90% 90%, rgba(255,183,3,.08), transparent 48%), linear-gradient(145deg, #073047, #032638); }
+.fb-capability--budget { background: radial-gradient(ellipse at 100% 100%, rgba(33,158,188,.11), transparent 48%), linear-gradient(145deg, #073047, #032638); }
+.fb-capability--export { background: radial-gradient(ellipse at 90% 40%, rgba(251,133,0,.08), transparent 42%), linear-gradient(145deg, #073047, #032638); }
+.fb-capability__top { grid-column: 1 / -1; grid-row: 1; display: flex; justify-content: space-between; align-items: center; gap: 15px; color: #8ECAE6; font-size: 8px; font-weight: 700; letter-spacing: .14em; }
+.fb-capability__icon { display: grid; width: 38px; height: 38px; flex: 0 0 38px; place-items: center; border: 1px solid rgba(142,202,230,.2); border-radius: 12px; background: rgba(255,255,255,.025); color: var(--fb-amber); }
+.fb-capability__icon svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.55; stroke-linecap: round; stroke-linejoin: round; }
+.fb-capability__icon--record svg { animation: fb-icon-record 3.2s ease-in-out infinite; }
+.fb-capability__icon--future svg { animation: fb-icon-clock 7s linear infinite; }
+.fb-capability__icon--budget svg { animation: fb-icon-budget 4.8s ease-in-out infinite; }
+.fb-capability__icon--export svg { animation: fb-icon-export 2.8s ease-in-out infinite; }
+.fb-capability__copy { position: relative; z-index: 2; grid-column: 1; grid-row: 2; align-self: center; max-width: none; margin: 0; }
+.fb-capability__copy h3 { margin: 0; color: #F5FAFC; font-size: clamp(25px, 2.45vw, 34px); font-weight: 500; letter-spacing: -.05em; line-height: 1.08; }
+.fb-capability__copy h3 em { color: var(--fb-sky); font-style: normal; }
+.fb-capability__copy p { max-width: 310px; margin: 14px 0 0; color: #A4BBC7; font-size: 13px; line-height: 1.85; }
+
+/* Record animation: transaction rows enter in a calm stagger. */
+.fb-transaction-art { position: relative; grid-column: 2; grid-row: 2; align-self: center; display: grid; gap: 9px; min-width: 0; margin: 0; padding: 0; }
+.fb-transaction-art__row { position: relative; display: flex; align-items: center; gap: 9px; min-width: 0; padding: 12px 10px; overflow: hidden; border: 1px solid rgba(142,202,230,.13); border-radius: 12px; background: rgba(255,255,255,.025); animation: fb-row-float 4.5s ease-in-out infinite; }
+.fb-transaction-art__row:nth-child(2) { animation-delay: -.8s; }
+.fb-transaction-art__row:nth-child(3) { animation-delay: -1.6s; }
+.fb-transaction-art__row > i { display: grid; width: 29px; height: 29px; flex: 0 0 29px; place-items: center; border-radius: 9px; font-style: normal; }
+.fb-transaction-art__row > i.is-blue { background: rgba(33,158,188,.15); color: #219EBC; }
+.fb-transaction-art__row > i.is-orange { background: rgba(251,133,0,.14); color: #FB8500; }
+.fb-transaction-art__row > i.is-sky { background: rgba(142,202,230,.14); color: #8ECAE6; }
+.fb-transaction-art__row span { min-width: 0; flex: 1; }
+.fb-transaction-art__row b { display: block; color: #F5FAFC; font-size: 9px; }
+.fb-transaction-art__row small { display: block; margin-top: 3px; color: #7899A9; font-size: 7px; }
+.fb-transaction-art__row strong { font-size: 8px; letter-spacing: .08em; }
+.fb-transaction-art__scan { position: absolute; right: 8px; bottom: 5px; left: 8px; height: 1px; background: linear-gradient(90deg, transparent, rgba(142,202,230,.8), transparent); opacity: 0; animation: fb-record-scan 4s ease-in-out infinite; }
+
+/* Future animation: recurring timeline with a softly rotating clock. */
+.fb-future-art { position: relative; grid-column: 2; grid-row: 2; align-self: center; display: grid; gap: 16px; min-width: 0; margin: 0; padding: 0; }
+.fb-future-art__clock { position: relative; width: 61px; height: 61px; margin: 0 auto 2px; border: 1px solid rgba(255,183,3,.35); border-radius: 50%; background: radial-gradient(circle, rgba(255,183,3,.12), rgba(255,255,255,.015)); box-shadow: 0 0 28px rgba(255,183,3,.08); }
+.fb-future-art__clock::before, .fb-future-art__clock::after { position: absolute; top: 50%; left: 50%; width: 1px; height: 17px; border-radius: 2px; background: #FFB703; content: ''; transform: translate(-50%, -100%); transform-origin: bottom; animation: fb-clock-hand 8s linear infinite; }
+.fb-future-art__clock::after { height: 12px; background: #8ECAE6; animation-duration: 2.4s; }
+.fb-future-art__clock i { position: absolute; top: 50%; left: 50%; width: 5px; height: 5px; border-radius: 50%; background: #F5FAFC; transform: translate(-50%,-50%); }
+.fb-future-art__timeline { display: grid; gap: 8px; }
+.fb-future-art__timeline > div { display: grid; grid-template-columns: 7px minmax(0,1fr) 7px; align-items: center; gap: 8px; padding: 9px; border: 1px solid rgba(142,202,230,.13); border-radius: 9px; background: rgba(255,255,255,.025); }
+.fb-future-art__timeline > div > i { width: 6px; height: 6px; border-radius: 50%; background: #FFB703; box-shadow: 0 0 9px rgba(255,183,3,.55); }
+.fb-future-art__timeline > div:nth-child(2) > i { background: #219EBC; box-shadow: 0 0 9px rgba(33,158,188,.55); }
+.fb-future-art__timeline > div:nth-child(3) > i { background: #8ECAE6; box-shadow: 0 0 9px rgba(142,202,230,.55); }
+.fb-future-art__timeline span { min-width: 0; }
+.fb-future-art__timeline b { display: block; color: #F5FAFC; font-size: 8px; font-weight: 600; }
+.fb-future-art__timeline small { display: block; margin-top: 2px; color: #7899A9; font-size: 7px; }
+.fb-future-art__timeline em { width: 6px; height: 6px; border-top: 1px solid #8ECAE6; border-right: 1px solid #8ECAE6; transform: rotate(45deg); }
+
+/* Budget animation: animated multi-colour progress tracks. */
+.fb-budget-art { position: relative; grid-column: 2; grid-row: 2; align-self: center; display: grid; gap: 22px; min-width: 0; margin: 0; padding: 0; }
+.fb-budget-art__item { display: grid; gap: 8px; }
+.fb-budget-art__item > span { color: #8ECAE6; font-size: 7px; font-weight: 700; letter-spacing: .12em; }
+.fb-budget-art__track { height: 11px; overflow: hidden; border-radius: 20px; background: #163F51; }
+.fb-budget-art__track i { display: block; width: 72%; height: 100%; border-radius: inherit; background: linear-gradient(90deg, #FFB703, #FB8500); transform-origin: left; animation: fb-budget-fill 3.5s ease-in-out infinite alternate; }
+.fb-budget-art__item--second .fb-budget-art__track i { width: 54%; background: linear-gradient(90deg, #219EBC, #8ECAE6); animation-delay: -1.3s; }
+.fb-budget-art__item small { color: #7899A9; font-size: 7px; }
+.fb-budget-art__pulse { position: absolute; right: 0; top: 0; width: 6px; height: 6px; border-radius: 50%; background: #FFB703; box-shadow: 0 0 13px #FFB703; animation: fb-budget-pulse 2.3s ease-in-out infinite; }
+
+/* Export animation: two floating file cards and a moving download indicator. */
+.fb-file-art { position: relative; grid-column: 2; grid-row: 2; align-self: center; display: grid; grid-template-columns: 1fr 1fr; gap: 9px; min-width: 0; margin: 0; padding: 0; }
+.fb-file-art__document { position: relative; min-height: 145px; display: flex; flex-direction: column; align-items: flex-start; padding: 13px 11px; overflow: hidden; border: 1px solid rgba(142,202,230,.18); border-radius: 12px; background: linear-gradient(145deg, rgba(255,255,255,.06), rgba(255,255,255,.015)); box-shadow: 0 12px 27px rgba(0,0,0,.17); animation: fb-file-float 4.4s ease-in-out infinite; }
+.fb-file-art__document--csv { animation-delay: -1.7s; }
+.fb-file-art__type { display: grid; width: 37px; height: 37px; place-items: center; border-radius: 9px; background: rgba(255,183,3,.13); color: #FFB703; font-size: 12px; font-weight: 700; letter-spacing: .03em; }
+.fb-file-art__document--csv .fb-file-art__type { background: rgba(33,158,188,.14); color: #8ECAE6; }
+.fb-file-art__document > i { width: 80%; height: 3px; margin-top: 10px; border-radius: 5px; background: rgba(142,202,230,.22); }
+.fb-file-art__document > i:nth-of-type(2) { width: 62%; margin-top: 6px; }
+.fb-file-art__document > i:nth-of-type(3) { width: 72%; margin-top: 6px; }
+.fb-file-art__document > b { position: absolute; right: 12px; bottom: 10px; color: #FFB703; font-size: 17px; font-weight: 500; animation: fb-download-bounce 1.8s ease-in-out infinite; }
+.fb-file-art__document--csv > b { color: #219EBC; animation-delay: -.9s; }
+.fb-file-art__mini-chart { height: 31px; display: flex; align-items: end; gap: 4px; margin-top: 12px; }
+.fb-file-art__mini-chart i { width: 6px; border-radius: 3px 3px 1px 1px; background: linear-gradient(180deg, #8ECAE6, #219EBC); animation: fb-export-bars 1.7s ease-in-out infinite alternate; }
+.fb-file-art__mini-chart i:nth-child(1) { height: 42%; }
+.fb-file-art__mini-chart i:nth-child(2) { height: 75%; animation-delay: -.2s; }
+.fb-file-art__mini-chart i:nth-child(3) { height: 56%; animation-delay: -.4s; }
+.fb-file-art__mini-chart i:nth-child(4) { height: 95%; animation-delay: -.6s; }
+.fb-file-art__mini-chart i:nth-child(5) { height: 67%; animation-delay: -.8s; }
+.fb-file-art__status { grid-column: 1 / -1; display: flex; align-items: center; gap: 7px; margin-top: 3px; color: #8EA8B6; font-size: 6px; letter-spacing: .12em; }
+.fb-file-art__status > i { width: 6px; height: 6px; border-radius: 50%; background: #2A9D8F; box-shadow: 0 0 9px #2A9D8F; }
+.fb-file-art__status > em { flex: 1; height: 2px; overflow: hidden; border-radius: 2px; background: #163F51; }
+.fb-file-art__status > em::after { display: block; width: 45%; height: 100%; background: #219EBC; content: ''; animation: fb-export-progress 2.8s ease-in-out infinite; }
 
 /* PRIVACY */
 .fb-privacy { position: relative; padding: clamp(105px, 11vw, 155px) 0; overflow: clip; background: #061F2D; }
@@ -742,9 +894,14 @@ html[data-page-theme="finly"] .site-footer { background: #061F2D; }
 .fb-privacy__intro { position: relative; z-index: 1; max-width: 850px; margin-bottom: 66px; }.fb-privacy__intro h2 { margin: 22px 0 0; color: #F5FAFC; font-size: clamp(48px, 6.5vw, 83px); font-weight: 500; letter-spacing: -.06em; line-height: 1.01; }.fb-privacy__intro h2 em { color: #8ECAE6; font-style: normal; }.fb-privacy__intro p { max-width: 530px; margin: 23px 0 0; color: #B8CBD4; font-size: 15px; line-height: 1.9; }
 .fb-privacy-composition { display: grid; grid-template-columns: .8fr 1.2fr; align-items: center; gap: clamp(50px, 8vw, 110px); }
 .fb-privacy-visual { position: sticky; top: 130px; min-height: 420px; display: grid; place-items: center; overflow: hidden; border: 1px solid rgba(142,202,230,.12); border-radius: 24px; background: radial-gradient(circle at 50% 50%, rgba(33,158,188,.09), transparent 60%), #032638; }
-.fb-privacy-visual__aura { position: absolute; width: 75%; aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle, rgba(33,158,188,.2), rgba(255,183,3,.06) 45%, transparent 70%); filter: blur(20px); }
-.fb-privacy-orbit { position: absolute; width: 82%; height: 42%; border: 1px solid rgba(33,158,188,.28); border-radius: 50%; transform: rotate(-28deg); }.fb-privacy-orbit--b { width: 68%; height: 67%; border-color: rgba(255,183,3,.18); transform: rotate(48deg); }
-.fb-privacy-core { position: relative; z-index: 2; width: 145px; aspect-ratio: 1; display: grid; place-items: center; border: 1px solid rgba(142,202,230,.3); border-radius: 35% 65% 56% 44% / 43% 39% 61% 57%; background: radial-gradient(circle at 35% 28%, rgba(33,158,188,.3), rgba(142,202,230,.1) 58%, rgba(3,38,56,.25)); box-shadow: 0 0 70px rgba(33,158,188,.16), inset 0 0 35px rgba(142,202,230,.08); animation: fb-core-morph 11s ease-in-out infinite alternate; }.fb-privacy-core span { color: #8ECAE6; font-family: 'Instrument Sans', sans-serif; font-size: 75px; font-weight: 500; letter-spacing: -.12em; text-shadow: 0 0 35px rgba(33,158,188,.48); }.fb-privacy-core i, .fb-privacy-core b { position: absolute; width: 6px; height: 6px; border-radius: 50%; background: #FFB703; box-shadow: 0 0 14px #FFB703; top: 11%; left: 21%; }.fb-privacy-core b { top: auto; left: auto; right: 8%; bottom: 23%; width: 8px; height: 8px; background: #219EBC; box-shadow: 0 0 15px #219EBC; }
+.fb-privacy-visual__aura { position: absolute; width: 78%; aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle, rgba(33,158,188,.2), rgba(255,183,3,.07) 45%, transparent 70%); filter: blur(23px); animation: fb-bio-aura 6s ease-in-out infinite alternate; }
+.fb-biometric { position: relative; z-index: 2; width: min(70%, 260px); aspect-ratio: 1; display: grid; place-items: center; border: 1px solid rgba(142,202,230,.16); border-radius: 28px; background: linear-gradient(145deg, rgba(10,53,72,.82), rgba(1,24,37,.45)); box-shadow: 0 25px 65px rgba(0,0,0,.2), inset 0 0 35px rgba(33,158,188,.07); }
+.fb-biometric svg { width: 100%; height: 100%; overflow: visible; }
+.fb-biometric__frame { fill: none; stroke: rgba(142,202,230,.65); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.fb-biometric__fingerprint { fill: none; stroke: url(#fb-bio-stroke); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 460; stroke-dashoffset: 0; filter: drop-shadow(0 0 5px rgba(33,158,188,.28)); animation: fb-fingerprint-pulse 3.6s ease-in-out infinite; }
+.fb-biometric__core { fill: none; stroke: #FFB703; stroke-width: 2.5; stroke-linecap: round; opacity: .8; }
+.fb-biometric__scanline { position: absolute; top: 17%; left: 12%; width: 76%; height: 2px; border-radius: 4px; background: linear-gradient(90deg, transparent, #219EBC 16%, #8ECAE6 50%, #FFB703 84%, transparent); box-shadow: 0 0 12px rgba(33,158,188,.65), 0 0 25px rgba(33,158,188,.22); animation: fb-biometric-scan 3.2s cubic-bezier(.45,0,.55,1) infinite alternate; }
+.fb-biometric__scan-glow { position: absolute; top: 17%; left: 12%; width: 76%; height: 45px; background: linear-gradient(180deg, rgba(33,158,188,.12), transparent); pointer-events: none; animation: fb-biometric-scan 3.2s cubic-bezier(.45,0,.55,1) infinite alternate; }
 .fb-privacy-caption { position: absolute; bottom: 23px; display: flex; align-items: center; gap: 9px; color: #8EA8B6; font-size: 7px; letter-spacing: .15em; }.fb-privacy-caption i { width: 6px; height: 6px; border-radius: 50%; background: #2A9D8F; box-shadow: 0 0 12px #2A9D8F; }
 .fb-privacy-points { border-top: 1px solid rgba(142,202,230,.18); }.fb-privacy-point { position: relative; display: grid; grid-template-columns: 35px 1fr 20px; align-items: start; gap: 16px; padding: 25px 0; border-bottom: 1px solid rgba(142,202,230,.18); transition: padding .3s ease; }.fb-privacy-point:hover { padding-inline: 9px; }.fb-privacy-point__number { padding-top: 2px; color: #FFB703; font-size: 9px; letter-spacing: .1em; }.fb-privacy-point > div > span { color: #8ECAE6; font-size: 8px; font-weight: 700; letter-spacing: .13em; }.fb-privacy-point h3 { margin: 9px 0 7px; color: #F5FAFC; font-size: 23px; font-weight: 500; letter-spacing: -.035em; }.fb-privacy-point p { max-width: 510px; margin: 0; color: #A4BBC7; font-size: 13px; line-height: 1.9; }.fb-privacy-point > b { padding-top: 2px; color: #8ECAE6; font-size: 16px; font-weight: 400; transition: color .2s ease, transform .2s ease; }.fb-privacy-point:hover > b { color: #FFB703; transform: translate(3px,-3px); }
 .fb-privacy__policy { display: inline-flex; align-items: center; gap: 9px; margin-top: 28px; padding-bottom: 7px; border-bottom: 1px solid rgba(142,202,230,.35); color: #8ECAE6 !important; font-size: 11px; font-weight: 600; transition: gap .2s ease, color .2s ease; }.fb-privacy__policy:hover { gap: 14px; color: #FFB703 !important; }
@@ -760,7 +917,12 @@ html[data-page-theme="finly"] .site-footer { background: #061F2D; }
 .fb-cta-panel { position: relative; min-height: 490px; display: flex; align-items: center; overflow: hidden; padding: clamp(38px, 7vw, 86px); border: 1px solid rgba(142,202,230,.22); border-radius: 29px; background: radial-gradient(ellipse at 100% 0%, rgba(33,158,188,.12), transparent 47%), linear-gradient(115deg, #073047, #032638 70%, #061F2D); isolation: isolate; }
 .fb-cta-panel__glow { position: absolute; z-index: -1; top: -80%; right: -8%; width: 68%; aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle, rgba(255,183,3,.13), rgba(33,158,188,.1) 42%, transparent 70%); filter: blur(30px); }
 .fb-cta-panel__copy { position: relative; z-index: 2; max-width: 680px; }.fb-cta-panel h2 { margin: 22px 0 0; color: #F5FAFC; font-size: clamp(48px, 6.5vw, 82px); font-weight: 500; letter-spacing: -.065em; line-height: 1.01; }.fb-cta-panel h2 em { color: #8ECAE6; font-style: normal; }.fb-cta-panel__copy > p { max-width: 470px; margin: 22px 0 27px; color: #B8CBD4; font-size: 15px; line-height: 1.9; }.fb-cta-panel__copy > small { display: block; margin-top: 17px; color: #8EA8B6; font-size: 9px; }
-.fb-cta-art { position: absolute; top: 50%; right: 7%; width: 245px; aspect-ratio: 1; display: grid; place-items: center; transform: translateY(-50%); animation: fb-orbit-float 9s ease-in-out infinite; }.fb-cta-art__ring { position: absolute; inset: 3%; border: 1px solid rgba(33,158,188,.28); border-radius: 50%; transform: rotate(-25deg) scaleY(.68); }.fb-cta-art__ring--two { inset: 15%; border-color: rgba(255,183,3,.2); transform: rotate(45deg) scaleY(.8); }.fb-cta-art > span { color: #8ECAE6; font-family: 'Instrument Sans', sans-serif; font-size: 115px; font-weight: 500; letter-spacing: -.13em; text-shadow: 0 0 55px rgba(33,158,188,.4); }.fb-cta-art > i, .fb-cta-art > b { position: absolute; top: 15%; left: 18%; width: 7px; height: 7px; border-radius: 50%; background: #FFB703; box-shadow: 0 0 14px #FFB703; }.fb-cta-art > b { top: auto; left: auto; right: 8%; bottom: 22%; width: 8px; height: 8px; background: #219EBC; box-shadow: 0 0 15px #219EBC; }
+.fb-cta-art { position: absolute; top: 50%; right: 8%; width: 230px; display: grid; justify-items: center; gap: 18px; transform: translateY(-50%); animation: fb-logo-float 7s ease-in-out infinite; }
+.fb-cta-art__glow { position: absolute; z-index: -1; width: 120%; aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle, rgba(33,158,188,.22), rgba(142,202,230,.08) 44%, transparent 70%); filter: blur(20px); }
+.fb-cta-art__tile { position: relative; width: 174px; aspect-ratio: 1; display: grid; place-items: center; padding: 12px; overflow: hidden; border: 1px solid rgba(142,202,230,.3); border-radius: 34px; background: linear-gradient(145deg, #0A3548, #011825); box-shadow: 0 30px 75px rgba(0,0,0,.36), 0 0 35px rgba(33,158,188,.12), inset 0 0 0 1px rgba(255,255,255,.035); }
+.fb-cta-art__tile::after { position: absolute; inset: 0; border-radius: inherit; background: linear-gradient(125deg, rgba(255,255,255,.13), transparent 35% 68%, rgba(142,202,230,.07)); content: ''; pointer-events: none; }
+.fb-cta-art__tile img { display: block; width: 100%; height: 100%; object-fit: contain; border-radius: 24px; }
+.fb-cta-art__label { color: rgba(142,202,230,.82); font-size: 8px; font-weight: 700; letter-spacing: .17em; text-align: center; }
 .fb-cta-panel__footer { position: absolute; right: 30px; bottom: 22px; left: 30px; display: flex; justify-content: space-between; gap: 15px; padding-top: 15px; border-top: 1px solid rgba(142,202,230,.14); color: #7899A9; font-size: 7px; letter-spacing: .14em; }.fb-cta-panel__footer a { color: #8ECAE6; }
 
 /* RESPONSIVE */
@@ -769,7 +931,7 @@ html[data-page-theme="finly"] .site-footer { background: #061F2D; }
   .fb-hero-art { min-height: 580px; }.fb-phone { width: 285px; }
   .fb-story__layout { gap: 45px; }.fb-story-stage { min-height: 490px; }
   .fb-privacy-composition { gap: 45px; }
-  .fb-cta-art { right: 2%; width: 190px; opacity: .8; }
+  .fb-cta-art { right: 4%; width: 205px; }
 }
 @media (max-width: 820px) {
   .finly-b .container { width: min(calc(100% - 44px), 700px); }
@@ -777,15 +939,16 @@ html[data-page-theme="finly"] .site-footer { background: #061F2D; }
   .fb-hero__layout { grid-template-columns: 1fr; gap: 15px; }
   .fb-hero__copy { max-width: 720px; }.fb-hero h1 { font-size: clamp(64px, 10vw, 88px); }
   .fb-hero-art { min-height: 610px; }.fb-phone { width: 300px; }
-  .fb-story__layout { grid-template-columns: 1fr; gap: 25px; }
-  .fb-story__steps { order: 2; }.fb-story__visual-wrap { order: 1; }
-  .fb-story__visual-sticky { position: relative; top: auto; }
-  .fb-story-step { min-height: 0; padding: 32px 0; opacity: .62; }
+  .fb-story__layout { display: flex; flex-direction: column; gap: 24px; }
+  .fb-story__steps { order: 2; }
+  .fb-story__visual-wrap { display: contents; }
+  .fb-story__visual-sticky { position: sticky; top: 82px; z-index: 20; order: 1; width: 100%; }
+  .fb-story-step { min-height: 55vh; padding: 30px 0; opacity: .38; }
   .fb-story-step.is-active { opacity: 1; }
   .fb-insights__intro { display: block; }.fb-insights__intro > p { max-width: 550px; margin-top: 22px; }
   .fb-privacy-composition { grid-template-columns: 1fr; }.fb-privacy-visual { position: relative; top: auto; min-height: 360px; }
   .fb-faq__layout { grid-template-columns: 1fr; gap: 42px; }
-  .fb-cta-art { right: -4%; opacity: .35; }
+  .fb-cta-art { right: -2%; width: 165px; opacity: .75; }
 }
 @media (max-width: 600px) {
   .finly-b .container { width: min(calc(100% - 38px), 520px); }
@@ -801,16 +964,16 @@ html[data-page-theme="finly"] .site-footer { background: #061F2D; }
   .fb-manifesto { padding-block: 95px; }.fb-manifesto h2 { font-size: clamp(43px, 11vw, 62px); }.fb-manifesto__bottom { display: block; margin-top: 33px; }.fb-manifesto__bottom p { font-size: 14px; }.fb-manifesto__index { display: block; margin-top: 23px; font-size: 7px; }
   .fb-story, .fb-insights, .fb-capabilities, .fb-privacy, .fb-faq { padding-block: 85px; }
   .fb-story__heading { margin-bottom: 38px; }.fb-story__heading h2, .fb-insights__intro h2, .fb-capabilities__intro h2 { font-size: clamp(42px, 10.5vw, 57px); }.fb-story__heading p, .fb-insights__intro > p, .fb-capabilities__intro > p { font-size: 13px; }
-  .fb-story__visual-sticky { border-radius: 19px; }.fb-story__visual-top, .fb-story__visual-bottom { padding: 14px; font-size: 6px; }.fb-story-stage { min-height: 445px; padding: 22px 16px; }.fb-state { inset: 22px 16px; }.fb-state__head strong { font-size: 23px; }
+  .fb-story__visual-sticky { border-radius: 19px; }.fb-story__visual-top, .fb-story__visual-bottom { padding: 13px 14px; font-size: 6px; }.fb-story-stage { height: 430px; min-height: 430px; padding: 20px 16px; }.fb-state { inset: 20px 16px; }.fb-state__head strong { font-size: 23px; }
   .fb-ledger__row { grid-template-columns: 29px minmax(0,1fr) auto; gap: 8px; padding: 10px 8px; }.fb-ledger__icon { width: 28px; height: 28px; }.fb-ledger__tag { display: none; }.fb-ledger__row b { font-size: 9px; }.fb-ledger__row small { font-size: 7px; }
   .fb-analysis-layout { gap: 7px; }.fb-large-donut-wrap { flex-basis: 58%; }.fb-analysis-legend { min-width: 88px; gap: 9px; }.fb-analysis-legend span { font-size: 8px; }.fb-state__disclaimer { font-size: 7px; }
   .fb-control-row { grid-template-columns: 30px minmax(0,1fr); }.fb-control-row em { grid-column: 2; }.fb-control-row b { font-size: 9px; }
   .fb-story-step { padding: 27px 0; }.fb-story-step h3 { margin: 17px 0 12px; font-size: 33px; }.fb-story-step p { font-size: 13px; }
   .fb-dashboard { padding: 11px; border-radius: 19px; }.fb-dashboard__bar, .fb-dashboard__foot { font-size: 6px; letter-spacing: .07em; }.fb-dashboard__grid { grid-template-columns: 1fr; gap: 11px; }.fb-dashboard-card, .fb-dashboard-card--line, .fb-dashboard-card--budget { grid-column: auto; padding: 19px 15px; }.fb-dashboard-card h3 { font-size: 20px; }.fb-dashboard-donut-row { min-height: 195px; }.fb-dashboard-donut { width: 52%; }.fb-dashboard-legend { gap: 9px; }.fb-dashboard-legend span { font-size: 8px; }.fb-bars { height: 195px; }.fb-line-plot { height: 180px; }.fb-chart-disclaimer { font-size: 8px; }
-  .fb-capabilities__intro { margin-bottom: 38px; }.fb-capability-grid { grid-template-columns: 1fr; gap: 12px; }.fb-capability, .fb-capability--large, .fb-capability--export { grid-column: auto; grid-row: auto; min-height: 390px; padding: 22px; }.fb-capability--large { min-height: 465px; }.fb-capability__copy { margin-top: 30px; }.fb-capability__copy h3 { font-size: 31px; }.fb-capability__copy p { font-size: 13px; }
-  .fb-privacy__intro { margin-bottom: 40px; }.fb-privacy__intro h2 { font-size: clamp(43px, 10.5vw, 60px); }.fb-privacy__intro p { font-size: 13px; }.fb-privacy-visual { min-height: 300px; }.fb-privacy-core { width: 115px; }.fb-privacy-core span { font-size: 61px; }.fb-privacy-point { grid-template-columns: 25px 1fr 15px; gap: 9px; padding: 21px 0; }.fb-privacy-point h3 { font-size: 20px; }.fb-privacy-point p { font-size: 12px; }
+  .fb-capabilities__intro { margin-bottom: 38px; }.fb-capability-grid { grid-template-columns: 1fr; gap: 12px; }.fb-capability { grid-template-columns: minmax(0,1fr) minmax(135px,.8fr); min-height: 315px; padding: 22px; gap: 13px; }.fb-capability__copy { margin: 0; }.fb-capability__copy h3 { font-size: 29px; }.fb-capability__copy p { font-size: 12px; }.fb-transaction-art { gap: 7px; }.fb-transaction-art__row { padding: 9px 7px; gap: 6px; }.fb-transaction-art__row > i { width: 25px; height: 25px; flex-basis: 25px; }.fb-transaction-art__row b { font-size: 8px; }.fb-transaction-art__row small { font-size: 6px; }.fb-future-art__timeline > div { padding: 7px 6px; gap: 6px; }.fb-future-art__timeline b { font-size: 7px; }.fb-future-art__timeline small { font-size: 6px; }.fb-file-art { gap: 6px; }.fb-file-art__document { min-height: 132px; padding: 10px 8px; }
+  .fb-privacy__intro { margin-bottom: 40px; }.fb-privacy__intro h2 { font-size: clamp(43px, 10.5vw, 60px); }.fb-privacy__intro p { font-size: 13px; }.fb-privacy-visual { min-height: 300px; }.fb-biometric { width: min(68%, 220px); }.fb-privacy-point { grid-template-columns: 25px 1fr 15px; gap: 9px; padding: 21px 0; }.fb-privacy-point h3 { font-size: 20px; }.fb-privacy-point p { font-size: 12px; }
   .fb-faq__layout { gap: 35px; }.fb-faq__intro h2 { font-size: 48px; }.fb-faq__intro p { font-size: 13px; }.fb-faq-item summary { padding-block: 19px; font-size: 16px; }.fb-faq-item p { font-size: 13px; }
-  .fb-cta-section { padding-bottom: 80px; }.fb-cta-panel { min-height: 455px; padding: 30px 22px 65px; border-radius: 21px; }.fb-cta-panel h2 { font-size: clamp(43px, 10.5vw, 59px); }.fb-cta-panel__copy > p { font-size: 13px; }.fb-cta-art { top: auto; right: -18%; bottom: -23%; width: 200px; transform: none; opacity: .24; }.fb-cta-panel__footer { right: 17px; bottom: 15px; left: 17px; font-size: 6px; }
+  .fb-cta-section { padding-bottom: 80px; }.fb-cta-panel { min-height: 455px; padding: 30px 22px 65px; border-radius: 21px; }.fb-cta-panel h2 { font-size: clamp(43px, 10.5vw, 59px); }.fb-cta-panel__copy > p { font-size: 13px; }.fb-cta-art { top: auto; right: -10%; bottom: -12%; width: 135px; transform: none; opacity: .32; }.fb-cta-art__tile { width: 112px; border-radius: 24px; padding: 8px; }.fb-cta-art__tile img { border-radius: 17px; }.fb-cta-art__label { font-size: 6px; }.fb-cta-panel__footer { right: 17px; bottom: 15px; left: 17px; font-size: 6px; }
 }
 @media (max-width: 370px) {
   .fb-hero h1 { font-size: 47px; }.fb-phone { width: 205px; }.fb-hero-art { min-height: 470px; }.fb-hero__footer { font-size: 5.5px; }
@@ -825,6 +988,125 @@ html[data-page-theme="finly"] .site-footer { background: #061F2D; }
 @keyframes fb-phone-float { 0%,100% { translate: 0 0; } 50% { translate: 0 -13px; } }
 @keyframes fb-core-morph { 0% { border-radius: 35% 65% 56% 44% / 43% 39% 61% 57%; transform: rotate(-7deg) scale(.97); } 50% { border-radius: 57% 43% 39% 61% / 55% 61% 39% 45%; transform: rotate(7deg) scale(1.03); } 100% { border-radius: 44% 56% 63% 37% / 38% 52% 48% 62%; transform: rotate(-3deg) scale(.99); } }
 @keyframes fb-orbit-float { 0%,100% { translate: 0 0; } 50% { translate: 0 -12px; } }
+
+
+/* FINLY-B REFINEMENTS — one story card at a time, animated capability icons,
+   biometric privacy illustration, and the real Finly app icon. */
+.fb-state[hidden] { display: none !important; }
+.fb-state.is-active:not([hidden]) { display: flex !important; }
+.fb-story-stage { isolation: isolate; }
+.fb-story__visual-sticky { z-index: 3; }
+.fb-story-step { scroll-margin-top: 120px; }
+.fb-privacy-caption { z-index: 3; }
+.fb-privacy-visual { min-width: 0; }
+.fb-biometric { isolation: isolate; }
+.fb-cta-art__tile { backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+
+@media (max-width: 820px) {
+  .fb-story__layout { display: flex; flex-direction: column; gap: 24px; }
+  .fb-story__steps { order: 2; }
+  .fb-story__visual-wrap { display: contents; }
+  .fb-story__visual-sticky { position: sticky; top: 82px; z-index: 20; order: 1; width: 100%; }
+  .fb-story-stage { height: 455px; min-height: 455px; }
+  .fb-story-step { min-height: 55vh; }
+}
+
+@media (max-width: 600px) {
+  .fb-story__visual-top, .fb-story__visual-bottom { min-height: 40px; }
+  .fb-story-stage { height: 430px; min-height: 430px; }
+  .fb-story-step { min-height: 53vh; }
+  .fb-capability { grid-template-columns: minmax(0,1fr) minmax(125px,.78fr); }
+  .fb-capability__copy h3 { font-size: 27px; }
+  .fb-capability__copy p { font-size: 11px; line-height: 1.75; }
+  .fb-biometric { width: min(70%, 205px); }
+}
+
+@media (max-width: 390px) {
+  .fb-story-stage { height: 405px; min-height: 405px; padding-inline: 13px; }
+  .fb-state { inset-inline: 13px; }
+  .fb-state__head strong { font-size: 21px; }
+  .fb-ledger { gap: 7px; margin-top: 24px; }
+  .fb-ledger__row { grid-template-columns: 26px minmax(0,1fr) auto; gap: 6px; padding: 8px 6px; }
+  .fb-ledger__row strong { font-size: 7px; }
+  .fb-analysis-layout { gap: 4px; }
+  .fb-large-donut-wrap { flex-basis: 54%; }
+  .fb-analysis-legend { min-width: 80px; gap: 7px; }
+  .fb-analysis-legend span { font-size: 7px; }
+  .fb-budget-list { gap: 14px; margin-top: 23px; }
+  .fb-budget-note { margin-top: 19px; padding: 11px; }
+  .fb-capability { grid-template-columns: 1fr; grid-template-rows: auto auto auto; min-height: 0; gap: 18px; }
+  .fb-capability__top { grid-column: 1; }
+  .fb-capability__copy { grid-column: 1; grid-row: 2; }
+  .fb-capability__copy h3 { font-size: 30px; }
+  .fb-capability__copy p { max-width: 100%; font-size: 13px; }
+  .fb-transaction-art, .fb-future-art, .fb-budget-art, .fb-file-art { grid-column: 1; grid-row: 3; width: 100%; }
+  .fb-transaction-art { grid-template-columns: 1fr 1fr; }
+  .fb-transaction-art__row:last-of-type { grid-column: 1 / -1; }
+  .fb-future-art { grid-template-columns: 62px 1fr; align-items: center; }
+  .fb-future-art__clock { width: 54px; height: 54px; margin: 0; }
+  .fb-file-art__document { min-height: 140px; }
+}
+
+@keyframes fb-icon-record { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-3px); } }
+@keyframes fb-icon-clock { to { transform: rotate(360deg); } }
+@keyframes fb-icon-budget { 0%,100% { transform: scale(.96); } 50% { transform: scale(1.06); } }
+@keyframes fb-icon-export { 0%,100% { transform: translateY(-2px); } 50% { transform: translateY(3px); } }
+@keyframes fb-row-float { 0%,100% { transform: translateX(0); border-color: rgba(142,202,230,.13); } 50% { transform: translateX(3px); border-color: rgba(33,158,188,.3); } }
+@keyframes fb-record-scan { 0%,12% { opacity: 0; transform: translateY(-84px); } 35%,68% { opacity: .85; } 88%,100% { opacity: 0; transform: translateY(0); } }
+@keyframes fb-clock-hand { to { transform: translate(-50%,-100%) rotate(360deg); } }
+@keyframes fb-budget-fill { from { transform: scaleX(.78); filter: saturate(.9); } to { transform: scaleX(1); filter: saturate(1.25); } }
+@keyframes fb-budget-pulse { 0%,100% { opacity: .35; transform: scale(.8); } 50% { opacity: 1; transform: scale(1.35); } }
+@keyframes fb-file-float { 0%,100% { transform: translateY(0) rotate(-1deg); } 50% { transform: translateY(-7px) rotate(1deg); } }
+@keyframes fb-download-bounce { 0%,100% { transform: translateY(-2px); opacity: .75; } 50% { transform: translateY(3px); opacity: 1; } }
+@keyframes fb-export-bars { from { transform: scaleY(.65); transform-origin: bottom; } to { transform: scaleY(1); transform-origin: bottom; } }
+@keyframes fb-export-progress { 0% { transform: translateX(-115%); } 100% { transform: translateX(240%); } }
+@keyframes fb-bio-aura { from { opacity: .65; transform: scale(.94); } to { opacity: 1; transform: scale(1.06); } }
+@keyframes fb-fingerprint-pulse { 0%,100% { opacity: .68; stroke-dashoffset: 0; } 50% { opacity: 1; stroke-dashoffset: 22; } }
+@keyframes fb-biometric-scan { 0% { transform: translateY(0); opacity: .4; } 100% { transform: translateY(155px); opacity: 1; } }
+@keyframes fb-logo-float { 0%,100% { transform: translateY(-50%) translateY(0) rotate(-2deg); } 50% { transform: translateY(-50%) translateY(-13px) rotate(1deg); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .fb-capability__icon svg, .fb-transaction-art__row, .fb-future-art__clock::before,
+  .fb-future-art__clock::after, .fb-budget-art__track i, .fb-budget-art__pulse,
+  .fb-file-art__document, .fb-file-art__document > b, .fb-file-art__mini-chart i,
+  .fb-file-art__status > em::after, .fb-biometric__fingerprint,
+  .fb-biometric__scanline, .fb-biometric__scan-glow, .fb-privacy-visual__aura,
+  .fb-cta-art { animation: none !important; }
+}
+
+
+/* Capability-card alignment refinement: remove the oversized gap between
+   each eyebrow label and its copy; keep the animated art balanced at right. */
+.fb-capability {
+  grid-template-rows: auto minmax(0, 1fr);
+  align-items: start;
+  row-gap: 11px;
+}
+.fb-capability__copy {
+  align-self: start;
+  padding-top: 4px;
+}
+.fb-transaction-art,
+.fb-future-art,
+.fb-budget-art,
+.fb-file-art {
+  align-self: center;
+}
+.fb-file-art {
+  perspective: 700px;
+  gap: 11px;
+}
+.fb-file-art__document--pdf { transform: rotate(-3deg); }
+.fb-file-art__document--csv { transform: rotate(3deg); }
+.fb-file-art__document:hover { border-color: rgba(255,183,3,.36); }
+.fb-file-art__document--csv:hover { border-color: rgba(33,158,188,.42); }
+
+/* The sticky panel is a single-state viewport. Inactive cards are never painted. */
+.fb-story-stage { isolation: isolate; }
+.fb-state { display: none !important; }
+.fb-state[hidden] { display: none !important; }
+.fb-state.is-active:not([hidden]) { display: flex !important; }
+
 </style>
 
 <script>
@@ -850,6 +1132,116 @@ html[data-page-theme="finly"] .site-footer { background: #061F2D; }
         event.preventDefault();
         document.getElementById('finly-b-top')?.scrollIntoView({ behavior: reducedMotion ? 'auto' : 'smooth', block: 'start' });
       });
+    }
+
+    // Sticky story controller: exactly one matching visual state is visible.
+    // It is driven by the active left-hand step, works in both scroll directions,
+    // and continues to work when reduced motion is enabled.
+    const storySteps = Array.from(page.querySelectorAll<HTMLElement>('[data-fb-step]'));
+    const storyStates = Array.from(page.querySelectorAll<HTMLElement>('[data-fb-state]'));
+    const storyStateLabel = page.querySelector<HTMLElement>('[data-fb-state-label]');
+    const storyLabels = ['01 / RECORD', '02 / UNDERSTAND', '03 / PLAN', '04 / KEEP CONTROL'];
+    let activeStoryIndex = -1;
+    let storyFrame = 0;
+
+    const animateStoryState = (state: HTMLElement) => {
+      if (reducedMotion) return;
+
+      gsap.fromTo(state,
+        { y: 16, autoAlpha: 0 },
+        { y: 0, autoAlpha: 1, duration: .42, ease: 'power2.out', overwrite: true }
+      );
+
+      state.querySelectorAll<SVGCircleElement>('[data-fb-donut]').forEach((slice, index) => {
+        const dash = slice.getAttribute('stroke-dasharray')?.split(/\s+/) || [];
+        const length = Number(dash[0] || 0);
+        gsap.fromTo(slice,
+          { strokeDasharray: '0 572', opacity: .35 },
+          { strokeDasharray: `${length} 572`, opacity: 1, duration: .95, delay: index * .055, ease: 'power2.out', overwrite: true }
+        );
+      });
+
+      state.querySelectorAll<HTMLElement>('[data-fb-progress]').forEach((bar) => {
+        const target = Number(bar.dataset.fbProgress || 0);
+        gsap.fromTo(bar,
+          { width: '0%' },
+          { width: `${target}%`, duration: .95, ease: 'power3.out', overwrite: true }
+        );
+      });
+    };
+
+    const activateStoryState = (index: number) => {
+      if (index < 0 || index >= storyStates.length || index === activeStoryIndex) return;
+      activeStoryIndex = index;
+
+      storySteps.forEach((step, stepIndex) => {
+        const active = stepIndex === index;
+        step.classList.toggle('is-active', active);
+        if (active) step.setAttribute('aria-current', 'step');
+        else step.removeAttribute('aria-current');
+      });
+
+      // Hide every previous/next panel before revealing the selected panel.
+      // The native hidden attribute also removes inactive panels from rendering
+      // and the accessibility tree, so panels cannot overlap.
+      storyStates.forEach((state, stateIndex) => {
+        const active = stateIndex === index;
+        if (!active) {
+          gsap.killTweensOf(state);
+          state.querySelectorAll('*').forEach((target) => gsap.killTweensOf(target));
+        }
+        state.hidden = !active;
+        state.classList.toggle('is-active', active);
+        state.setAttribute('aria-hidden', String(!active));
+      });
+
+      const selectedState = storyStates[index];
+      if (selectedState) animateStoryState(selectedState);
+      if (storyStateLabel) storyStateLabel.textContent = storyLabels[index] || storyLabels[0];
+    };
+
+    const syncStoryState = () => {
+      storyFrame = 0;
+      if (!storySteps.length || storyStates.length !== storySteps.length) return;
+
+      const marker = Math.min(
+        Math.max(100, window.innerHeight * .48),
+        Math.max(100, window.innerHeight - 110)
+      );
+      let selectedIndex = 0;
+      let closestDistance = Number.POSITIVE_INFINITY;
+
+      storySteps.forEach((step, index) => {
+        const rect = step.getBoundingClientRect();
+        const containsMarker = marker >= rect.top && marker <= rect.bottom;
+        const distance = containsMarker
+          ? 0
+          : marker < rect.top
+            ? rect.top - marker
+            : marker - rect.bottom;
+
+        if (distance < closestDistance) {
+          closestDistance = distance;
+          selectedIndex = index;
+        }
+      });
+
+      activateStoryState(selectedIndex);
+    };
+
+    const requestStorySync = () => {
+      if (!storyFrame) storyFrame = window.requestAnimationFrame(syncStoryState);
+    };
+
+    if (storySteps.length && storyStates.length === storySteps.length) {
+      window.addEventListener('scroll', requestStorySync, { passive: true });
+      window.addEventListener('resize', requestStorySync, { passive: true });
+      requestStorySync();
+      window.addEventListener('pagehide', () => {
+        window.removeEventListener('scroll', requestStorySync);
+        window.removeEventListener('resize', requestStorySync);
+        if (storyFrame) window.cancelAnimationFrame(storyFrame);
+      }, { once: true });
     }
 
     const faqItems = Array.from(page.querySelectorAll<HTMLDetailsElement>('.fb-faq-item'));
@@ -891,52 +1283,6 @@ html[data-page-theme="finly"] .site-footer { background: #061F2D; }
             scrollTrigger: { trigger: element, start: 'top 86%', once: true }
           });
         });
-
-        // MindFlow-inspired process: each scroll chapter changes one sticky visual.
-        const steps = Array.from(page.querySelectorAll<HTMLElement>('[data-fb-step]'));
-        const states = Array.from(page.querySelectorAll<HTMLElement>('[data-fb-state]'));
-        const stateLabel = page.querySelector<HTMLElement>('[data-fb-state-label]');
-        const labels = ['01 / RECORD', '02 / UNDERSTAND', '03 / PLAN', '04 / KEEP CONTROL'];
-        const activateState = (index: number) => {
-          steps.forEach((step, i) => step.classList.toggle('is-active', i === index));
-          states.forEach((state, i) => {
-            const active = i === index;
-            state.classList.toggle('is-active', active);
-            state.setAttribute('aria-hidden', String(!active));
-            if (active) {
-              gsap.fromTo(state, { y: 18, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: .48, ease: 'power2.out', overwrite: true });
-              animateVisualState(state);
-            }
-          });
-          if (stateLabel) stateLabel.textContent = labels[index] || labels[0];
-        };
-
-        const animatedStates = new WeakSet<HTMLElement>();
-        const animateVisualState = (state: HTMLElement) => {
-          if (animatedStates.has(state)) return;
-          animatedStates.add(state);
-          const slices = state.querySelectorAll<SVGCircleElement>('[data-fb-donut]');
-          slices.forEach((slice, i) => {
-            const dash = slice.getAttribute('stroke-dasharray')?.split(/\s+/) || [];
-            const length = Number(dash[0] || 0);
-            gsap.fromTo(slice, { strokeDasharray: `0 572`, opacity: .45 }, { strokeDasharray: `${length} 572`, opacity: 1, duration: 1.05, delay: i * .07, ease: 'power2.out' });
-          });
-          state.querySelectorAll<HTMLElement>('[data-fb-progress]').forEach((bar) => {
-            const target = Number(bar.dataset.fbProgress || 0);
-            gsap.to(bar, { width: `${target}%`, duration: 1.05, ease: 'power3.out' });
-          });
-        };
-
-        steps.forEach((step, index) => {
-          ScrollTrigger.create({
-            trigger: step,
-            start: 'top 56%',
-            end: 'bottom 44%',
-            onEnter: () => activateState(index),
-            onEnterBack: () => activateState(index)
-          });
-        });
-        activateState(0);
 
         // Dashboard charts: animate on first entrance, not continuously.
         page.querySelectorAll<HTMLElement>('[data-fb-chart]').forEach((chart) => {
