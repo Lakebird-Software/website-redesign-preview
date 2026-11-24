@@ -1,18 +1,8 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import FinlyPage from '../../components/finly/FinlyPage.astro';
-
 export function getStaticPaths() {
   const pages = [
-   
-    {
-      slug: 'gps-camera',
-      name: 'GPS CAMERA',
-      descriptor: 'Capture more than a photograph.',
-      status: 'Live on Google Play',
-      message: 'The dedicated GPS Camera product page is being designed next. Visit the Google Play developer listing to find the published app.',
-      play: 'https://play.google.com/store/search?q=GPS%20Camera%20Lakebird%20Software&c=apps'
-    },
     {
       slug: 'filtra',
       name: 'FILTRA',
@@ -21,7 +11,6 @@ export function getStaticPaths() {
       message: 'The dedicated Filtra product page will be added when its product story and approved feature details are ready.'
     }
   ];
-
   return pages.map((page) => ({
     params: { slug: page.slug },
     props: { page }
@@ -35,13 +24,11 @@ const statusClass =
   page.status === 'In development'
     ? 'availability availability--soon'
     : 'availability availability--live';
-
 const description =
   page.slug === 'finly'
     ? 'Finly makes everyday money management simpler. Organise income, expenses, budgets and financial records without an account or login.'
     : page.descriptor;
 ---
-
 <BaseLayout
   title={`${page.name} — Lakebird Software`}
   description={description}
@@ -57,7 +44,6 @@ const description =
           <span class="eyebrow">LAKEBIRD SOFTWARE / APPLICATION</span>
 
           <span class={statusClass}>{page.status}</span>
-
           <h1>{page.name}</h1>
           <h2>{page.descriptor}</h2>
           <p>{page.message}</p>
@@ -76,7 +62,6 @@ const description =
           <a class="text-link" href={`${base}#applications`}>
             ← Back to all applications
           </a>
-
           <p class="placeholder-page__notice">
             This is a temporary route so the homepage links work.
             The full product page will replace this placeholder during
