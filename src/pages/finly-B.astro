@@ -516,12 +516,17 @@ const privacyUrl = `${import.meta.env.BASE_URL}privacy/finly/`;
             <a class="fb-button fb-button--primary" href={playUrl} target="_blank" rel="noopener noreferrer"><span>Get Finly on Google Play</span><span class="fb-button__arrow" aria-hidden="true">↗</span></a>
             <small>No account. No login. No advertisements.</small>
           </div>
-          <div class="fb-cta-art" role="img" aria-label="Finly app logo">
-            <div class="fb-cta-art__glow" aria-hidden="true"></div>
-            <div class="fb-cta-art__tile">
-              <img src={finlyLogoUrl} alt="Finly app logo" width="240" height="480" loading="lazy" decoding="async" />
-            </div>
-            <span class="fb-cta-art__label">FINLY / PERSONAL FINANCE</span>
+          <div class="fb-cta-art">
+            <img
+              class="fb-cta-art__logo"
+              src={finlyLogoUrl}
+              alt="Finly app logo"
+              width="360"
+              height="360"
+              loading="lazy"
+              decoding="async"
+            />
+            <span class="fb-cta-art__name">Finly</span>
           </div>
           <div class="fb-cta-panel__footer"><span>FINLY / PERSONAL FINANCE</span><a href="#finly-b-top">BACK TO TOP ↑</a></div>
         </div>
@@ -1106,6 +1111,135 @@ html[data-page-theme="finly"] .site-footer { background: #061F2D; }
 .fb-state { display: none !important; }
 .fb-state[hidden] { display: none !important; }
 .fb-state.is-active:not([hidden]) { display: flex !important; }
+
+
+
+/* ==========================================================
+   CTA LOGO REFINEMENT — clean, large, unframed app logo
+   ========================================================== */
+
+.fb-cta-panel__copy {
+  max-width: min(58%, 680px);
+}
+
+.fb-cta-art {
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  bottom: auto;
+  width: clamp(280px, 29vw, 350px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  opacity: 1;
+  transform: translateY(-50%);
+  animation: fb-logo-float 7s ease-in-out infinite;
+}
+
+.fb-cta-art__logo {
+  display: block;
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  border: 0 !important;
+  border-radius: 0 !important;
+  outline: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  filter: drop-shadow(0 24px 38px rgba(0, 8, 16, .23));
+}
+
+.fb-cta-art__name {
+  display: block;
+  margin: 0;
+  color: #F5FAFC;
+  font-family: 'Instrument Sans', sans-serif;
+  font-size: clamp(25px, 2.4vw, 32px);
+  font-weight: 500;
+  letter-spacing: -.045em;
+  line-height: 1;
+  text-align: center;
+}
+
+/* Tablet and mobile: stack the logo below the copy, never over it. */
+@media (max-width: 820px) {
+  .fb-cta-panel {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 26px;
+    min-height: 0;
+    padding: 42px 34px 28px;
+  }
+
+  .fb-cta-panel__copy {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .fb-cta-art {
+    position: relative;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    width: min(100%, 300px);
+    margin: 0 auto;
+    transform: none;
+    gap: 11px;
+    animation: fb-logo-float 7s ease-in-out infinite;
+  }
+
+  .fb-cta-art__logo {
+    max-width: 300px;
+  }
+
+  .fb-cta-art__name {
+    font-size: 29px;
+  }
+
+  .fb-cta-panel__footer {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    left: auto;
+    width: 100%;
+    margin-top: 4px;
+  }
+}
+
+@media (max-width: 600px) {
+  .fb-cta-panel {
+    gap: 23px;
+    padding: 31px 22px 23px;
+  }
+
+  .fb-cta-art {
+    width: min(100%, 245px);
+  }
+
+  .fb-cta-art__logo {
+    max-width: 245px;
+  }
+
+  .fb-cta-art__name {
+    font-size: 26px;
+  }
+
+  .fb-cta-panel__footer {
+    gap: 10px;
+    padding-top: 12px;
+    font-size: 6px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fb-cta-art {
+    animation: none !important;
+  }
+}
 
 </style>
 
