@@ -1,7 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 
-// Explicit GitHub Pages project path for the preview repository.
 const media = '/website-redesign-preview/gps-camera-assets/';
 const playUrl = 'https://play.google.com/store/apps/details?id=com.prithveeshbhat.gpscamera';
 const title = 'GPS Camera: Geo Tagging — Capture the moment. Keep its place.';
@@ -67,7 +66,7 @@ const description = 'Capture photos and videos with GPS location, maps, date and
       <div class="gps-wrap">
         <div class="gps-section-heading gps-section-heading--split" data-reveal>
           <div>
-            <span class="gps-section-kicker">01 / CAPTURE WITH CONTEXT</span>
+            <span class="gps-section-kicker">CAPTURE WITH CONTEXT</span>
             <h2 id="gps-capture-title">Let the details<br /><em>travel with the image.</em></h2>
           </div>
           <p>Add useful place and time information to your photographs and videos as you capture. Keep the context visible, not buried in a separate note.</p>
@@ -76,7 +75,7 @@ const description = 'Capture photos and videos with GPS location, maps, date and
           <article class="gps-media-card gps-media-card--photo" data-reveal>
             <div class="gps-media-card__image"><img src={`${media}playstore-01-location-photos-videos.webp`} alt="GPS Camera photograph with a location label, address, coordinates and capture date and time" loading="lazy" /></div>
             <div class="gps-media-card__copy">
-              <span class="gps-card-index">01 — PHOTOGRAPHY</span>
+              <span class="gps-card-index">PHOTOGRAPHY</span>
               <h3>Photos with a sense of place.</h3>
               <p>Stamp photographs with location details, maps, coordinates, date and time. Add custom notes when the moment needs a little more explanation.</p>
             </div>
@@ -84,7 +83,7 @@ const description = 'Capture photos and videos with GPS location, maps, date and
           <article class="gps-media-card gps-media-card--video" data-reveal data-reveal-delay="100">
             <div class="gps-media-card__image"><img src={`${media}playstore-08-geotagged-video.webp`} alt="GPS Camera video recording preview with live location information overlaid on the footage" loading="lazy" /></div>
             <div class="gps-media-card__copy">
-              <span class="gps-card-index">02 — VIDEO</span>
+              <span class="gps-card-index">VIDEO</span>
               <h3>Keep the context in motion.</h3>
               <p>Record video with GPS information displayed directly in the footage, so the location details stay with the scene you are documenting.</p>
             </div>
@@ -104,22 +103,22 @@ const description = 'Capture photos and videos with GPS location, maps, date and
       <div class="gps-wrap gps-camera-layout">
         <div class="gps-camera-copy">
           <div class="gps-section-heading" data-reveal>
-            <span class="gps-section-kicker">02 / THE CAMERA EXPERIENCE</span>
+            <span class="gps-section-kicker">THE CAMERA EXPERIENCE</span>
             <h2 id="gps-camera-title">Ready when<br /><em>the moment happens.</em></h2>
             <p>Thoughtful camera controls help you frame the scene, focus on the detail and capture without getting in the way.</p>
           </div>
           <div class="gps-camera-features" role="group" aria-label="Explore camera features">
             <button class="gps-camera-feature is-active" type="button" data-camera-feature data-shot={`${media}playstore-03-pro-camera-maps.webp`}>
-              <span class="gps-feature-number">01</span><div><h3>Fast, responsive capture</h3><p>Zero-shutter-lag capture helps you take the shot when the moment is there.</p></div><span class="gps-feature-chevron">↗</span>
+              <div><h3>Fast, responsive capture</h3><p>Zero-shutter-lag capture helps you take the shot when the moment is there.</p></div><span class="gps-feature-chevron">↗</span>
             </button>
             <button class="gps-camera-feature" type="button" data-camera-feature data-shot={`${media}playstore-05-custom-notes-and-coordinates.webp`}>
-              <span class="gps-feature-number">02</span><div><h3>Focus on the subject</h3><p>Use autofocus and tap-to-focus to bring the important detail into view.</p></div><span class="gps-feature-chevron">↗</span>
+              <div><h3>Focus on the subject</h3><p>Use autofocus and tap-to-focus to bring the important detail into view.</p></div><span class="gps-feature-chevron">↗</span>
             </button>
             <button class="gps-camera-feature" type="button" data-camera-feature data-shot={`${media}playstore-03-pro-camera-maps.webp`}>
-              <span class="gps-feature-number">03</span><div><h3>Choose your framing</h3><p>Quick 0.5×, 1× and 2× zoom presets make it easy to move between views.</p></div><span class="gps-feature-chevron">↗</span>
+              <div><h3>Choose your framing</h3><p>Quick 0.5×, 1× and 2× zoom presets make it easy to move between views.</p></div><span class="gps-feature-chevron">↗</span>
             </button>
             <button class="gps-camera-feature" type="button" data-camera-feature data-shot={`${media}playstore-01-location-photos-videos.webp`}>
-              <span class="gps-feature-number">04</span><div><h3>See the map before the shot</h3><p>Live street-map rendering, continuous torch mode and adjustable stamp text size add control when conditions change.</p></div><span class="gps-feature-chevron">↗</span>
+              <div><h3>See the map before the shot</h3><p>Live street-map rendering, continuous torch mode and adjustable stamp text size add control when conditions change.</p></div><span class="gps-feature-chevron">↗</span>
             </button>
           </div>
         </div>
@@ -142,7 +141,7 @@ const description = 'Capture photos and videos with GPS location, maps, date and
           <div class="gps-edit-visual__label"><span class="gps-edit-pulse"></span> DETAILS THAT MATTER</div>
         </div>
         <div class="gps-edit-copy" data-reveal data-reveal-delay="100">
-          <span class="gps-section-kicker">03 / AFTER THE CAPTURE</span>
+          <span class="gps-section-kicker">AFTER THE CAPTURE</span>
           <h2 id="gps-edit-title">The moment has passed.<br /><em>The details can still be refined.</em></h2>
           <p>Already taken the photograph? Bring an existing image into the in-app editor and add or adjust its GPS and time information afterwards.</p>
           <ul class="gps-check-list">
@@ -159,29 +158,57 @@ const description = 'Capture photos and videos with GPS location, maps, date and
     <section class="gps-templates gps-section" aria-labelledby="gps-templates-title">
       <div class="gps-wrap">
         <div class="gps-section-heading gps-section-heading--center" data-reveal>
-          <span class="gps-section-kicker">04 / STAMP STYLES</span>
+          <span class="gps-section-kicker">STAMP STYLES</span>
           <h2 id="gps-templates-title">Your details.<br /><em>Your kind of layout.</em></h2>
           <p>Choose a stamp style that suits the way you use your camera — from everyday memories to more structured field documentation.</p>
         </div>
         <div class="gps-template-explorer" data-reveal>
           <div class="gps-template-options" role="group" aria-label="Explore GPS stamp template styles">
-            <button class="gps-template-option is-selected" type="button" data-template="classic" aria-pressed="true"><span class="gps-template-option__num">01</span><span><strong>Classic & Compact</strong><small>Clean, essential information</small></span><span class="gps-template-option__arrow">↗</span></button>
-            <button class="gps-template-option" type="button" data-template="corporate" aria-pressed="false"><span class="gps-template-option__num">02</span><span><strong>Corporate & Professional</strong><small>Clear, business-ready layouts</small></span><span class="gps-template-option__arrow">↗</span></button>
-            <button class="gps-template-option" type="button" data-template="adventure" aria-pressed="false"><span class="gps-template-option__num">03</span><span><strong>Adventure & Travel</strong><small>Made for the journey</small></span><span class="gps-template-option__arrow">↗</span></button>
-            <button class="gps-template-option" type="button" data-template="engineering" aria-pressed="false"><span class="gps-template-option__num">04</span><span><strong>Engineering & Journal</strong><small>More room for field details</small></span><span class="gps-template-option__arrow">↗</span></button>
+            <button class="gps-template-option is-selected" type="button" data-template="classic" aria-pressed="true"><span class="gps-template-option__copy"><strong>Classic & Compact</strong><small>A clean, everyday location stamp</small></span><span class="gps-template-option__arrow" aria-hidden="true">↗</span></button>
+            <button class="gps-template-option" type="button" data-template="corporate" aria-pressed="false"><span class="gps-template-option__copy"><strong>Corporate & Professional</strong><small>Structured details for work records</small></span><span class="gps-template-option__arrow" aria-hidden="true">↗</span></button>
+            <button class="gps-template-option" type="button" data-template="adventure" aria-pressed="false"><span class="gps-template-option__copy"><strong>Adventure & Travel</strong><small>A distinctive style for the journey</small></span><span class="gps-template-option__arrow" aria-hidden="true">↗</span></button>
+            <button class="gps-template-option" type="button" data-template="engineering" aria-pressed="false"><span class="gps-template-option__copy"><strong>Engineering & Journal</strong><small>Coordinates, notes and field details</small></span><span class="gps-template-option__arrow" aria-hidden="true">↗</span></button>
           </div>
           <div class="gps-template-stage" data-template-stage="classic" aria-live="polite">
-            <div class="gps-template-stage__top"><span>STAMP STYLE PREVIEW</span><span class="gps-template-stage__live"><i></i> INTERACTIVE EXAMPLE</span></div>
+            <div class="gps-template-stage__top"><span>STAMP STYLE PREVIEW</span><span class="gps-template-stage__live"><i></i> SELECT A STYLE TO PREVIEW</span></div>
             <div class="gps-template-preview" id="gps-template-preview">
-              <div class="gps-template-preview__map"><span class="gps-map-road gps-map-road--one"></span><span class="gps-map-road gps-map-road--two"></span><span class="gps-map-road gps-map-road--three"></span><span class="gps-map-pin">⌖</span></div>
-              <div class="gps-template-preview__stamp">
-                <span class="gps-template-preview__category">GPS CAMERA / CLASSIC</span>
-                <strong id="gps-template-name">Location captured</strong>
-                <span id="gps-template-place">Address · coordinates</span>
-                <div class="gps-template-preview__meta"><span>DATE & TIME</span><b>LOCATION DETAILS</b></div>
+              <div class="gps-template-preview__scene" aria-hidden="true">
+                <span class="gps-scene-road gps-scene-road--one"></span><span class="gps-scene-road gps-scene-road--two"></span><span class="gps-scene-road gps-scene-road--three"></span>
+                <span class="gps-scene-park"></span><span class="gps-scene-water"></span><span class="gps-scene-pin">⌖</span>
+                <span class="gps-scene-grid"></span><span class="gps-scene-horizon"></span>
               </div>
+
+              <article class="gps-stamp-card gps-stamp-card--classic" data-stamp-preview="classic" aria-label="Classic and compact stamp example">
+                <div class="gps-stamp-classic__pin" aria-hidden="true">⌖</div>
+                <div class="gps-stamp-classic__content">
+                  <span class="gps-stamp-eyebrow">GPS CAMERA · LOCATION</span>
+                  <strong>Captured here</strong>
+                  <span class="gps-stamp-address">Address · GPS coordinates</span>
+                  <div class="gps-stamp-classic__meta"><span>DATE & TIME</span><i></i><span>MAP DETAILS</span></div>
+                </div>
+              </article>
+
+              <article class="gps-stamp-card gps-stamp-card--corporate" data-stamp-preview="corporate" aria-label="Corporate and professional stamp example">
+                <header class="gps-stamp-corporate__header"><span class="gps-stamp-corporate__mark">LB</span><span><b>FIELD DOCUMENTATION</b><small>PROJECT RECORD</small></span><span class="gps-stamp-corporate__status">RECORDED</span></header>
+                <div class="gps-stamp-corporate__body"><span class="gps-stamp-eyebrow">SITE VISIT · LOCATION RECORD</span><strong>Site inspection record</strong><span class="gps-stamp-address">Project location · Address</span></div>
+                <div class="gps-stamp-corporate__details"><span><small>DATE & TIME</small><b>Capture timestamp</b></span><span><small>GPS LOCATION</small><b>Coordinates & map</b></span></div>
+                <footer class="gps-stamp-corporate__footer"><span>GPS CAMERA</span><span>FIELD RECORD</span></footer>
+              </article>
+
+              <article class="gps-stamp-card gps-stamp-card--adventure" data-stamp-preview="adventure" aria-label="Adventure and travel stamp example">
+                <div class="gps-stamp-adventure__top"><span class="gps-stamp-adventure__badge">TRAVEL LOG</span><span class="gps-stamp-adventure__symbol" aria-hidden="true">✳</span></div>
+                <div class="gps-stamp-adventure__body"><span class="gps-stamp-eyebrow">THE JOURNEY · GPS CAMERA</span><strong>A day worth remembering</strong><span class="gps-stamp-address">Destination · GPS location</span></div>
+                <div class="gps-stamp-adventure__route"><span class="gps-stamp-adventure__route-pin"></span><i></i><span class="gps-stamp-adventure__route-pin"></span><span class="gps-stamp-adventure__route-label">PLACE <b>·</b> DATE <b>·</b> TIME</span></div>
+              </article>
+
+              <article class="gps-stamp-card gps-stamp-card--engineering" data-stamp-preview="engineering" aria-label="Engineering and journal stamp example">
+                <header class="gps-stamp-engineering__header"><span>FIELD NOTE / GPS CAMERA</span><b>OBSERVATION LOG</b></header>
+                <div class="gps-stamp-engineering__title"><span class="gps-stamp-engineering__crosshair" aria-hidden="true">＋</span><span><small>SITE DOCUMENTATION</small><strong>Site observation</strong></span></div>
+                <div class="gps-stamp-engineering__data"><span><small>LATITUDE</small><b>GPS coordinates</b></span><span><small>LONGITUDE</small><b>GPS coordinates</b></span><span class="gps-stamp-engineering__wide"><small>FIELD NOTE</small><b>Custom note · Site details</b></span></div>
+                <footer class="gps-stamp-engineering__footer"><span>DATE & TIME</span><span>LOCATION VERIFIED</span></footer>
+              </article>
             </div>
-            <p class="gps-template-stage__note">Illustrative preview of the template families listed for GPS Camera; it is not an additional in-app screen.</p>
+            <p class="gps-template-stage__note">Illustrative design concepts to show how each stamp style can feel different. These are not additional in-app screenshots.</p>
           </div>
         </div>
       </div>
@@ -190,21 +217,47 @@ const description = 'Capture photos and videos with GPS location, maps, date and
     <section class="gps-workflow gps-section" aria-labelledby="gps-workflow-title">
       <div class="gps-wrap">
         <div class="gps-section-heading gps-section-heading--split" data-reveal>
-          <div><span class="gps-section-kicker">05 / PROJECTS & REPORTS</span><h2 id="gps-workflow-title">From field captures<br /><em>to organised reports.</em></h2></div>
+          <div><span class="gps-section-kicker">PROJECTS & REPORTS</span><h2 id="gps-workflow-title">From field captures<br /><em>to organised reports.</em></h2></div>
           <p>Keep work, visits and trips together. When it is time to share the record, bring selected captures into a polished PDF report.</p>
         </div>
         <div class="gps-workflow-grid">
           <article class="gps-work-card gps-work-card--folders" data-reveal>
-            <div class="gps-work-card__image"><img src={`${media}playstore-02-project-folders.webp`} alt="GPS Camera albums screen with separate custom project folders" loading="lazy" /></div>
-            <div class="gps-work-card__body"><span class="gps-card-index">01 — ORGANISE</span><h3>Give every project its place.</h3><p>Create custom folders for different jobs, sites or journeys. Keep related photographs and videos easy to find and manage.</p></div>
+            <div class="gps-work-card__art gps-organise-art" aria-hidden="true">
+              <span class="gps-art-orbit gps-art-orbit--one"></span><span class="gps-art-orbit gps-art-orbit--two"></span>
+              <div class="gps-organise-art__folder gps-organise-art__folder--back"><span class="gps-folder-line"></span><span class="gps-folder-line gps-folder-line--short"></span></div>
+              <div class="gps-organise-art__folder gps-organise-art__folder--middle"><span class="gps-folder-line"></span><span class="gps-folder-line gps-folder-line--short"></span></div>
+              <div class="gps-organise-art__folder gps-organise-art__folder--front"><span class="gps-folder-mark">⌖</span><span class="gps-folder-title">PROJECT FILES</span><span class="gps-folder-line"></span><span class="gps-folder-line gps-folder-line--short"></span><span class="gps-folder-items"><i></i><i></i><i></i></span></div>
+              <span class="gps-art-float-label gps-art-float-label--organise">PROJECTS / MEDIA</span>
+            </div>
+            <div class="gps-work-card__body"><span class="gps-card-index">ORGANISE</span><h3>Give every project its place.</h3><p>Create custom folders for different jobs, sites or journeys. Keep related photographs and videos easy to find and manage.</p></div>
           </article>
+
           <article class="gps-work-card gps-work-card--history" data-reveal data-reveal-delay="80">
-            <div class="gps-work-card__image gps-work-card__image--contain"><img src={`${media}playstore-07-capture-history-statistics.webp`} alt="GPS Camera profile and statistics screen showing photo, video and storage counts" loading="lazy" /></div>
-            <div class="gps-work-card__body"><span class="gps-card-index">02 — LOOK BACK</span><h3>Track your capture history.</h3><p>Return to your capture activity through the profile and statistics view, with an overview of your photos, videos and storage.</p></div>
+            <div class="gps-work-card__art gps-history-art" aria-hidden="true">
+              <div class="gps-history-art__panel">
+                <div class="gps-history-art__header"><span class="gps-history-art__avatar"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.1"></circle><path d="M5.5 20c.5-3.4 2.8-5.2 6.5-5.2s6 1.8 6.5 5.2"></path></svg></span><span><b>CAPTURE HISTORY</b><small>Profile overview</small></span><i class="gps-history-art__menu"></i></div>
+                <div class="gps-history-art__stats"><div class="gps-history-stat"><span class="gps-history-stat__icon gps-history-stat__icon--photo">▧</span><span><b>PHOTO CAPTURES</b><small>Saved photographs</small></span><i class="gps-history-stat__bar"><em></em></i></div><div class="gps-history-stat"><span class="gps-history-stat__icon gps-history-stat__icon--video">▶</span><span><b>VIDEO CAPTURES</b><small>Recorded videos</small></span><i class="gps-history-stat__bar gps-history-stat__bar--video"><em></em></i></div></div>
+                <div class="gps-history-art__activity"><div><b>ACTIVITY OVERVIEW</b><small>Capture statistics</small></div><span class="gps-history-art__chart"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+              </div>
+              <span class="gps-art-float-label gps-art-float-label--history"><i></i> YOUR RECORD, AT A GLANCE</span>
+            </div>
+            <div class="gps-work-card__body"><span class="gps-card-index">LOOK BACK</span><h3>Track your capture history.</h3><p>Return to your capture activity through the profile and statistics view, with an overview of your photos, videos and storage.</p></div>
           </article>
+
           <article class="gps-work-card gps-work-card--reports" data-reveal data-reveal-delay="160">
-            <div class="gps-work-card__image"><img src={`${media}playstore-04-pdf-reports.webp`} alt="GPS Camera preview of an A4 PDF report with a business logo and geotagged photographs" loading="lazy" /></div>
-            <div class="gps-work-card__body"><span class="gps-card-index">03 — SHARE THE RECORD</span><h3>Make a report that is ready to present.</h3><p>Select photographs and generate an A4 PDF report with your business logo, capture dates and GPS coordinates.</p></div>
+            <div class="gps-work-card__art gps-report-art" aria-hidden="true">
+              <div class="gps-report-art__back-sheet"></div>
+              <div class="gps-report-sheet">
+                <header><span class="gps-report-sheet__pdf">PDF</span><span>GPS CAMERA / EXPORT</span><i></i></header>
+                <div class="gps-report-sheet__brand"><span class="gps-report-sheet__brandmark">LB</span><span><b>FIELD REPORT</b><small>LOCATION DOCUMENTATION</small></span></div>
+                <div class="gps-report-sheet__photo"><span class="gps-report-sheet__photo-pin">⌖</span><i></i><i></i><i></i></div>
+                <div class="gps-report-sheet__title-line"></div><div class="gps-report-sheet__line gps-report-sheet__line--long"></div><div class="gps-report-sheet__line"></div>
+                <div class="gps-report-sheet__details"><span><small>DATE & TIME</small><b>Capture details</b></span><span><small>GPS LOCATION</small><b>Coordinates</b></span></div>
+                <footer><span><i></i> READY TO SHARE</span><b>A4 · PDF</b></footer>
+              </div>
+              <span class="gps-art-float-label gps-art-float-label--report">REPORT ASSEMBLED</span>
+            </div>
+            <div class="gps-work-card__body"><span class="gps-card-index">SHARE THE RECORD</span><h3>Make a report that is ready to present.</h3><p>Select photographs and generate an A4 PDF report with your business logo, capture dates and GPS coordinates.</p></div>
           </article>
         </div>
       </div>
@@ -213,15 +266,15 @@ const description = 'Capture photos and videos with GPS location, maps, date and
     <section class="gps-usecases gps-section" aria-labelledby="gps-usecases-title">
       <div class="gps-wrap gps-usecases__layout">
         <div class="gps-usecases__intro" data-reveal>
-          <span class="gps-section-kicker">06 / MADE FOR REAL-WORLD WORK</span>
+          <span class="gps-section-kicker">MADE FOR REAL-WORLD WORK</span>
           <h2 id="gps-usecases-title">Made for the field.<br /><em>Ready for the journey.</em></h2>
           <p>Wherever a photograph needs more than a picture, GPS Camera helps keep the place and time in view.</p>
         </div>
         <div class="gps-usecase-grid" data-reveal data-reveal-delay="100">
-          <article class="gps-usecase"><span class="gps-usecase__icon"><svg viewBox="0 0 24 24"><path d="M3 20.5h18M5 20V8.5l7-4 7 4V20M9 20v-6h6v6M8 9.5h.01M12 9.5h.01M16 9.5h.01"/></svg></span><h3>Construction & engineering</h3><p>Document site progress and field work with location-rich captures and project folders.</p><span class="gps-usecase__index">01</span></article>
-          <article class="gps-usecase"><span class="gps-usecase__icon"><svg viewBox="0 0 24 24"><path d="M3 20.5h18M5 20V5h14v15M8 8h3v3H8zM14 8h3v3h-3zM8 14h3v3H8zM14 14h3v6h-3z"/></svg></span><h3>Real estate & architecture</h3><p>Keep property visits and visual documentation connected to their locations.</p><span class="gps-usecase__index">02</span></article>
-          <article class="gps-usecase"><span class="gps-usecase__icon"><svg viewBox="0 0 24 24"><path d="M4 4.5h16v15H4zM8 8.5h8M8 12h8M8 15.5h4M16.5 16l1.5 1.5 3-3"/></svg></span><h3>Surveyors & inspectors</h3><p>Capture field observations with coordinates, timestamps and notes for later review.</p><span class="gps-usecase__index">03</span></article>
-          <article class="gps-usecase"><span class="gps-usecase__icon"><svg viewBox="0 0 24 24"><path d="M12 21s7-6.1 7-12a7 7 0 1 0-14 0c0 5.9 7 12 7 12Z"/><circle cx="12" cy="9" r="2.3"/><path d="M3 21h18"/></svg></span><h3>Travel & exploration</h3><p>Keep the where and when attached to the memories you bring back.</p><span class="gps-usecase__index">04</span></article>
+          <article class="gps-usecase"><span class="gps-usecase__icon"><svg viewBox="0 0 24 24"><path d="M3 20.5h18M5 20V8.5l7-4 7 4V20M9 20v-6h6v6M8 9.5h.01M12 9.5h.01M16 9.5h.01"/></svg></span><h3>Construction & engineering</h3><p>Document site progress and field work with location-rich captures and project folders.</p></article>
+          <article class="gps-usecase"><span class="gps-usecase__icon"><svg viewBox="0 0 24 24"><path d="M3 20.5h18M5 20V5h14v15M8 8h3v3H8zM14 8h3v3h-3zM8 14h3v3H8zM14 14h3v6h-3z"/></svg></span><h3>Real estate & architecture</h3><p>Keep property visits and visual documentation connected to their locations.</p></article>
+          <article class="gps-usecase"><span class="gps-usecase__icon"><svg viewBox="0 0 24 24"><path d="M4 4.5h16v15H4zM8 8.5h8M8 12h8M8 15.5h4M16.5 16l1.5 1.5 3-3"/></svg></span><h3>Surveyors & inspectors</h3><p>Capture field observations with coordinates, timestamps and notes for later review.</p></article>
+          <article class="gps-usecase"><span class="gps-usecase__icon"><svg viewBox="0 0 24 24"><path d="M12 21s7-6.1 7-12a7 7 0 1 0-14 0c0 5.9 7 12 7 12Z"/><circle cx="12" cy="9" r="2.3"/><path d="M3 21h18"/></svg></span><h3>Travel & exploration</h3><p>Keep the where and when attached to the memories you bring back.</p></article>
         </div>
       </div>
     </section>
@@ -229,13 +282,13 @@ const description = 'Capture photos and videos with GPS location, maps, date and
     <section class="gps-control-note gps-section" aria-labelledby="gps-control-title">
       <div class="gps-wrap gps-control-note__panel" data-reveal>
         <div class="gps-control-note__symbol"><img src={`${media}gps-camera-logo-transparent.webp`} alt="GPS Camera logo" loading="lazy" /></div>
-        <div class="gps-control-note__copy"><span class="gps-section-kicker">07 / YOUR CAPTURE WORKFLOW</span><h2 id="gps-control-title">Useful information.<br /><em>When you need it.</em></h2><p>Use location-aware camera features, review your captures, organise them into projects and create reports as your workflow calls for them. Location and camera features rely on the permissions and device settings you choose.</p><p class="gps-ad-note"><span class="gps-ad-note__dot"></span> GPS Camera is supported by ads. <a href={playUrl} target="_blank" rel="noopener noreferrer">See the app on Google Play <span aria-hidden="true">↗</span></a></p></div>
+        <div class="gps-control-note__copy"><span class="gps-section-kicker">YOUR CAPTURE WORKFLOW</span><h2 id="gps-control-title">Useful information.<br /><em>When you need it.</em></h2><p>Use location-aware camera features, review your captures, organise them into projects and create reports as your workflow calls for them. Location and camera features rely on the permissions and device settings you choose.</p><p class="gps-ad-note"><span class="gps-ad-note__dot"></span> GPS Camera is supported by ads. <a href={playUrl} target="_blank" rel="noopener noreferrer">See the app on Google Play <span aria-hidden="true">↗</span></a></p></div>
       </div>
     </section>
 
     <section class="gps-faq gps-section" aria-labelledby="gps-faq-title">
       <div class="gps-wrap gps-faq__layout">
-        <div class="gps-section-heading" data-reveal><span class="gps-section-kicker">08 / GOOD TO KNOW</span><h2 id="gps-faq-title">A few things<br /><em>you might be wondering.</em></h2><p>Some quick answers about what GPS Camera can help you do.</p></div>
+        <div class="gps-section-heading" data-reveal><span class="gps-section-kicker">GOOD TO KNOW</span><h2 id="gps-faq-title">A few things<br /><em>you might be wondering.</em></h2><p>Some quick answers about what GPS Camera can help you do.</p></div>
         <div class="gps-faq-list" data-reveal data-reveal-delay="100">
           <details class="gps-faq-item" open><summary>What information can GPS Camera add to a photo?<span></span></summary><p>Depending on the selected stamp layout and available device location, you can include address, map details, latitude and longitude, date, time and custom notes.</p></details>
           <details class="gps-faq-item"><summary>Can I record videos with GPS information?<span></span></summary><p>Yes. GPS Camera supports video recording with live GPS details displayed in the footage.</p></details>
@@ -304,31 +357,18 @@ const description = 'Capture photos and videos with GPS location, maps, date and
       });
     });
 
-    const templateContent = {
-      classic: { name: 'Location captured', place: 'Address · coordinates', category: 'GPS CAMERA / CLASSIC' },
-      corporate: { name: 'Site documentation', place: 'Project · address · timestamp', category: 'GPS CAMERA / PROFESSIONAL' },
-      adventure: { name: 'A place worth remembering', place: 'Destination · date · time', category: 'GPS CAMERA / TRAVEL' },
-      engineering: { name: 'Field record', place: 'Coordinates · notes · timestamp', category: 'GPS CAMERA / FIELD JOURNAL' }
-    };
     const templateButtons = [...document.querySelectorAll('[data-template]')];
     const templateStage = document.querySelector('[data-template-stage]');
-    const templateName = document.getElementById('gps-template-name');
-    const templatePlace = document.getElementById('gps-template-place');
-    const templateCategory = document.querySelector('.gps-template-preview__category');
     templateButtons.forEach((button) => {
       button.addEventListener('click', () => {
         const key = button.dataset.template;
-        const details = templateContent[key];
-        if (!details) return;
+        if (!['classic', 'corporate', 'adventure', 'engineering'].includes(key)) return;
         templateButtons.forEach((item) => {
           const selected = item === button;
           item.classList.toggle('is-selected', selected);
           item.setAttribute('aria-pressed', String(selected));
         });
         if (templateStage) templateStage.dataset.templateStage = key;
-        if (templateName) templateName.textContent = details.name;
-        if (templatePlace) templatePlace.textContent = details.place;
-        if (templateCategory) templateCategory.textContent = details.category;
       });
     });
 
@@ -416,7 +456,7 @@ const description = 'Capture photos and videos with GPS location, maps, date and
   .gps-page button { font: inherit; }
   .gps-wrap { width: min(1220px, calc(100% - 48px)); margin-inline: auto; }
   .gps-section { position: relative; padding-block: clamp(88px, 10vw, 148px); }
-  .gps-eyebrow, .gps-section-kicker, .gps-card-index, .gps-camera-visual__top, .gps-template-stage__top, .gps-template-preview__category, .gps-hero__bottom, .gps-feature-number {
+  .gps-eyebrow, .gps-section-kicker, .gps-card-index, .gps-camera-visual__top, .gps-template-stage__top, .gps-template-preview__category, .gps-hero__bottom {
     font-family: 'Inter', sans-serif;
     font-size: 10px;
     font-weight: 600;
@@ -495,7 +535,7 @@ const description = 'Capture photos and videos with GPS location, maps, date and
   .gps-media-card__copy { padding: 0 29px 29px; }
   .gps-card-index { color: var(--gps-accent); font-size: 9px; }
   .gps-media-card h3, .gps-work-card h3 { margin: 11px 0 0; font-family: 'Instrument Sans', sans-serif; font-size: clamp(23px, 2.3vw, 30px); line-height: 1.12; font-weight: 600; letter-spacing: -.04em; }
-  .gps-media-card p, .gps-work-card p { margin: 13px 0 0; color: var(--gps-copy); font-size: 12px; line-height: 1.85; }
+  .gps-media-card p, .gps-work-card p { margin: 13px 0 0; color: var(--gps-copy); font-size: 13px; line-height: 1.85; }
   .gps-capture__detail-row { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 32px; }
   .gps-detail-chip { display: inline-flex; align-items: center; gap: 9px; padding: 10px 15px; border: 1px solid var(--gps-border); border-radius: 100px; background: rgba(30,30,46,.55); color: var(--gps-copy); font-size: 10px; }
   .gps-detail-chip b { color: var(--gps-accent); font-size: 14px; font-weight: 500; }
@@ -504,13 +544,11 @@ const description = 'Capture photos and videos with GPS location, maps, date and
   .gps-camera-copy .gps-section-heading { margin-bottom: 32px; }
   .gps-camera-copy .gps-section-heading > p { max-width: 480px; }
   .gps-camera-features { display: grid; gap: 5px; }
-  .gps-camera-feature { display: grid; grid-template-columns: 35px 1fr 25px; align-items: start; gap: 15px; width: 100%; padding: 16px 15px; border: 1px solid transparent; border-radius: 14px; background: transparent; color: inherit; text-align: left; cursor: pointer; transition: background .25s ease, border-color .25s ease, transform .25s ease; }
+  .gps-camera-feature { display: grid; grid-template-columns: minmax(0, 1fr) 25px; align-items: start; gap: 15px; width: 100%; padding: 16px 15px; border: 1px solid transparent; border-radius: 14px; background: transparent; color: inherit; text-align: left; cursor: pointer; transition: background .25s ease, border-color .25s ease, transform .25s ease; }
   .gps-camera-feature:hover, .gps-camera-feature.is-active { background: rgba(30,30,46,.78); border-color: rgba(187,134,252,.22); }
   .gps-camera-feature.is-active { transform: translateX(6px); }
-  .gps-feature-number { padding-top: 2px; color: #736985; font-size: 9px; }
-  .gps-camera-feature.is-active .gps-feature-number { color: var(--gps-accent); }
   .gps-camera-feature h3 { margin: 0; font-family: 'Instrument Sans', sans-serif; font-size: 17px; font-weight: 600; letter-spacing: -.02em; }
-  .gps-camera-feature p { margin: 5px 0 0; color: var(--gps-muted); font-size: 11px; line-height: 1.75; }
+  .gps-camera-feature p { margin: 7px 0 0; color: var(--gps-muted); font-size: 12px; line-height: 1.8; }
   .gps-feature-chevron { padding-top: 1px; color: #7b728b; font-size: 15px; transition: color .2s ease, transform .2s ease; }
   .gps-camera-feature.is-active .gps-feature-chevron { color: var(--gps-accent); transform: translate(2px,-2px); }
   .gps-camera-visual { position: relative; display: flex; justify-content: center; align-items: center; min-height: 580px; }
@@ -541,10 +579,9 @@ const description = 'Capture photos and videos with GPS location, maps, date and
   .gps-templates { background: linear-gradient(180deg, #17171f, #121212); }
   .gps-template-explorer { display: grid; grid-template-columns: .86fr 1.14fr; gap: 25px; padding: 18px; border: 1px solid var(--gps-border); border-radius: 25px; background: rgba(30,30,46,.58); }
   .gps-template-options { display: grid; align-content: start; gap: 7px; }
-  .gps-template-option { display: grid; grid-template-columns: 28px 1fr 20px; align-items: center; gap: 13px; width: 100%; min-height: 83px; padding: 13px 14px; border: 1px solid transparent; border-radius: 14px; background: transparent; color: var(--gps-text); text-align: left; cursor: pointer; transition: background .2s ease, border-color .2s ease, transform .2s ease; }
+  .gps-template-option { display: grid; grid-template-columns: minmax(0, 1fr) 20px; align-items: center; gap: 13px; width: 100%; min-height: 83px; padding: 13px 14px; border: 1px solid transparent; border-radius: 14px; background: transparent; color: var(--gps-text); text-align: left; cursor: pointer; transition: background .2s ease, border-color .2s ease, transform .2s ease; }
   .gps-template-option:hover, .gps-template-option.is-selected { border-color: rgba(187,134,252,.22); background: rgba(187,134,252,.08); }
   .gps-template-option.is-selected { transform: translateX(4px); }
-  .gps-template-option__num { align-self: start; padding-top: 2px; color: var(--gps-accent); font-size: 9px; font-weight: 700; }
   .gps-template-option strong, .gps-template-option small { display: block; }
   .gps-template-option strong { font-family: 'Instrument Sans', sans-serif; font-size: 15px; font-weight: 600; }
   .gps-template-option small { margin-top: 4px; color: var(--gps-muted); font-size: 10px; }
@@ -553,38 +590,185 @@ const description = 'Capture photos and videos with GPS location, maps, date and
   .gps-template-stage { min-width: 0; padding: 23px; border: 1px solid rgba(187,134,252,.13); border-radius: 18px; background: linear-gradient(135deg, #252536, #191925); }
   .gps-template-stage__top { display: flex; align-items: center; justify-content: space-between; gap: 15px; color: #9189a0; font-size: 8px; }
   .gps-template-stage__live { display: inline-flex; align-items: center; gap: 7px; color: #b8adc9; font-size: 7px; letter-spacing: .1em; }
-  .gps-template-stage__live i { width: 6px; height: 6px; border-radius: 50%; background: #77D4A3; }
-  .gps-template-preview { position: relative; display: flex; min-height: 300px; align-items: flex-end; overflow: hidden; margin-top: 19px; padding: 16px; border: 1px solid rgba(255,255,255,.15); border-radius: 14px; background: linear-gradient(160deg, #465a65, #263945 42%, #131b24); transition: background .3s ease; }
-  .gps-template-preview::before { position: absolute; inset: 0; background: radial-gradient(ellipse at 74% 24%, rgba(187,134,252,.24), transparent 40%), linear-gradient(135deg, rgba(255,255,255,.06), transparent 40%); content: ''; }
-  .gps-template-preview__map { position: absolute; inset: 0; opacity: .56; overflow: hidden; }
-  .gps-map-road { position: absolute; display: block; height: 1px; background: rgba(225,231,239,.3); transform-origin: center; }
-  .gps-map-road--one { width: 130%; top: 40%; left: -15%; transform: rotate(-22deg); }
-  .gps-map-road--two { width: 120%; top: 61%; left: -10%; transform: rotate(23deg); }
-  .gps-map-road--three { width: 85%; top: 23%; left: 29%; transform: rotate(68deg); }
-  .gps-map-pin { position: absolute; top: 22%; right: 25%; display: grid; place-items: center; width: 42px; height: 42px; border: 1px solid rgba(255,255,255,.35); border-radius: 50% 50% 50% 7px; background: #8f55dc; color: white; font-size: 20px; transform: rotate(-45deg); box-shadow: 0 8px 22px rgba(0,0,0,.35); }
-  .gps-map-pin::first-letter { transform: rotate(45deg); }
-  .gps-template-preview__stamp { position: relative; z-index: 2; width: 100%; padding: 17px 18px; border: 1px solid rgba(255,255,255,.18); border-radius: 11px; background: rgba(15,19,27,.86); backdrop-filter: blur(9px); -webkit-backdrop-filter: blur(9px); transition: border-radius .25s ease, border-color .25s ease, background .25s ease; }
-  .gps-template-preview__category { display: block; color: #c7a4f3; font-size: 7px; letter-spacing: .15em; }
-  .gps-template-preview__stamp strong { display: block; margin-top: 6px; color: #fff; font-family: 'Instrument Sans', sans-serif; font-size: 20px; font-weight: 600; }
-  .gps-template-preview__stamp > span:nth-child(3) { display: block; margin-top: 3px; color: #c3c4ce; font-size: 10px; }
-  .gps-template-preview__meta { display: flex; justify-content: space-between; gap: 10px; margin-top: 14px; padding-top: 11px; border-top: 1px solid rgba(255,255,255,.15); color: #d1c9dc; font-size: 7px; letter-spacing: .12em; }
-  .gps-template-preview__meta b { color: #b9a3d6; font-weight: 600; }
-  .gps-template-stage[data-template-stage='corporate'] .gps-template-preview__stamp { border-radius: 4px; border-left: 4px solid #BB86FC; background: rgba(11,18,27,.91); }
-  .gps-template-stage[data-template-stage='adventure'] .gps-template-preview { background: linear-gradient(145deg, #53695d, #263e39 50%, #111d1c); }
-  .gps-template-stage[data-template-stage='adventure'] .gps-template-preview__stamp { border-radius: 18px 18px 4px 18px; background: rgba(17,31,28,.83); }
-  .gps-template-stage[data-template-stage='engineering'] .gps-template-preview { background: linear-gradient(150deg, #485366, #283446 52%, #131b28); }
-  .gps-template-stage[data-template-stage='engineering'] .gps-template-preview__stamp { border-radius: 3px; border: 1px dashed rgba(187,134,252,.55); background: rgba(10,17,27,.9); }
-  .gps-template-stage__note { margin: 12px 0 0; color: #837b90; font-size: 9px; line-height: 1.6; }
+  .gps-template-stage__live i { width: 6px; height: 6px; border-radius: 50%; background: #77D4A3; box-shadow: 0 0 9px rgba(119,212,163,.4); }
+  .gps-template-preview { position: relative; display: flex; min-height: 330px; align-items: flex-end; overflow: hidden; margin-top: 19px; padding: 20px; border: 1px solid rgba(255,255,255,.15); border-radius: 14px; background: linear-gradient(145deg, #596b70 0%, #334951 46%, #182a32 100%); isolation: isolate; transition: background .45s ease, border-color .35s ease; }
+  .gps-template-preview::before { position: absolute; z-index: 0; inset: 0; background: radial-gradient(ellipse at 72% 20%, rgba(187,134,252,.18), transparent 36%), linear-gradient(135deg, rgba(255,255,255,.06), transparent 44%); content: ''; pointer-events: none; }
+  .gps-template-preview__scene { position: absolute; z-index: 1; inset: 0; overflow: hidden; opacity: .85; transition: opacity .4s ease; }
+  .gps-scene-road { position: absolute; display: block; height: 2px; border-radius: 50%; background: rgba(235,242,244,.42); box-shadow: 0 0 0 5px rgba(235,242,244,.035); transform-origin: center; }
+  .gps-scene-road--one { width: 130%; top: 34%; left: -15%; transform: rotate(-22deg); }
+  .gps-scene-road--two { width: 120%; top: 65%; left: -10%; transform: rotate(23deg); }
+  .gps-scene-road--three { width: 85%; top: 18%; left: 29%; transform: rotate(68deg); }
+  .gps-scene-park { position: absolute; top: 12%; left: 9%; width: 26%; height: 30%; border: 1px solid rgba(207,232,204,.22); border-radius: 38% 62% 44% 56%; background: rgba(105,155,112,.24); transform: rotate(-17deg); }
+  .gps-scene-water { position: absolute; right: -12%; bottom: 7%; width: 44%; height: 29%; border-radius: 50%; background: rgba(119,180,196,.19); transform: rotate(-18deg); }
+  .gps-scene-pin { position: absolute; top: 17%; right: 24%; display: grid; place-items: center; width: 39px; height: 39px; border: 1px solid rgba(255,255,255,.42); border-radius: 50% 50% 50% 8px; background: #8f55dc; color: white; font-size: 17px; transform: rotate(-45deg); box-shadow: 0 8px 22px rgba(0,0,0,.35); }
+  .gps-scene-grid { position: absolute; inset: 0; opacity: 0; background-image: linear-gradient(rgba(185,205,231,.17) 1px, transparent 1px), linear-gradient(90deg, rgba(185,205,231,.17) 1px, transparent 1px); background-size: 28px 28px; transition: opacity .35s ease; }
+  .gps-scene-horizon { position: absolute; right: -8%; bottom: 0; left: -8%; height: 48%; opacity: 0; background: linear-gradient(155deg, transparent 0 17%, rgba(29,74,65,.7) 17.5% 44%, transparent 44.5%), linear-gradient(28deg, transparent 0 30%, rgba(53,100,78,.78) 30.5% 65%, transparent 65.5%); transition: opacity .4s ease; }
+  .gps-stamp-card { position: relative; z-index: 2; display: none; width: 100%; animation: gps-stamp-in .46s cubic-bezier(.2,.75,.25,1) both; }
+  .gps-template-preview .gps-stamp-card { display: none; }
+  .gps-template-stage[data-template-stage='classic'] [data-stamp-preview='classic'] { display: grid; }
+  .gps-template-stage[data-template-stage='corporate'] [data-stamp-preview='corporate'], .gps-template-stage[data-template-stage='adventure'] [data-stamp-preview='adventure'], .gps-template-stage[data-template-stage='engineering'] [data-stamp-preview='engineering'] { display: block; }
+  .gps-stamp-eyebrow { display: block; font-family: 'Inter', sans-serif; font-size: 7px; font-weight: 700; letter-spacing: .16em; line-height: 1.5; }
+  .gps-stamp-address { display: block; margin-top: 5px; font-family: 'Inter', sans-serif; font-size: 9px; letter-spacing: .025em; line-height: 1.5; }
+  .gps-stamp-card strong { display: block; font-family: 'Instrument Sans', sans-serif; font-weight: 600; letter-spacing: -.015em; line-height: 1.12; }
+  .gps-stamp-card--classic { display: grid; grid-template-columns: 38px 1fr; align-items: center; gap: 12px; max-width: 100%; padding: 15px 17px; border: 1px solid rgba(255,255,255,.22); border-radius: 12px; background: rgba(13,19,27,.88); box-shadow: 0 18px 36px rgba(0,0,0,.28); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+  .gps-stamp-classic__pin { display: grid; place-items: center; width: 36px; height: 36px; border: 1px solid rgba(187,134,252,.4); border-radius: 11px; background: rgba(187,134,252,.16); color: #d7baff; font-size: 20px; }
+  .gps-stamp-classic__content { min-width: 0; }
+  .gps-stamp-card--classic .gps-stamp-eyebrow { color: #d5b8fa; }
+  .gps-stamp-card--classic strong { margin-top: 4px; color: #fff; font-size: 19px; }
+  .gps-stamp-card--classic .gps-stamp-address { color: #c5c9d1; }
+  .gps-stamp-classic__meta { display: flex; align-items: center; gap: 9px; margin-top: 10px; color: #9c9eac; font-size: 7px; font-weight: 700; letter-spacing: .12em; }
+  .gps-stamp-classic__meta i { width: 3px; height: 3px; border-radius: 50%; background: #bb86fc; }
+  .gps-stamp-card--corporate { padding: 16px 18px 12px; border: 1px solid rgba(255,255,255,.62); border-radius: 5px; background: linear-gradient(115deg, #f8f7f4, #e8e7e2); color: #262b32; box-shadow: 0 18px 38px rgba(0,0,0,.3); }
+  .gps-stamp-corporate__header { display: flex; align-items: center; gap: 9px; padding-bottom: 11px; border-bottom: 1px solid rgba(35,45,52,.17); }
+  .gps-stamp-corporate__mark { display: grid; place-items: center; width: 28px; height: 28px; border-radius: 5px; background: #282b38; color: #f1e9fb; font-family: 'Instrument Sans', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: .03em; }
+  .gps-stamp-corporate__header > span:nth-child(2) { display: grid; gap: 2px; }
+  .gps-stamp-corporate__header b { color: #343844; font-size: 7px; letter-spacing: .13em; }
+  .gps-stamp-corporate__header small { color: #85838a; font-size: 6px; letter-spacing: .13em; }
+  .gps-stamp-corporate__status { margin-left: auto; padding: 5px 7px; border: 1px solid rgba(38,112,88,.25); border-radius: 3px; color: #287456; font-size: 6px; font-weight: 700; letter-spacing: .1em; }
+  .gps-stamp-corporate__body { padding: 13px 0 11px; }
+  .gps-stamp-card--corporate .gps-stamp-eyebrow { color: #7c5ca2; font-size: 6px; }
+  .gps-stamp-card--corporate strong { margin-top: 5px; color: #252b34; font-size: 19px; }
+  .gps-stamp-card--corporate .gps-stamp-address { color: #6d737c; font-size: 8px; }
+  .gps-stamp-corporate__details { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; padding: 10px 0; border-top: 1px solid rgba(35,45,52,.15); border-bottom: 1px solid rgba(35,45,52,.15); }
+  .gps-stamp-corporate__details span { display: grid; gap: 4px; }
+  .gps-stamp-corporate__details small { color: #96939a; font-size: 6px; font-weight: 700; letter-spacing: .12em; }
+  .gps-stamp-corporate__details b { color: #424650; font-size: 8px; font-weight: 600; }
+  .gps-stamp-corporate__footer { display: flex; justify-content: space-between; padding-top: 9px; color: #99959c; font-size: 6px; font-weight: 700; letter-spacing: .13em; }
+  .gps-template-stage[data-template-stage='corporate'] .gps-template-preview { background: linear-gradient(145deg, #69757b, #47545b 50%, #28343b); }
+  .gps-stamp-card--adventure { max-width: 95%; margin-inline: auto; padding: 17px 19px 15px; overflow: hidden; border: 1px solid rgba(235,240,218,.35); border-radius: 20px 20px 5px 20px; background: linear-gradient(130deg, rgba(19,48,42,.94), rgba(27,67,54,.9)); color: #f4f0da; box-shadow: 0 18px 38px rgba(0,0,0,.32); }
+  .gps-stamp-adventure__top { display: flex; align-items: center; justify-content: space-between; }
+  .gps-stamp-adventure__badge { padding: 6px 9px; border: 1px solid rgba(230,224,187,.35); border-radius: 100px; color: #e8dcae; font-size: 7px; font-weight: 700; letter-spacing: .16em; }
+  .gps-stamp-adventure__symbol { display: grid; place-items: center; width: 28px; height: 28px; border: 1px solid rgba(230,224,187,.35); border-radius: 50%; color: #e5d59d; font-size: 15px; }
+  .gps-stamp-adventure__body { padding: 15px 0 13px; }
+  .gps-stamp-card--adventure .gps-stamp-eyebrow { color: #c9d3a9; }
+  .gps-stamp-card--adventure strong { margin-top: 5px; color: #fff7dc; font-size: 23px; }
+  .gps-stamp-card--adventure .gps-stamp-address { color: #c3d1c2; }
+  .gps-stamp-adventure__route { display: flex; align-items: center; gap: 7px; padding-top: 11px; border-top: 1px solid rgba(240,235,210,.2); }
+  .gps-stamp-adventure__route-pin { width: 7px; height: 7px; border: 2px solid #e4d7a5; border-radius: 50%; box-shadow: 0 0 0 3px rgba(228,215,165,.12); }
+  .gps-stamp-adventure__route > i { width: 42px; height: 1px; background: repeating-linear-gradient(90deg, #d8c994 0 4px, transparent 4px 7px); }
+  .gps-stamp-adventure__route-label { margin-left: auto; color: #d6d6bd; font-size: 6px; font-weight: 700; letter-spacing: .13em; }
+  .gps-stamp-adventure__route-label b { color: #d8c994; }
+  .gps-template-stage[data-template-stage='adventure'] .gps-template-preview { background: linear-gradient(180deg, #82998e 0%, #476e63 42%, #263e38 100%); }
+  .gps-template-stage[data-template-stage='adventure'] .gps-scene-horizon { opacity: 1; }
+  .gps-template-stage[data-template-stage='adventure'] .gps-scene-park { border-color: rgba(225,232,193,.22); background: rgba(193,208,151,.17); }
+  .gps-template-stage[data-template-stage='adventure'] .gps-scene-road { opacity: .12; }
+  .gps-stamp-card--engineering { padding: 15px 17px 12px; border: 1px solid rgba(151,185,222,.42); border-radius: 4px; background: rgba(10,22,37,.94); color: #dce9f8; box-shadow: 0 18px 38px rgba(0,0,0,.36); }
+  .gps-stamp-engineering__header { display: flex; justify-content: space-between; gap: 9px; padding-bottom: 9px; border-bottom: 1px solid rgba(151,185,222,.24); color: #93b3d8; font-family: 'Inter', sans-serif; font-size: 6px; font-weight: 700; letter-spacing: .12em; }
+  .gps-stamp-engineering__header b { color: #b8c9dd; }
+  .gps-stamp-engineering__title { display: flex; align-items: center; gap: 10px; padding: 13px 0 11px; }
+  .gps-stamp-engineering__crosshair { display: grid; place-items: center; width: 31px; height: 31px; border: 1px solid rgba(151,185,222,.4); color: #a9c9ec; font-size: 18px; }
+  .gps-stamp-engineering__title > span:last-child { display: grid; gap: 4px; }
+  .gps-stamp-engineering__title small { color: #839dbb; font-size: 6px; font-weight: 700; letter-spacing: .14em; }
+  .gps-stamp-card--engineering strong { color: #f0f5fb; font-size: 19px; }
+  .gps-stamp-engineering__data { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; padding: 10px; border: 1px solid rgba(151,185,222,.22); background: rgba(73,111,151,.09); }
+  .gps-stamp-engineering__data span { display: grid; gap: 4px; }
+  .gps-stamp-engineering__data small { color: #809cbb; font-size: 6px; font-weight: 700; letter-spacing: .12em; }
+  .gps-stamp-engineering__data b { color: #d5e3f2; font-size: 8px; font-weight: 500; }
+  .gps-stamp-engineering__data .gps-stamp-engineering__wide { grid-column: 1 / -1; padding-top: 7px; border-top: 1px solid rgba(151,185,222,.17); }
+  .gps-stamp-engineering__footer { display: flex; justify-content: space-between; gap: 8px; margin-top: 10px; color: #87a9ce; font-size: 6px; font-weight: 700; letter-spacing: .13em; }
+  .gps-template-stage[data-template-stage='engineering'] .gps-template-preview { background: linear-gradient(145deg, #526275, #2d4056 55%, #172638); }
+  .gps-template-stage[data-template-stage='engineering'] .gps-scene-grid { opacity: .55; }
+  .gps-template-stage[data-template-stage='engineering'] .gps-scene-park, .gps-template-stage[data-template-stage='engineering'] .gps-scene-water { opacity: .12; }
+  .gps-template-stage[data-template-stage='corporate'] .gps-scene-park, .gps-template-stage[data-template-stage='corporate'] .gps-scene-water { opacity: .2; }
+  .gps-template-stage__note { margin: 12px 0 0; color: #938a9f; font-size: 10px; line-height: 1.65; letter-spacing: .01em; word-spacing: .025em; }
+  @keyframes gps-stamp-in { from { opacity: 0; transform: translateY(12px) scale(.985); filter: blur(3px); } to { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); } }
   .gps-workflow { background: #121212; }
-  .gps-workflow-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 19px; }
-  .gps-work-card { min-width: 0; overflow: hidden; border: 1px solid var(--gps-border); border-radius: 20px; background: #1a1a25; transition: transform .3s var(--gps-ease), border-color .3s ease; }
-  .gps-work-card:hover { transform: translateY(-6px); border-color: rgba(187,134,252,.4); }
-  .gps-work-card__image { display: grid; place-items: center; height: 325px; padding: 18px; overflow: hidden; background: radial-gradient(ellipse at 50% 50%, rgba(187,134,252,.13), transparent 67%), #211f2e; }
-  .gps-work-card__image img { width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 12px 22px rgba(0,0,0,.25)); }
-  .gps-work-card__image--contain { background: radial-gradient(ellipse at 50% 50%, rgba(187,134,252,.13), transparent 67%), #252536; }
-  .gps-work-card__image--contain img { width: auto; max-width: 100%; height: 100%; }
+  .gps-workflow-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 19px; align-items: stretch; }
+  .gps-work-card { min-width: 0; overflow: hidden; border: 1px solid var(--gps-border); border-radius: 20px; background: linear-gradient(160deg, #1e1e2e, #191923); transition: transform .3s var(--gps-ease), border-color .3s ease, box-shadow .3s ease; }
+  .gps-work-card:hover { transform: translateY(-6px); border-color: rgba(187,134,252,.4); box-shadow: 0 22px 55px rgba(0,0,0,.22); }
+  .gps-work-card__art { position: relative; display: grid; min-height: 260px; place-items: center; overflow: hidden; margin: 0; isolation: isolate; background: radial-gradient(ellipse at 50% 52%, rgba(187,134,252,.15), transparent 68%), linear-gradient(145deg, #242437, #191923); }
+  .gps-work-card__art::before { position: absolute; z-index: -1; inset: 0; background: radial-gradient(circle at 50% 50%, rgba(255,255,255,.035), transparent 58%), linear-gradient(135deg, rgba(255,255,255,.025), transparent 55%); content: ''; }
+  .gps-art-orbit { position: absolute; width: 205px; height: 205px; border: 1px solid rgba(187,134,252,.12); border-radius: 50%; }
+  .gps-art-orbit--one { transform: scaleX(1.3) rotate(-23deg); }
+  .gps-art-orbit--two { width: 155px; height: 155px; border-style: dashed; opacity: .6; transform: rotate(28deg); }
+  .gps-organise-art__folder { position: absolute; width: 205px; height: 126px; border: 1px solid rgba(255,255,255,.2); border-radius: 11px 14px 14px 14px; background: linear-gradient(145deg, #5f4b85, #302b4c); box-shadow: 0 19px 33px rgba(0,0,0,.28); }
+  .gps-organise-art__folder::before { position: absolute; top: -12px; left: 13px; width: 72px; height: 15px; border: 1px solid rgba(255,255,255,.15); border-bottom: 0; border-radius: 8px 8px 0 0; background: #6c5790; content: ''; }
+  .gps-organise-art__folder--back { background: linear-gradient(145deg, #3c6a78, #243c55); transform: translate(-24px,-24px) rotate(-10deg); animation: gps-folder-back 6s ease-in-out infinite; }
+  .gps-organise-art__folder--middle { background: linear-gradient(145deg, #6d5c94, #3d355c); transform: translate(19px,-12px) rotate(8deg); animation: gps-folder-middle 5.3s ease-in-out infinite; }
+  .gps-organise-art__folder--front { padding: 24px 19px 15px; background: linear-gradient(145deg, #8069a9, #443c6b); animation: gps-folder-front 5.8s ease-in-out infinite; }
+  .gps-folder-mark { position: absolute; top: 19px; right: 17px; display: grid; place-items: center; width: 27px; height: 27px; border: 1px solid rgba(255,255,255,.25); border-radius: 8px; background: rgba(255,255,255,.12); color: #eee4ff; font-size: 15px; }
+  .gps-folder-title { display: block; color: #f2edfa; font-size: 8px; font-weight: 700; letter-spacing: .14em; }
+  .gps-folder-line { display: block; width: 76%; height: 4px; margin-top: 12px; border-radius: 5px; background: rgba(255,255,255,.27); }
+  .gps-folder-line--short { width: 48%; margin-top: 7px; background: rgba(255,255,255,.16); }
+  .gps-folder-items { display: flex; gap: 5px; margin-top: 12px; }
+  .gps-folder-items i { width: 18px; height: 13px; border: 1px solid rgba(255,255,255,.16); border-radius: 3px; background: rgba(210,201,235,.25); }
+  .gps-art-float-label { position: absolute; z-index: 3; display: inline-flex; align-items: center; gap: 7px; padding: 8px 11px; border: 1px solid rgba(255,255,255,.13); border-radius: 100px; background: rgba(19,19,29,.84); color: #d9c8f4; font-size: 7px; font-weight: 700; letter-spacing: .14em; box-shadow: 0 8px 22px rgba(0,0,0,.2); backdrop-filter: blur(9px); }
+  .gps-art-float-label--organise { top: 23px; right: 20px; }
+  .gps-history-art { background: radial-gradient(ellipse at 50% 58%, rgba(77,174,160,.13), transparent 68%), linear-gradient(145deg, #1c2930, #171d29); }
+  .gps-history-art .gps-art-float-label { color: #b4e7dc; }
+  .gps-history-art__panel { position: relative; width: min(82%, 290px); padding: 18px; border: 1px solid rgba(161,219,207,.2); border-radius: 15px; background: linear-gradient(145deg, rgba(37,58,65,.97), rgba(27,38,50,.97)); box-shadow: 0 21px 42px rgba(0,0,0,.35); animation: gps-history-float 5.8s ease-in-out infinite; }
+  .gps-history-art__header { display: flex; align-items: center; gap: 10px; padding-bottom: 14px; border-bottom: 1px solid rgba(197,228,220,.12); }
+  .gps-history-art__avatar { display: grid; place-items: center; width: 35px; height: 35px; border: 1px solid rgba(116,205,184,.3); border-radius: 11px; background: rgba(83,175,156,.14); color: #91d8c6; }
+  .gps-history-art__avatar svg { width: 19px; height: 19px; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; }
+  .gps-history-art__header > span:nth-child(2) { display: grid; gap: 3px; }
+  .gps-history-art__header b { color: #e4f3ee; font-size: 8px; letter-spacing: .13em; }
+  .gps-history-art__header small { color: #8fa9aa; font-size: 8px; }
+  .gps-history-art__menu { width: 4px; height: 4px; margin-left: auto; border-radius: 50%; background: #8ab7ae; box-shadow: 0 7px #8ab7ae, 0 -7px #8ab7ae; }
+  .gps-history-art__stats { display: grid; gap: 11px; padding: 14px 0; }
+  .gps-history-stat { display: grid; grid-template-columns: 28px minmax(0,1fr); align-items: center; gap: 8px; }
+  .gps-history-stat__icon { display: grid; place-items: center; width: 27px; height: 27px; border-radius: 8px; font-size: 11px; }
+  .gps-history-stat__icon--photo { background: rgba(126,190,173,.15); color: #9ce0cd; }
+  .gps-history-stat__icon--video { background: rgba(160,146,211,.15); color: #c4b4f1; }
+  .gps-history-stat > span:nth-child(2) { display: grid; gap: 3px; }
+  .gps-history-stat b { color: #d8e8e3; font-size: 7px; letter-spacing: .11em; }
+  .gps-history-stat small { color: #87a1a2; font-size: 7px; }
+  .gps-history-stat__bar { grid-column: 2; display: block; height: 4px; overflow: hidden; margin-top: -3px; border-radius: 6px; background: rgba(255,255,255,.09); }
+  .gps-history-stat__bar em { display: block; width: 72%; height: 100%; border-radius: inherit; background: linear-gradient(90deg, #65bba8, #a8ddc7); animation: gps-history-bar 3.2s ease-in-out infinite alternate; }
+  .gps-history-stat__bar--video em { width: 46%; background: linear-gradient(90deg, #8976c2, #c5b7ef); animation-delay: .5s; }
+  .gps-history-art__activity { display: flex; justify-content: space-between; align-items: end; gap: 12px; padding-top: 12px; border-top: 1px solid rgba(197,228,220,.12); }
+  .gps-history-art__activity > div { display: grid; gap: 4px; }
+  .gps-history-art__activity b { color: #d5e8e1; font-size: 7px; letter-spacing: .11em; }
+  .gps-history-art__activity small { color: #8ba3a0; font-size: 7px; }
+  .gps-history-art__chart { display: flex; height: 34px; align-items: end; gap: 3px; }
+  .gps-history-art__chart i { width: 5px; height: 30%; transform-origin: bottom; border-radius: 3px 3px 1px 1px; background: #69baa6; opacity: .72; animation: gps-history-chart 1.8s ease-in-out infinite alternate; }
+  .gps-history-art__chart i:nth-child(3n) { height: 76%; animation-delay: .3s; }
+  .gps-history-art__chart i:nth-child(3n + 1) { height: 48%; animation-delay: .6s; }
+  .gps-history-art__chart i:nth-child(4n) { height: 92%; animation-delay: .9s; }
+  .gps-art-float-label--history { right: 15px; bottom: 18px; }
+  .gps-art-float-label--history i { width: 5px; height: 5px; border-radius: 50%; background: #7bd0b5; box-shadow: 0 0 9px rgba(123,208,181,.8); }
+  .gps-report-art { background: radial-gradient(ellipse at 50% 48%, rgba(187,134,252,.18), transparent 66%), linear-gradient(145deg, #292338, #191923); }
+  .gps-report-art__back-sheet { position: absolute; width: 174px; height: 220px; border: 1px solid rgba(255,255,255,.16); border-radius: 7px; background: linear-gradient(145deg, #c9c0d9, #9087a8); transform: translate(18px,-4px) rotate(8deg); opacity: .5; }
+  .gps-report-sheet { position: relative; width: 174px; min-height: 224px; padding: 13px 13px 10px; border: 1px solid rgba(255,255,255,.7); border-radius: 6px; background: linear-gradient(145deg, #fbfaf8, #e8e7e3); color: #2a2e37; box-shadow: 0 20px 40px rgba(0,0,0,.35); transform: rotate(-4deg); animation: gps-report-float 5.7s ease-in-out infinite; }
+  .gps-report-sheet::after { position: absolute; inset: 0; border-radius: inherit; background: linear-gradient(180deg, transparent, rgba(147,112,192,.12), transparent); content: ''; pointer-events: none; animation: gps-report-scan 4.6s ease-in-out infinite; }
+  .gps-report-sheet header { display: flex; align-items: center; gap: 6px; padding-bottom: 7px; border-bottom: 1px solid rgba(44,49,58,.14); color: #85818d; font-size: 5px; font-weight: 700; letter-spacing: .12em; }
+  .gps-report-sheet__pdf { padding: 4px 5px; border-radius: 3px; background: #6b45a0; color: white; font-size: 6px; letter-spacing: .06em; }
+  .gps-report-sheet header i { width: 5px; height: 5px; margin-left: auto; border-radius: 50%; background: #76b89b; }
+  .gps-report-sheet__brand { display: flex; align-items: center; gap: 6px; padding: 9px 0; }
+  .gps-report-sheet__brandmark { display: grid; place-items: center; width: 20px; height: 20px; border-radius: 4px; background: #292b3a; color: #e9ddf7; font-size: 7px; font-weight: 700; }
+  .gps-report-sheet__brand > span:last-child { display: grid; gap: 2px; }
+  .gps-report-sheet__brand b { color: #30333d; font-size: 7px; letter-spacing: .08em; }
+  .gps-report-sheet__brand small { color: #96939a; font-size: 4px; letter-spacing: .14em; }
+  .gps-report-sheet__photo { position: relative; height: 70px; overflow: hidden; border-radius: 3px; background: linear-gradient(160deg, #758a8a, #455e5a 48%, #263b42); }
+  .gps-report-sheet__photo::before { position: absolute; right: -12%; bottom: -40%; width: 75%; height: 100%; border-radius: 50%; background: rgba(160,193,165,.6); content: ''; }
+  .gps-report-sheet__photo::after { position: absolute; bottom: -30%; left: -10%; width: 80%; height: 82%; border-radius: 50%; background: rgba(47,91,75,.8); content: ''; }
+  .gps-report-sheet__photo-pin { position: absolute; z-index: 1; top: 13px; right: 23px; display: grid; place-items: center; width: 17px; height: 17px; border: 1px solid rgba(255,255,255,.6); border-radius: 50%; background: #8b57d0; color: white; font-size: 9px; }
+  .gps-report-sheet__photo > i { position: absolute; z-index: 1; top: 25px; left: -10px; width: 110%; height: 1px; background: rgba(255,255,255,.35); transform: rotate(-12deg); }
+  .gps-report-sheet__photo > i:nth-of-type(2) { top: 43px; transform: rotate(9deg); }
+  .gps-report-sheet__photo > i:nth-of-type(3) { top: 11px; left: 60%; width: 40%; transform: rotate(67deg); }
+  .gps-report-sheet__title-line { width: 58%; height: 5px; margin-top: 9px; border-radius: 3px; background: #4d475b; }
+  .gps-report-sheet__line { width: 76%; height: 3px; margin-top: 5px; border-radius: 3px; background: #d1ced3; }
+  .gps-report-sheet__line--long { width: 92%; }
+  .gps-report-sheet__details { display: grid; grid-template-columns: 1fr 1fr; gap: 7px; padding: 8px 0; }
+  .gps-report-sheet__details span { display: grid; gap: 3px; }
+  .gps-report-sheet__details small { color: #a09ba5; font-size: 4px; font-weight: 700; letter-spacing: .12em; }
+  .gps-report-sheet__details b { color: #54515d; font-size: 5px; font-weight: 600; }
+  .gps-report-sheet footer { display: flex; justify-content: space-between; padding-top: 7px; border-top: 1px solid rgba(44,49,58,.15); color: #7c7489; font-size: 5px; font-weight: 700; letter-spacing: .1em; }
+  .gps-report-sheet footer span { display: inline-flex; align-items: center; gap: 4px; }
+  .gps-report-sheet footer i { width: 4px; height: 4px; border-radius: 50%; background: #55a782; }
+  .gps-report-sheet footer b { color: #66459a; }
+  .gps-art-float-label--report { top: 24px; right: 20px; color: #ddc9fa; }
   .gps-work-card__body { padding: 24px 23px 27px; }
+  .gps-card-index { color: var(--gps-accent); font-size: 9px; }
   .gps-work-card h3 { min-height: 2.25em; font-size: 23px; }
+  .gps-work-card p { min-height: 5.5em; font-size: 13px; }
+  @keyframes gps-folder-back { 0%,100% { transform: translate(-24px,-24px) rotate(-10deg); } 50% { transform: translate(-29px,-29px) rotate(-12deg); } }
+  @keyframes gps-folder-middle { 0%,100% { transform: translate(19px,-12px) rotate(8deg); } 50% { transform: translate(24px,-17px) rotate(10deg); } }
+  @keyframes gps-folder-front { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+  @keyframes gps-history-float { 0%,100% { transform: translateY(0) rotate(-1deg); } 50% { transform: translateY(-7px) rotate(0deg); } }
+  @keyframes gps-history-bar { from { filter: brightness(.85); } to { filter: brightness(1.25); } }
+  @keyframes gps-history-chart { from { transform: scaleY(.72); opacity: .55; } to { transform: scaleY(1); opacity: .95; } }
+  @keyframes gps-report-float { 0%,100% { transform: rotate(-4deg) translateY(0); } 50% { transform: rotate(-2deg) translateY(-7px); } }
+  @keyframes gps-report-scan { 0%,100% { opacity: 0; transform: translateY(-16%); } 45%,65% { opacity: .7; } }
   .gps-usecases { background: linear-gradient(180deg, #17171f, #14141a); }
   .gps-usecases__layout { display: grid; grid-template-columns: .8fr 1.2fr; align-items: start; gap: clamp(55px, 8vw, 115px); }
   .gps-usecases__intro { position: sticky; top: 135px; }
@@ -597,7 +781,6 @@ const description = 'Capture photos and videos with GPS location, maps, date and
   .gps-usecase__icon svg { width: 21px; height: 21px; fill: none; stroke: currentColor; stroke-width: 1.45; stroke-linecap: round; stroke-linejoin: round; }
   .gps-usecase h3 { max-width: 220px; margin: 22px 0 0; font-family: 'Instrument Sans', sans-serif; font-size: 19px; font-weight: 600; letter-spacing: -.03em; line-height: 1.2; }
   .gps-usecase p { margin: 10px 0 0; color: var(--gps-muted); font-size: 10px; line-height: 1.8; }
-  .gps-usecase__index { position: absolute; top: 25px; right: 22px; color: #746b82; font-size: 9px; font-weight: 700; }
   .gps-control-note { padding-top: 100px; padding-bottom: 100px; background: #121212; }
   .gps-control-note__panel { display: grid; grid-template-columns: 170px 1fr; align-items: center; gap: clamp(40px, 6vw, 86px); padding: clamp(30px, 5vw, 62px); border: 1px solid var(--gps-border); border-radius: 25px; background: radial-gradient(ellipse at 15% 50%, rgba(98,0,234,.17), transparent 44%), linear-gradient(120deg, #1e1e2e, #191923); }
   .gps-control-note__symbol { display: grid; place-items: center; width: 145px; height: 145px; border: 1px solid rgba(255,255,255,.35); border-radius: 32px; background: linear-gradient(145deg, #f5efff, #dfeaff); box-shadow: 0 16px 45px rgba(0,0,0,.2); }
@@ -639,6 +822,17 @@ const description = 'Capture photos and videos with GPS location, maps, date and
   :global(html.gps-js) [data-reveal-delay='120'] { transition-delay: .12s; }
   :global(html.gps-js) [data-reveal-delay='140'] { transition-delay: .14s; }
   :global(html.gps-js) [data-reveal-delay='160'] { transition-delay: .16s; }
+  /* Give headings and reading text more breathing room across the whole page. */
+  .gps-page { letter-spacing: .01em; word-spacing: .025em; }
+  .gps-page p, .gps-page li { letter-spacing: .012em; word-spacing: .04em; }
+  .gps-page h1, .gps-page h2, .gps-page h3 { letter-spacing: -.022em; word-spacing: .015em; }
+  .gps-hero h1 { letter-spacing: -.025em; }
+  .gps-intro-band h2 { letter-spacing: -.02em; }
+  .gps-section-heading h2, .gps-edit-copy h2, .gps-usecases__intro h2, .gps-control-note h2, .gps-faq h2 { letter-spacing: -.025em; }
+  .gps-media-card h3, .gps-work-card h3 { letter-spacing: -.012em; }
+  .gps-camera-feature h3, .gps-usecase h3 { letter-spacing: -.01em; }
+  .gps-final-cta h2 { letter-spacing: -.025em; }
+  .gps-page button, .gps-page a { letter-spacing: .008em; }
   .gps-page button:focus-visible, .gps-page a:focus-visible, .gps-page summary:focus-visible { outline: 2px solid #D8B7FF; outline-offset: 4px; }
   @keyframes gps-float { 0%,100% { transform: translateY(0) rotate(2.3deg); } 50% { transform: translateY(-13px) rotate(1deg); } }
   @media (max-width: 1050px) {
@@ -649,7 +843,7 @@ const description = 'Capture photos and videos with GPS location, maps, date and
     .gps-section-heading--split { gap: 35px; }
     .gps-camera-layout { gap: 45px; }
     .gps-edit-layout { gap: 55px; }
-    .gps-work-card__image { height: 285px; }
+    .gps-work-card__art { min-height: 250px; }
   }
   @media (max-width: 780px) {
     .gps-wrap { width: min(100% - 36px, 600px); }
@@ -677,7 +871,7 @@ const description = 'Capture photos and videos with GPS location, maps, date and
     .gps-media-card__image img { height: 360px; }
     .gps-media-card__copy { padding: 0 17px 22px; }
     .gps-media-card h3 { font-size: 23px; }
-    .gps-media-card p { font-size: 11px; }
+    .gps-media-card p { font-size: 12px; }
     .gps-camera-layout { grid-template-columns: 1fr; gap: 36px; }
     .gps-camera-visual { min-height: 500px; }
     .gps-camera-visual__frame { width: min(100%, 410px); }
@@ -687,14 +881,12 @@ const description = 'Capture photos and videos with GPS location, maps, date and
     .gps-edit-visual img { height: 420px; }
     .gps-template-explorer { grid-template-columns: 1fr; }
     .gps-template-options { grid-template-columns: 1fr 1fr; }
-    .gps-template-option { min-height: 82px; padding: 11px; grid-template-columns: 20px 1fr; gap: 9px; }
+    .gps-template-option { min-height: 82px; padding: 11px; grid-template-columns: minmax(0, 1fr) 18px; gap: 9px; }
     .gps-template-option__arrow { display: none; }
     .gps-template-option strong { font-size: 13px; }
     .gps-template-option small { font-size: 9px; }
     .gps-workflow-grid { grid-template-columns: 1fr 1fr; }
-    .gps-work-card:last-child { grid-column: 1 / -1; display: grid; grid-template-columns: .85fr 1.15fr; align-items: center; }
-    .gps-work-card:last-child .gps-work-card__image { height: 100%; min-height: 300px; }
-    .gps-work-card:last-child .gps-work-card__body { padding-inline: 22px; }
+    .gps-work-card:last-child { grid-column: 1 / -1; }
     .gps-work-card h3 { font-size: 21px; }
     .gps-usecases__layout { grid-template-columns: 1fr; gap: 36px; }
     .gps-usecases__intro, .gps-faq .gps-section-heading { position: static; }
@@ -734,32 +926,33 @@ const description = 'Capture photos and videos with GPS location, maps, date and
     .gps-media-card__image img { height: 395px; }
     .gps-capture__detail-row { justify-content: flex-start; gap: 8px; }
     .gps-detail-chip { font-size: 9px; padding: 8px 11px; }
-    .gps-camera-feature { grid-template-columns: 26px 1fr 18px; gap: 10px; padding: 14px 10px; }
+    .gps-camera-feature { grid-template-columns: minmax(0, 1fr) 18px; gap: 10px; padding: 14px 10px; }
     .gps-camera-feature h3 { font-size: 15px; }
-    .gps-camera-feature p { font-size: 10px; }
+    .gps-camera-feature p { font-size: 11px; }
     .gps-camera-visual { min-height: 450px; }
     .gps-camera-visual__foot-note { display: none; }
     .gps-edit-visual { min-height: 430px; }
     .gps-edit-visual img { height: 370px; }
     .gps-template-explorer { padding: 11px; gap: 15px; }
     .gps-template-options { grid-template-columns: 1fr; gap: 5px; }
-    .gps-template-option { min-height: 63px; grid-template-columns: 25px 1fr 15px; padding: 9px 12px; }
+    .gps-template-option { min-height: 63px; grid-template-columns: minmax(0, 1fr) 15px; padding: 9px 12px; }
     .gps-template-option__arrow { display: block; }
     .gps-template-option strong { font-size: 14px; }
     .gps-template-stage { padding: 14px; }
     .gps-template-stage__top { align-items: flex-start; flex-direction: column; gap: 6px; }
-    .gps-template-preview { min-height: 260px; }
-    .gps-template-preview__stamp { padding: 14px; }
+    .gps-template-preview { min-height: 300px; padding: 13px; }
+    .gps-stamp-card--corporate { padding: 13px; }
+    .gps-stamp-card--adventure { padding: 14px; }
+    .gps-stamp-card--engineering { padding: 12px; }
+    .gps-work-card__art { min-height: 250px; }
     .gps-workflow-grid { grid-template-columns: 1fr; }
-    .gps-work-card:last-child { display: block; grid-column: auto; }
-    .gps-work-card__image { height: 330px; }
-    .gps-work-card:last-child .gps-work-card__image { min-height: 0; height: 330px; }
+    .gps-work-card:last-child { grid-column: auto; }
     .gps-work-card h3 { min-height: 0; font-size: 23px; }
+    .gps-work-card p { min-height: 0; font-size: 12px; }
     .gps-usecase-grid { grid-template-columns: 1fr 1fr; gap: 9px; }
     .gps-usecase { min-height: 220px; padding: 18px 14px; }
     .gps-usecase h3 { margin-top: 18px; font-size: 16px; }
-    .gps-usecase p { font-size: 9px; }
-    .gps-usecase__index { top: 17px; right: 14px; }
+    .gps-usecase p { font-size: 10px; }
     .gps-usecase__icon { width: 37px; height: 37px; }
     .gps-control-note { padding-block: 65px; }
     .gps-control-note__panel { grid-template-columns: 1fr; gap: 23px; padding: 25px 22px; }
