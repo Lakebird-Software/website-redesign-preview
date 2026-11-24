@@ -2108,3 +2108,302 @@ html[data-page-theme="finly"] .site-footer {
     transition-duration: .01ms !important;
   }
 }
+
+/* ==========================================================
+   FINLY — READABILITY, ALIGNMENT & INTERACTION REFINEMENT
+   ========================================================== */
+
+/* Better spacing between words */
+.finly-page h1,
+.finly-page h2,
+.finly-page h3 {
+  word-spacing: .035em;
+}
+
+.finly-page p {
+  word-spacing: .035em;
+}
+
+/* Section labels */
+.finly-page .finly-eyebrow {
+  font-size: 11px;
+  letter-spacing: .13em;
+  word-spacing: .11em;
+  line-height: 1.75;
+}
+
+/* Headings: consistent separation between phrases */
+.finly-section-heading h2 span,
+.finly-privacy__heading h2 span,
+.finly-faq__intro h2 span,
+.finly-reports__copy h2 span {
+  display: block;
+  margin-top: .08em;
+}
+
+/* Hero bottom navigation alignment */
+.finly-hero__bottom {
+  min-height: 20px;
+  align-items: center;
+  gap: 20px;
+}
+
+.finly-hero__bottom-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  line-height: 1.7;
+  white-space: nowrap;
+}
+
+.finly-hero__bottom-label > i {
+  width: 6px;
+  height: 6px;
+  flex: 0 0 6px;
+  border-radius: 50%;
+  background: #219EBC;
+  box-shadow: 0 0 12px rgba(33,158,188,.65);
+}
+
+.finly-hero__bottom > a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 9px;
+  white-space: nowrap;
+  line-height: 1.7;
+}
+
+.finly-hero__bottom > a > span {
+  color: #FFB703;
+  font-size: 13px;
+  transition: transform .25s ease;
+}
+
+.finly-hero__bottom > a:hover > span {
+  transform: translateY(4px);
+}
+
+/* ==========================================================
+   PARAGRAPH TEXT — DESKTOP READABILITY
+   ========================================================== */
+
+.finly-section-heading > p {
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+.finly-feature-card p {
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.finly-story-item p {
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.finly-reports__copy p {
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+.finly-privacy__heading > p {
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+.finly-privacy-card p {
+  font-size: 13.5px;
+  line-height: 1.9;
+}
+
+.finly-faq__intro > p {
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.finly-faq-item p {
+  font-size: 14px;
+  line-height: 1.95;
+}
+
+.finly-final__content > p {
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+/* Improve the chart's supporting text */
+.finly-chart-note {
+  font-size: 10.5px;
+  line-height: 1.75;
+}
+
+.finly-donut-legend span {
+  font-size: 10.5px;
+}
+
+.finly-chart-legend span {
+  font-size: 11px;
+}
+
+.finly-export-card__formats span {
+  font-size: 10.5px;
+}
+
+.finly-final__content > small {
+  font-size: 10px;
+}
+
+/* Improve small card labels */
+.finly-card-index,
+.finly-chart-kicker {
+  font-size: 9px;
+  letter-spacing: .13em;
+}
+
+/* ==========================================================
+   PRIVACY CARDS — AMBER TO BLUE-GREEN GRADIENT BORDER
+   ========================================================== */
+
+.finly-privacy-card {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  transition:
+    transform .35s ease,
+    box-shadow .35s ease,
+    border-color .35s ease;
+}
+
+/* Animated gradient border layer */
+.finly-privacy-card::before {
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  padding: 1.5px;
+  border-radius: inherit;
+  background: linear-gradient(
+    125deg,
+    #FFB703 0%,
+    #219EBC 52%,
+    #FFB703 100%
+  );
+
+  content: '';
+  pointer-events: none;
+  opacity: 0;
+
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+
+  transition: opacity .35s ease;
+}
+
+.finly-privacy-card:hover {
+  transform: translateY(-6px);
+  border-color: transparent;
+  box-shadow:
+    0 18px 48px rgba(33,158,188,.12),
+    0 0 25px rgba(255,183,3,.07);
+}
+
+.finly-privacy-card:hover::before,
+.finly-privacy-card:focus-within::before {
+  opacity: 1;
+}
+
+/* Keep privacy card content above the border layer */
+.finly-privacy-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Keyboard accessibility */
+.finly-privacy-card:focus-within {
+  outline: 1px solid #219EBC;
+  outline-offset: 3px;
+}
+
+/* ==========================================================
+   MOBILE TYPOGRAPHY AND SPACING
+   ========================================================== */
+
+@media (max-width: 600px) {
+
+  .finly-page .finly-eyebrow {
+    font-size: 9px;
+    letter-spacing: .11em;
+    word-spacing: .09em;
+  }
+
+  .finly-section-heading > p,
+  .finly-privacy__heading > p,
+  .finly-reports__copy p,
+  .finly-final__content > p {
+    font-size: 14px;
+    line-height: 1.85;
+  }
+
+  .finly-feature-card p,
+  .finly-story-item p,
+  .finly-privacy-card p,
+  .finly-faq__intro > p,
+  .finly-faq-item p {
+    font-size: 13px;
+    line-height: 1.85;
+  }
+
+  .finly-chart-note {
+    font-size: 9.5px;
+  }
+
+  .finly-donut-legend span,
+  .finly-chart-legend span {
+    font-size: 10px;
+  }
+
+  .finly-hero__bottom {
+    gap: 10px;
+    font-size: 7px;
+    letter-spacing: .08em;
+  }
+
+  .finly-hero__bottom-label {
+    gap: 7px;
+    letter-spacing: .07em;
+  }
+
+  .finly-hero__bottom > a {
+    gap: 5px;
+    letter-spacing: .07em;
+  }
+
+  .finly-hero__bottom-label > i {
+    width: 5px;
+    height: 5px;
+    flex-basis: 5px;
+  }
+}
+
+@media (max-width: 370px) {
+  .finly-hero__bottom {
+    font-size: 6px;
+    letter-spacing: .04em;
+  }
+}
+
+/* Keep hover effects disabled for reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .finly-privacy-card,
+  .finly-privacy-card::before {
+    transition: none !important;
+  }
+}
