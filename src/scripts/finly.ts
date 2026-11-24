@@ -10,6 +10,22 @@ if (page) {
     '(prefers-reduced-motion: reduce)'
   ).matches;
 
+  /* Keep Back to top on the Finly page */
+  const backToTop = document.querySelector<HTMLAnchorElement>('.back-to-top');
+
+  if (backToTop) {
+    backToTop.href = '#finly-top';
+
+    backToTop.addEventListener('click', (event) => {
+      event.preventDefault();
+
+      document.getElementById('finly-top')?.scrollIntoView({
+        behavior: reducedMotion ? 'auto' : 'smooth',
+        block: 'start',
+      });
+    });
+  }
+
   if (!reducedMotion) {
     const context = gsap.context(() => {
 
