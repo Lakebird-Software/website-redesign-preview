@@ -1,7 +1,10 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 
-const media = '/website-redesign-preview/gps-camera-assets/';
+const base = import.meta.env.BASE_URL.endsWith('/')
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
+const media = `${base}gps-camera-assets/`;
 const playUrl = 'https://play.google.com/store/apps/details?id=com.prithveeshbhat.gpscamera';
 const title = 'GPS Camera: Geo Tagging — Capture the moment. Keep its place.';
 const description = 'Capture photos and videos with GPS location, maps, date and time stamps. Organise projects, customise your overlays and create professional PDF reports with GPS Camera by Lakebird Software.';
