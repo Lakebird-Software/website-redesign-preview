@@ -1145,3 +1145,164 @@ html[data-theme='light'] .privacy-app-glance > div { background: #FFFFFF; }
   .privacy-app-toc a { font-size: 10px; }
   .privacy-app-back { flex-direction: column; }
 }
+
+/* ================================================================
+   HOMEPAGE FINAL REFINEMENT — readable typography + closing CTA fill
+   Append this block to the END of src/styles/v23.css.
+   ================================================================ */
+
+/* Give the homepage's regular text a little more breathing room. */
+body {
+  letter-spacing: 0.008em;
+  word-spacing: 0.035em;
+}
+
+/* Headlines: remove the overly compressed tracking while keeping
+   the original display type and visual hierarchy. */
+.hero h1,
+.section-heading h2,
+.studio-intro h2,
+.philosophy h2,
+.contact h2,
+.product-feature h3,
+.experience-card h3,
+.principle h3,
+.brand-closing__copy h2 {
+  letter-spacing: 0.002em;
+  word-spacing: 0.055em;
+}
+
+.hero h1 {
+  line-height: 1.1;
+}
+
+.section-heading h2,
+.studio-intro h2,
+.philosophy h2,
+.contact h2,
+.brand-closing__copy h2 {
+  line-height: 1.13;
+}
+
+.product-feature h3,
+.experience-card h3,
+.principle h3 {
+  line-height: 1.16;
+}
+
+/* Lead copy and paragraphs: slightly open letter spacing, more room
+   between words, and comfortable reading rhythm. */
+.hero__description,
+.section-heading--split p,
+.section-heading--center p,
+.studio-intro__body,
+.product-feature__description,
+.feature-points li,
+.experience-card p,
+.principle p,
+.philosophy__intro > p,
+.contact-panel__content > p {
+  letter-spacing: 0.014em;
+  word-spacing: 0.065em;
+}
+
+.hero__description,
+.section-heading--split p,
+.section-heading--center p,
+.studio-intro__body,
+.product-feature__description,
+.experience-card p,
+.philosophy__intro > p,
+.contact-panel__content > p {
+  line-height: 1.9;
+}
+
+.feature-points li {
+  line-height: 1.78;
+}
+
+.studio-intro__lead {
+  letter-spacing: 0.008em;
+  word-spacing: 0.06em;
+  line-height: 1.55;
+}
+
+/* Navigation and controls: keep labels crisp, not cramped. */
+.nav-link,
+.button,
+.text-link,
+.underlined-link,
+.product-explore-link,
+.brand-closing__link,
+.brand-closing__link-label {
+  letter-spacing: 0.014em;
+  word-spacing: 0.045em;
+}
+
+/* Preserve the deliberately spaced monospace eyebrows, labels,
+   wordmarks and technical captions from the original design. */
+
+/* Centre the expanding circle so its fill reaches both ends of the CTA. */
+.brand-closing__link::before {
+  top: 50%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  width: 24em;
+  height: 24em;
+  transform: translate(-50%, -50%);
+  box-shadow: inset 0 0 0 0 var(--closing-button-fill);
+}
+
+.brand-closing__link:hover::before,
+.brand-closing__link:focus-visible::before,
+.brand-closing__link:active::before {
+  box-shadow: inset 0 0 0 12em var(--closing-button-fill);
+}
+
+/* Slightly reduce the added word spacing on narrow screens so text
+   remains balanced and headings do not wrap awkwardly. */
+@media (max-width: 600px) {
+  body {
+    letter-spacing: 0.006em;
+    word-spacing: 0.025em;
+  }
+
+  .hero h1,
+  .section-heading h2,
+  .studio-intro h2,
+  .philosophy h2,
+  .contact h2,
+  .product-feature h3,
+  .experience-card h3,
+  .principle h3,
+  .brand-closing__copy h2 {
+    letter-spacing: 0;
+    word-spacing: 0.035em;
+  }
+
+  .hero__description,
+  .section-heading--split p,
+  .section-heading--center p,
+  .studio-intro__body,
+  .product-feature__description,
+  .feature-points li,
+  .experience-card p,
+  .principle p,
+  .philosophy__intro > p,
+  .contact-panel__content > p {
+    letter-spacing: 0.012em;
+    word-spacing: 0.045em;
+  }
+
+  .nav-link,
+  .button,
+  .text-link,
+  .underlined-link,
+  .product-explore-link,
+  .brand-closing__link,
+  .brand-closing__link-label {
+    letter-spacing: 0.012em;
+    word-spacing: 0.03em;
+  }
+}
