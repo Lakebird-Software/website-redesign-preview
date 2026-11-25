@@ -1147,92 +1147,94 @@ html[data-theme='light'] .privacy-app-glance > div { background: #FFFFFF; }
 }
 
 /* ================================================================
-   HOMEPAGE FINAL REFINEMENT — balanced typography + closing CTA fill
-   Append this block to the END of src/styles/v23.css.
+   HOMEPAGE FINAL REFINEMENT — scoped to the homepage only
+   This stylesheet is loaded site-wide through BaseLayout, so every
+   rule below is deliberately scoped to the homepage's unique
+   .hero-terrain-stage wrapper. FINLY and GPS Camera remain untouched.
    ================================================================ */
 
 /* Keep word spacing comfortably open while reducing letter tracking. */
-body {
+body:has(.hero-terrain-stage) {
   letter-spacing: 0.002em;
   word-spacing: 0.035em;
 }
 
 /* Headlines: slightly tighter letter spacing, with word spacing preserved. */
-.hero h1,
-.section-heading h2,
-.studio-intro h2,
-.philosophy h2,
-.contact h2,
-.product-feature h3,
-.experience-card h3,
-.principle h3,
-.brand-closing__copy h2 {
+body:has(.hero-terrain-stage) .hero h1,
+body:has(.hero-terrain-stage) .section-heading h2,
+body:has(.hero-terrain-stage) .studio-intro h2,
+body:has(.hero-terrain-stage) .philosophy h2,
+body:has(.hero-terrain-stage) .contact h2,
+body:has(.hero-terrain-stage) .product-feature h3,
+body:has(.hero-terrain-stage) .experience-card h3,
+body:has(.hero-terrain-stage) .principle h3,
+body:has(.hero-terrain-stage) .brand-closing__copy h2 {
   letter-spacing: -0.008em;
   word-spacing: 0.055em;
 }
 
-.hero h1 {
+body:has(.hero-terrain-stage) .hero h1 {
   line-height: 1.1;
 }
 
-.section-heading h2,
-.studio-intro h2,
-.philosophy h2,
-.contact h2,
-.brand-closing__copy h2 {
+body:has(.hero-terrain-stage) .section-heading h2,
+body:has(.hero-terrain-stage) .studio-intro h2,
+body:has(.hero-terrain-stage) .philosophy h2,
+body:has(.hero-terrain-stage) .contact h2,
+body:has(.hero-terrain-stage) .brand-closing__copy h2 {
   line-height: 1.13;
 }
 
-.product-feature h3,
-.experience-card h3,
-.principle h3 {
+body:has(.hero-terrain-stage) .product-feature h3,
+body:has(.hero-terrain-stage) .experience-card h3,
+body:has(.hero-terrain-stage) .principle h3 {
   line-height: 1.16;
 }
 
 /* Body copy: restrained letter spacing; preserve the intentional word gaps. */
-.hero__description,
-.section-heading--split p,
-.section-heading--center p,
-.studio-intro__body,
-.product-feature__description,
-.feature-points li,
-.experience-card p,
-.principle p,
-.philosophy__intro > p,
-.contact-panel__content > p {
+body:has(.hero-terrain-stage) .hero__description,
+body:has(.hero-terrain-stage) .section-heading--split p,
+body:has(.hero-terrain-stage) .section-heading--center p,
+body:has(.hero-terrain-stage) .studio-intro__body,
+body:has(.hero-terrain-stage) .product-feature__description,
+body:has(.hero-terrain-stage) .feature-points li,
+body:has(.hero-terrain-stage) .experience-card p,
+body:has(.hero-terrain-stage) .principle p,
+body:has(.hero-terrain-stage) .philosophy__intro > p,
+body:has(.hero-terrain-stage) .contact-panel__content > p {
   letter-spacing: 0.006em;
   word-spacing: 0.065em;
 }
 
-.hero__description,
-.section-heading--split p,
-.section-heading--center p,
-.studio-intro__body,
-.product-feature__description,
-.experience-card p,
-.philosophy__intro > p,
-.contact-panel__content > p {
+body:has(.hero-terrain-stage) .hero__description,
+body:has(.hero-terrain-stage) .section-heading--split p,
+body:has(.hero-terrain-stage) .section-heading--center p,
+body:has(.hero-terrain-stage) .studio-intro__body,
+body:has(.hero-terrain-stage) .product-feature__description,
+body:has(.hero-terrain-stage) .experience-card p,
+body:has(.hero-terrain-stage) .philosophy__intro > p,
+body:has(.hero-terrain-stage) .contact-panel__content > p {
   line-height: 1.9;
 }
 
-.feature-points li {
+body:has(.hero-terrain-stage) .feature-points li {
   line-height: 1.78;
 }
 
-.studio-intro__lead {
+body:has(.hero-terrain-stage) .studio-intro__lead {
   letter-spacing: 0.003em;
   word-spacing: 0.06em;
   line-height: 1.55;
 }
 
-/* Navigation and controls: keep labels crisp, not cramped. */
-.nav-link,
-.button,
-.text-link,
-.underlined-link,
-.product-explore-link,
-.brand-closing__link,
-.brand-closing__link-label {
+/* Navigation and controls: homepage header/buttons only. */
+body:has(.hero-terrain-stage) .nav-link,
+body:has(.hero-terrain-stage) .button,
+body:has(.hero-terrain-stage) .text-link,
+body:has(.hero-terrain-stage) .underlined-link,
+body:has(.hero-terrain-stage) .product-explore-link,
+body:has(.hero-terrain-stage) .brand-closing__link,
+body:has(.hero-terrain-stage) .brand-closing__link-label {
   letter-spacing: 0.006em;
   word-spacing: 0.045em;
 }
@@ -1241,7 +1243,7 @@ body {
    wordmarks and technical captions from the original design. */
 
 /* Centre the expanding circle so its fill reaches both ends of the CTA. */
-.brand-closing__link::before {
+body:has(.hero-terrain-stage) .brand-closing__link::before {
   top: 50%;
   left: 50%;
   right: auto;
@@ -1252,53 +1254,53 @@ body {
   box-shadow: inset 0 0 0 0 var(--closing-button-fill);
 }
 
-.brand-closing__link:hover::before,
-.brand-closing__link:focus-visible::before,
-.brand-closing__link:active::before {
+body:has(.hero-terrain-stage) .brand-closing__link:hover::before,
+body:has(.hero-terrain-stage) .brand-closing__link:focus-visible::before,
+body:has(.hero-terrain-stage) .brand-closing__link:active::before {
   box-shadow: inset 0 0 0 12em var(--closing-button-fill);
 }
 
 /* Mobile: keep the same word gaps and use compact, readable letter spacing. */
 @media (max-width: 600px) {
-  body {
+  body:has(.hero-terrain-stage) {
     letter-spacing: 0.001em;
     word-spacing: 0.025em;
   }
 
-  .hero h1,
-  .section-heading h2,
-  .studio-intro h2,
-  .philosophy h2,
-  .contact h2,
-  .product-feature h3,
-  .experience-card h3,
-  .principle h3,
-  .brand-closing__copy h2 {
+  body:has(.hero-terrain-stage) .hero h1,
+  body:has(.hero-terrain-stage) .section-heading h2,
+  body:has(.hero-terrain-stage) .studio-intro h2,
+  body:has(.hero-terrain-stage) .philosophy h2,
+  body:has(.hero-terrain-stage) .contact h2,
+  body:has(.hero-terrain-stage) .product-feature h3,
+  body:has(.hero-terrain-stage) .experience-card h3,
+  body:has(.hero-terrain-stage) .principle h3,
+  body:has(.hero-terrain-stage) .brand-closing__copy h2 {
     letter-spacing: -0.005em;
     word-spacing: 0.035em;
   }
 
-  .hero__description,
-  .section-heading--split p,
-  .section-heading--center p,
-  .studio-intro__body,
-  .product-feature__description,
-  .feature-points li,
-  .experience-card p,
-  .principle p,
-  .philosophy__intro > p,
-  .contact-panel__content > p {
+  body:has(.hero-terrain-stage) .hero__description,
+  body:has(.hero-terrain-stage) .section-heading--split p,
+  body:has(.hero-terrain-stage) .section-heading--center p,
+  body:has(.hero-terrain-stage) .studio-intro__body,
+  body:has(.hero-terrain-stage) .product-feature__description,
+  body:has(.hero-terrain-stage) .feature-points li,
+  body:has(.hero-terrain-stage) .experience-card p,
+  body:has(.hero-terrain-stage) .principle p,
+  body:has(.hero-terrain-stage) .philosophy__intro > p,
+  body:has(.hero-terrain-stage) .contact-panel__content > p {
     letter-spacing: 0.005em;
     word-spacing: 0.045em;
   }
 
-  .nav-link,
-  .button,
-  .text-link,
-  .underlined-link,
-  .product-explore-link,
-  .brand-closing__link,
-  .brand-closing__link-label {
+  body:has(.hero-terrain-stage) .nav-link,
+  body:has(.hero-terrain-stage) .button,
+  body:has(.hero-terrain-stage) .text-link,
+  body:has(.hero-terrain-stage) .underlined-link,
+  body:has(.hero-terrain-stage) .product-explore-link,
+  body:has(.hero-terrain-stage) .brand-closing__link,
+  body:has(.hero-terrain-stage) .brand-closing__link-label {
     letter-spacing: 0.005em;
     word-spacing: 0.03em;
   }
