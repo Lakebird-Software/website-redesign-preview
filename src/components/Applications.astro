@@ -40,7 +40,17 @@ const base = import.meta.env.BASE_URL.endsWith('/')
       </div>
       <div class="product-feature__visual product-feature__visual--finly">
         <div class="product-feature__visual-glow" aria-hidden="true"></div>
-        <div class="product-feature__device"><div class="device-notch"></div><AppScreen app="finly" /></div>
+        <div class="product-feature__device product-feature__device--finly-real">
+          <img
+            class="product-feature__finly-dashboard"
+            src={`${base}finly-assets/finly-home-dashboard.webp`}
+            alt="FINLY home dashboard showing cash flow, income, spending insights, net worth and budget overview"
+            width="921"
+            height="2048"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
         <div class="product-float-card product-float-card--finly"><span class="float-card-icon">✳</span><span><b>100% AD-FREE</b><small>No interruptions. Just clarity.</small></span></div>
         <span class="product-feature__visual-caption">FINLY / PERSONAL FINANCE</span>
       </div>
@@ -88,3 +98,21 @@ const base = import.meta.env.BASE_URL.endsWith('/')
     </article>
   </div>
 </section>
+
+<style>
+  /* Use the real FINLY dashboard screenshot in the Product Collection card. */
+  .product-feature__device--finly-real {
+    overflow: hidden;
+  }
+
+  .product-feature__device--finly-real .product-feature__finly-dashboard {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 921 / 2048;
+    object-fit: contain;
+    object-position: center top;
+    border-radius: 25px;
+  }
+</style>
