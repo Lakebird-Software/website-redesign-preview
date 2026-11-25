@@ -78,6 +78,15 @@ const privacyUrl = `${base}privacy/finly/`;
           <div class="fb-phone" data-fb-phone>
             <div class="fb-phone__rim">
               <div class="fb-phone__island"></div>
+                  <img
+                    class="fb-phone__mobile-image"
+                    src={`${base}finly-assets/finly-home-dashboard.webp`}
+                    alt="FINLY home dashboard showing cash flow, net worth, spending insights and budget overview"
+                    width="921"
+                    height="2048"
+                    loading="eager"
+                    fetchpriority="high"
+                  />
               <div class="fb-phone__screen">
                 <div class="fb-phone__status"><span>9:41</span><span>● ● ▰</span></div>
                 <div class="fb-phone__topbar"><span class="fb-phone__brand">finly<span>.</span></span><span class="fb-phone__dots">•••</span></div>
@@ -1278,6 +1287,57 @@ html[data-page-theme="finly"] .site-footer { background: #061F2D; }
     const storyStates = Array.from(page.querySelectorAll<HTMLElement>('[data-fb-state]'));
     const storyStateLabel = page.querySelector<HTMLElement>('[data-fb-state-label]');
     const storyLabels = ['01 / RECORD', '02 / UNDERSTAND', '03 / PLAN', '04 / KEEP CONTROL'];
+    // On phones, pair every story explanation with its own matching visual.
+    // Desktop keeps the original single sticky visual panel unchanged.
+    const buildMobileStoryVisuals = () => {
+      page.querySelectorAll<HTMLElement>('.fb-story-mobile-visual').forEach((node) => node.remove());
+      if (!window.matchMedia('(max-width: 820px)').matches) return;
+
+      const topTemplate = page.querySelector<HTMLElement>('.fb-story__visual-top');
+      const bottomTemplate = page.querySelector<HTMLElement>('.fb-story__visual-bottom');
+
+      storySteps.forEach((step, index) => {
+        const source = storyStates[index];
+        if (!source) return;
+
+        const card = document.createElement('div');
+        card.className = 'fb-story-mobile-visual';
+        card.setAttribute('aria-hidden', 'true');
+
+        if (topTemplate) card.append(topTemplate.cloneNode(true));
+
+        const stage = document.createElement('div');
+        stage.className = 'fb-story-mobile-stage';
+
+        const panel = source.cloneNode(true) as HTMLElement;
+        panel.hidden = false;
+        panel.removeAttribute('data-fb-state');
+        panel.removeAttribute('aria-hidden');
+        panel.classList.remove('is-active');
+        panel.classList.add('fb-state--mobile-static');
+        panel.querySelectorAll<HTMLElement>('[id]').forEach((element) => element.removeAttribute('id'));
+        panel.querySelectorAll<HTMLElement>('[data-fb-donut], [data-fb-progress]').forEach((element) => {
+          element.removeAttribute('data-fb-donut');
+          element.removeAttribute('data-fb-progress');
+        });
+        stage.append(panel);
+        card.append(stage);
+
+        if (bottomTemplate) {
+          const bottom = bottomTemplate.cloneNode(true) as HTMLElement;
+          const label = bottom.querySelector<HTMLElement>('[data-fb-state-label]');
+          if (label) {
+            label.textContent = storyLabels[index] || storyLabels[0];
+            label.removeAttribute('data-fb-state-label');
+          }
+          card.append(bottom);
+        }
+
+        step.append(card);
+      });
+    };
+
+    buildMobileStoryVisuals();
     let activeStoryIndex = -1;
     const storyTriggers: Array<{ kill: () => void }> = [];
 
