@@ -3,7 +3,10 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
 
 const playUrl = 'https://play.google.com/store/apps/details?id=com.prithveeshbhat.finly&hl=en';
 const finlyLogoUrl = 'https://play-lh.googleusercontent.com/FLUJjiYrZX8m3xpjAPgSGzc-vU6p6yF4tmamA467q7fUZh3PBaOzX0npMDVNTgIJQE5fWJ4He-H18UbA8-4-vA=w240-h480-rw';
-const privacyUrl = `${import.meta.env.BASE_URL}privacy/finly/`;
+const base = import.meta.env.BASE_URL.endsWith('/')
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
+const privacyUrl = `${base}privacy/finly/`;
 ---
 
 <BaseLayout
