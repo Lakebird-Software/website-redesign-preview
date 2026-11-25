@@ -1257,10 +1257,18 @@ html[data-page-theme="finly"] .site-footer { background: #061F2D; }
    FINLY MOBILE REFINEMENTS — real hero screen, paired story cards,
    and a contained CTA logo float. Desktop styling remains intact.
    ============================================================ */
+/* Use the authentic FINLY dashboard on desktop and mobile */
+.fb-phone__island,
+.fb-phone__screen,
+.fb-phone__caption {
+  display: none !important;
+}
+
 .fb-phone__mobile-image {
-  display: none;
+  display: block;
   width: 100%;
   height: auto;
+  aspect-ratio: 921 / 2048;
   object-fit: contain;
   border-radius: 29px;
 }
