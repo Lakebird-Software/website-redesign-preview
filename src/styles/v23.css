@@ -1147,18 +1147,17 @@ html[data-theme='light'] .privacy-app-glance > div { background: #FFFFFF; }
 }
 
 /* ================================================================
-   HOMEPAGE FINAL REFINEMENT — readable typography + closing CTA fill
+   HOMEPAGE FINAL REFINEMENT — balanced typography + closing CTA fill
    Append this block to the END of src/styles/v23.css.
    ================================================================ */
 
-/* Give the homepage's regular text a little more breathing room. */
+/* Keep word spacing comfortably open while reducing letter tracking. */
 body {
-  letter-spacing: 0.008em;
+  letter-spacing: 0.002em;
   word-spacing: 0.035em;
 }
 
-/* Headlines: remove the overly compressed tracking while keeping
-   the original display type and visual hierarchy. */
+/* Headlines: slightly tighter letter spacing, with word spacing preserved. */
 .hero h1,
 .section-heading h2,
 .studio-intro h2,
@@ -1168,7 +1167,7 @@ body {
 .experience-card h3,
 .principle h3,
 .brand-closing__copy h2 {
-  letter-spacing: 0.002em;
+  letter-spacing: -0.008em;
   word-spacing: 0.055em;
 }
 
@@ -1190,8 +1189,7 @@ body {
   line-height: 1.16;
 }
 
-/* Lead copy and paragraphs: slightly open letter spacing, more room
-   between words, and comfortable reading rhythm. */
+/* Body copy: restrained letter spacing; preserve the intentional word gaps. */
 .hero__description,
 .section-heading--split p,
 .section-heading--center p,
@@ -1202,7 +1200,7 @@ body {
 .principle p,
 .philosophy__intro > p,
 .contact-panel__content > p {
-  letter-spacing: 0.014em;
+  letter-spacing: 0.006em;
   word-spacing: 0.065em;
 }
 
@@ -1222,7 +1220,7 @@ body {
 }
 
 .studio-intro__lead {
-  letter-spacing: 0.008em;
+  letter-spacing: 0.003em;
   word-spacing: 0.06em;
   line-height: 1.55;
 }
@@ -1235,7 +1233,7 @@ body {
 .product-explore-link,
 .brand-closing__link,
 .brand-closing__link-label {
-  letter-spacing: 0.014em;
+  letter-spacing: 0.006em;
   word-spacing: 0.045em;
 }
 
@@ -1260,11 +1258,10 @@ body {
   box-shadow: inset 0 0 0 12em var(--closing-button-fill);
 }
 
-/* Slightly reduce the added word spacing on narrow screens so text
-   remains balanced and headings do not wrap awkwardly. */
+/* Mobile: keep the same word gaps and use compact, readable letter spacing. */
 @media (max-width: 600px) {
   body {
-    letter-spacing: 0.006em;
+    letter-spacing: 0.001em;
     word-spacing: 0.025em;
   }
 
@@ -1277,7 +1274,7 @@ body {
   .experience-card h3,
   .principle h3,
   .brand-closing__copy h2 {
-    letter-spacing: 0;
+    letter-spacing: -0.005em;
     word-spacing: 0.035em;
   }
 
@@ -1291,7 +1288,7 @@ body {
   .principle p,
   .philosophy__intro > p,
   .contact-panel__content > p {
-    letter-spacing: 0.012em;
+    letter-spacing: 0.005em;
     word-spacing: 0.045em;
   }
 
@@ -1302,7 +1299,8 @@ body {
   .product-explore-link,
   .brand-closing__link,
   .brand-closing__link-label {
-    letter-spacing: 0.012em;
+    letter-spacing: 0.005em;
     word-spacing: 0.03em;
   }
 }
+
