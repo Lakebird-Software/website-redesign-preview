@@ -1,5 +1,9 @@
 ---
 import AppScreen from './AppScreen.astro';
+
+const base = import.meta.env.BASE_URL.endsWith('/')
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
 ---
 <section class="hero" id="top" aria-labelledby="hero-title">
   <div class="hero__ambient hero__ambient--aqua" aria-hidden="true"></div>
@@ -21,14 +25,24 @@ import AppScreen from './AppScreen.astro';
         </div>
       </div>
     </div>
-
     <div class="hero__visual" aria-label="Conceptual device previews for Lakebird Software applications">
       <div class="hero__visual-glow" aria-hidden="true"></div>
       <div class="hero__orbit hero__orbit--one" aria-hidden="true"></div>
       <div class="hero__orbit hero__orbit--two" aria-hidden="true"></div>
       <div class="hero__device hero__device--gps" data-float="gps"><div class="device-notch"></div><AppScreen app="gps" compact /></div>
       <div class="hero__device hero__device--filtra" data-float="filtra"><div class="device-notch"></div><AppScreen app="filtra" compact /></div>
-      <div class="hero__device hero__device--finly" data-float="finly"><div class="device-notch"></div><AppScreen app="finly" /></div>
+      <div class="hero__device hero__device--finly" data-float="finly">
+        <div class="device-notch"></div>
+        <img
+          class="hero__finly-screen"
+          src={`${base}finly-assets/finly-home-dashboard.webp`}
+          alt="FINLY personal finance dashboard showing cash flow, net worth, spending insights and budgets"
+          width="921"
+          height="2048"
+          loading="eager"
+          fetchpriority="high"
+        />
+      </div>
       <div class="hero__floating-label hero__floating-label--one"><span class="label-dot label-dot--aqua"></span><span>FINLY <small>FINANCE</small></span></div>
       <div class="hero__floating-label hero__floating-label--two"><span class="label-dot label-dot--indigo"></span><span>GPS CAMERA <small>LOCATION</small></span></div>
     </div>
@@ -38,3 +52,14 @@ import AppScreen from './AppScreen.astro';
   </div>
   <div class="hero__edge-glow" aria-hidden="true"></div>
 </section>
+
+<style>
+  .hero__finly-screen {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 921 / 2048;
+    object-fit: contain;
+    border-radius: 25px;
+  }
+</style>
