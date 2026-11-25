@@ -1448,6 +1448,7 @@ html[data-page-theme="finly"] .site-footer { background: #061F2D; }
         syncStoryStateToViewport();
       }, { once: true });
       window.addEventListener('resize', () => {
+        buildMobileStoryVisuals();
         ScrollTrigger.refresh();
         syncStoryStateToViewport();
       }, { passive: true });
