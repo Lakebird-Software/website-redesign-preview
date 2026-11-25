@@ -1271,15 +1271,15 @@ html[data-page-theme="finly"] .site-footer { background: #061F2D; }
       });
     }
 
-    // Sticky story controller: exactly one matching visual state is visible.
-    // It is driven by the active left-hand step, works in both scroll directions,
-    // and continues to work when reduced motion is enabled.
+    // Sticky story controller: use GSAP ScrollTrigger so every text step
+    // activates its matching visual when it crosses the centre reading line.
+    // This supports scrolling down, scrolling back up, direct links and resize.
     const storySteps = Array.from(page.querySelectorAll<HTMLElement>('[data-fb-step]'));
     const storyStates = Array.from(page.querySelectorAll<HTMLElement>('[data-fb-state]'));
     const storyStateLabel = page.querySelector<HTMLElement>('[data-fb-state-label]');
     const storyLabels = ['01 / RECORD', '02 / UNDERSTAND', '03 / PLAN', '04 / KEEP CONTROL'];
     let activeStoryIndex = -1;
-    let storyFrame = 0;
+    const storyTriggers: Array<{ kill: () => void }> = [];
 
     const animateStoryState = (state: HTMLElement) => {
       if (reducedMotion) return;
@@ -1308,7 +1308,7 @@ html[data-page-theme="finly"] .site-footer { background: #061F2D; }
     };
 
     const activateStoryState = (index: number) => {
-      if (index < 0 || index >= storyStates.length || index === activeStoryIndex) return;
+      if (index < 0 || index >= storyStates.length || index >= storySteps.length || index === activeStoryIndex) return;
       activeStoryIndex = index;
 
       storySteps.forEach((step, stepIndex) => {
@@ -1318,9 +1318,7 @@ html[data-page-theme="finly"] .site-footer { background: #061F2D; }
         else step.removeAttribute('aria-current');
       });
 
-      // Hide every previous/next panel before revealing the selected panel.
-      // The native hidden attribute also removes inactive panels from rendering
-      // and the accessibility tree, so panels cannot overlap.
+      // Keep exactly one visual panel visible at a time.
       storyStates.forEach((state, stateIndex) => {
         const active = stateIndex === index;
         if (!active) {
@@ -1337,12 +1335,11 @@ html[data-page-theme="finly"] .site-footer { background: #061F2D; }
       if (storyStateLabel) storyStateLabel.textContent = storyLabels[index] || storyLabels[0];
     };
 
-    const syncStoryState = () => {
-      storyFrame = 0;
+    const syncStoryStateToViewport = () => {
       if (!storySteps.length || storyStates.length !== storySteps.length) return;
 
       const marker = Math.min(
-        Math.max(100, window.innerHeight * .48),
+        Math.max(100, window.innerHeight * .52),
         Math.max(100, window.innerHeight - 110)
       );
       let selectedIndex = 0;
@@ -1366,20 +1363,38 @@ html[data-page-theme="finly"] .site-footer { background: #061F2D; }
       activateStoryState(selectedIndex);
     };
 
-    const requestStorySync = () => {
-      if (!storyFrame) storyFrame = window.requestAnimationFrame(syncStoryState);
-    };
-
     if (storySteps.length && storyStates.length === storySteps.length) {
-      window.addEventListener('scroll', requestStorySync, { passive: true });
-      window.addEventListener('resize', requestStorySync, { passive: true });
-      requestStorySync();
-      window.addEventListener('pagehide', () => {
-        window.removeEventListener('scroll', requestStorySync);
-        window.removeEventListener('resize', requestStorySync);
-        if (storyFrame) window.cancelAnimationFrame(storyFrame);
+      storySteps.forEach((step, index) => {
+        const trigger = ScrollTrigger.create({
+          trigger: step,
+          start: 'top 52%',
+          end: 'bottom 52%',
+          onEnter: () => activateStoryState(index),
+          onEnterBack: () => activateStoryState(index)
+        });
+        storyTriggers.push(trigger);
+      });
+
+      // Set the correct panel immediately (including direct links to this section).
+      syncStoryStateToViewport();
+
+      // Refresh after fonts/layout settle, then synchronise to the current position.
+      requestAnimationFrame(() => {
+        ScrollTrigger.refresh();
+        syncStoryStateToViewport();
+      });
+      window.addEventListener('load', () => {
+        ScrollTrigger.refresh();
+        syncStoryStateToViewport();
       }, { once: true });
-    }
+      window.addEventListener('resize', () => {
+        ScrollTrigger.refresh();
+        syncStoryStateToViewport();
+      }, { passive: true });
+      window.addEventListener('pagehide', () => {
+        storyTriggers.forEach((trigger) => trigger.kill());
+      }, { once: true });
+    } 
 
     const faqItems = Array.from(page.querySelectorAll<HTMLDetailsElement>('.fb-faq-item'));
     faqItems.forEach((item) => item.addEventListener('toggle', () => {
