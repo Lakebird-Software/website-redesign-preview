@@ -1,5 +1,6 @@
 ---
 import AppScreen from './AppScreen.astro';
+import GooglePlayBadge from './GooglePlayBadge.astro';
 const base = import.meta.env.BASE_URL.endsWith('/')
   ? import.meta.env.BASE_URL
   : `${import.meta.env.BASE_URL}/`;
@@ -8,12 +9,13 @@ const base = import.meta.env.BASE_URL.endsWith('/')
   <div class="container">
     <div class="section-heading section-heading--split" data-reveal>
       <div>
-        <span class="eyebrow"><span>03</span> / THE PRODUCT COLLECTION</span>
+        <span class="eyebrow">THE PRODUCT COLLECTION</span>
         <h2 id="applications-title">Designed to make<br /><em>a difference.</em></h2>
       </div>
       <p>Purpose-built Android applications, each created to solve a different everyday challenge — with the same care for clarity, usefulness and experience.</p>
     </div>
-    <article class="product-feature product-feature--finly" data-reveal>
+
+    <article class="product-feature product-feature--finly" data-reveal data-tilt-card>
       <div class="product-feature__copy">
         <div class="product-feature__meta"><span class="product-number">01</span><span class="eyebrow">PERSONAL FINANCE</span><span class="availability availability--live"><i></i> LIVE ON GOOGLE PLAY</span></div>
         <h3>Money management,<br /><em>made clearer.</em></h3>
@@ -29,8 +31,11 @@ const base = import.meta.env.BASE_URL.endsWith('/')
           <li><span class="feature-check">↗</span> PDF and CSV transaction-ledger exports</li>
         </ul>
         <div class="product-feature__actions">
-          <a class="button button--primary" href="https://play.google.com/store/apps/details?id=com.prithveeshbhat.finly&amp;hl=en" target="_blank" rel="noopener noreferrer">Get FINLY on Google Play <span aria-hidden="true">↗</span></a>
-          <a class="text-link" href={`${base}apps/finly/`}>Explore FINLY <span aria-hidden="true">→</span></a>
+          <GooglePlayBadge href="https://play.google.com/store/apps/details?id=com.prithveeshbhat.finly&amp;hl=en" label="Get FINLY on Google Play" />
+          <a class="product-explore-link product-explore-link--finly" href={`${base}apps/finly/`} aria-label="Explore Finly">
+            <span>Explore Finly</span>
+            <svg viewBox="0 0 16 19" aria-hidden="true"><path d="M7 18C7 18.5523 7.44772 19 8 19C8.55228 19 9 18.5523 9 18H7ZM8.70711 0.292893C8.31658 -0.0976311 7.68342 -0.0976311 7.29289 0.292893L0.928932 6.65685C0.538408 7.04738 0.538408 7.68054 0.928932 8.07107C1.31946 8.46159 1.95262 8.46159 2.34315 8.07107L8 2.41421L13.6569 8.07107C14.0474 8.46159 14.6805 8.46159 15.0711 8.07107C15.4616 7.68054 15.4616 7.04738 15.0711 6.65685L8.70711 0.292893ZM9 18L9 1H7L7 18H9Z" /></svg>
+          </a>
         </div>
       </div>
       <div class="product-feature__visual product-feature__visual--finly">
@@ -40,7 +45,8 @@ const base = import.meta.env.BASE_URL.endsWith('/')
         <span class="product-feature__visual-caption">FINLY / PERSONAL FINANCE</span>
       </div>
     </article>
-    <article class="product-feature product-feature--gps" data-reveal>
+
+    <article class="product-feature product-feature--gps" data-reveal data-tilt-card>
       <div class="product-feature__copy">
         <div class="product-feature__meta"><span class="product-number">02</span><span class="eyebrow">LOCATION PHOTOGRAPHY</span><span class="availability availability--live"><i></i> LIVE ON GOOGLE PLAY</span></div>
         <h3>Capture more than<br /><em>a photograph.</em></h3>
@@ -53,8 +59,11 @@ const base = import.meta.env.BASE_URL.endsWith('/')
           <li><span class="feature-check">↗</span> PDF site reports</li>
         </ul>
         <div class="product-feature__actions">
-          <a class="button button--indigo" href="https://play.google.com/store/apps/details?id=com.prithveeshbhat.gpscamera" target="_blank" rel="noopener noreferrer">Get GPS Camera on Google Play <span aria-hidden="true">↗</span></a>
-          <a class="text-link" href={`${base}apps/gps-camera/`}>Explore GPS Camera <span aria-hidden="true">→</span></a>
+          <GooglePlayBadge href="https://play.google.com/store/apps/details?id=com.prithveeshbhat.gpscamera" label="Find GPS Camera on Google Play" />
+          <a class="product-explore-link product-explore-link--gps" href={`${base}apps/gps-camera/`} aria-label="Explore GPS Camera">
+            <span>Explore GPS Camera</span>
+            <svg viewBox="0 0 16 19" aria-hidden="true"><path d="M7 18C7 18.5523 7.44772 19 8 19C8.55228 19 9 18.5523 9 18H7ZM8.70711 0.292893C8.31658 -0.0976311 7.68342 -0.0976311 7.29289 0.292893L0.928932 6.65685C0.538408 7.04738 0.538408 7.68054 0.928932 8.07107C1.31946 8.46159 1.95262 8.46159 2.34315 8.07107L8 2.41421L13.6569 8.07107C14.0474 8.46159 14.6805 8.46159 15.0711 8.07107C15.4616 7.68054 15.4616 7.04738 15.0711 6.65685L8.70711 0.292893ZM9 18L9 1H7L7 18H9Z" /></svg>
+          </a>
         </div>
       </div>
       <div class="product-feature__visual product-feature__visual--gps">
@@ -64,12 +73,12 @@ const base = import.meta.env.BASE_URL.endsWith('/')
         <span class="product-feature__visual-caption">GPS CAMERA / FIELD DOCUMENTATION</span>
       </div>
     </article>
-    <article class="product-feature product-feature--filtra" data-reveal>
+
+    <article class="product-feature product-feature--filtra" data-reveal data-tilt-card>
       <div class="product-feature__copy">
         <div class="product-feature__meta"><span class="product-number">03</span><span class="eyebrow">NEXT IN THE PORTFOLIO</span><span class="availability availability--soon"><i></i> IN DEVELOPMENT</span></div>
         <h3>Something new<br /><em>is taking shape.</em></h3>
         <p class="product-feature__description">Meet Filtra, our upcoming application. We're shaping its experience with the same focus on purpose, clarity and thoughtful details.</p>
-        <!-- FILTRA intentionally has no app-page link. -->
       </div>
       <div class="product-feature__visual product-feature__visual--filtra">
         <div class="product-feature__visual-glow" aria-hidden="true"></div>
