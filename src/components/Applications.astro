@@ -1,6 +1,8 @@
 ---
 import AppScreen from './AppScreen.astro';
-const base = import.meta.env.BASE_URL;
+const base = import.meta.env.BASE_URL.endsWith('/')
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
 ---
 <section class="applications section-pad" id="applications" aria-labelledby="applications-title">
   <div class="container">
@@ -67,9 +69,7 @@ const base = import.meta.env.BASE_URL;
         <div class="product-feature__meta"><span class="product-number">03</span><span class="eyebrow">NEXT IN THE PORTFOLIO</span><span class="availability availability--soon"><i></i> IN DEVELOPMENT</span></div>
         <h3>Something new<br /><em>is taking shape.</em></h3>
         <p class="product-feature__description">Meet Filtra, our upcoming application. We're shaping its experience with the same focus on purpose, clarity and thoughtful details.</p>
-        <div class="product-feature__actions">
-          <a class="button button--quiet" href={`${base}apps/filtra/`}>Discover Filtra <span aria-hidden="true">↗</span></a>
-        </div>
+        <!-- FILTRA intentionally has no app-page link. -->
       </div>
       <div class="product-feature__visual product-feature__visual--filtra">
         <div class="product-feature__visual-glow" aria-hidden="true"></div>
