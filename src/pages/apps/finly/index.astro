@@ -1253,6 +1253,145 @@ html[data-page-theme="finly"] .site-footer { background: #061F2D; }
   }
 }
 
+/* ============================================================
+   FINLY MOBILE REFINEMENTS — real hero screen, paired story cards,
+   and a contained CTA logo float. Desktop styling remains intact.
+   ============================================================ */
+.fb-phone__mobile-image {
+  display: none;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 29px;
+}
+
+@media (max-width: 820px) {
+  /* A clear vertical story: every text card owns its matching visual. */
+  .fb-story__layout {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .fb-story__steps {
+    order: 1;
+    width: 100%;
+  }
+
+  /* The desktop sticky panel is replaced by one matching card per step. */
+  .fb-story__visual-wrap {
+    display: none !important;
+  }
+
+  .fb-story-step {
+    min-height: 0;
+    padding: 30px 0 40px;
+    opacity: 1;
+  }
+
+  .fb-story-step.is-active {
+    opacity: 1;
+  }
+
+  .fb-story-mobile-visual {
+    display: block;
+    margin-top: 23px;
+    overflow: hidden;
+    border: 1px solid rgba(142, 202, 230, .19);
+    border-radius: 19px;
+    background:
+      radial-gradient(ellipse at 100% 0%, rgba(33, 158, 188, .12), transparent 49%),
+      linear-gradient(145deg, #073047, #032638 78%);
+    box-shadow: 0 20px 48px rgba(0, 0, 0, .22);
+  }
+
+  .fb-story-mobile-visual .fb-story__visual-top,
+  .fb-story-mobile-visual .fb-story__visual-bottom {
+    min-height: 40px;
+    padding: 13px 14px;
+    font-size: 6px;
+  }
+
+  .fb-story-mobile-stage {
+    position: relative;
+    padding: 18px 15px 20px;
+  }
+
+  .fb-story-mobile-visual .fb-state--mobile-static {
+    position: relative !important;
+    inset: auto !important;
+    display: flex !important;
+    width: 100%;
+    min-height: 0;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    pointer-events: auto !important;
+  }
+
+  /* In mobile document flow, the CTA logo must never float over the copy. */
+  .fb-cta-art {
+    position: relative;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    margin: 0 auto;
+    opacity: 1;
+    transform: none;
+    animation: fb-logo-float-mobile 7s ease-in-out infinite;
+  }
+}
+
+@media (max-width: 600px) {
+  /* Use the supplied real app screen instead of the tall CSS mock interface. */
+  .fb-hero-art {
+    min-height: 0;
+    padding: 24px 0 34px;
+  }
+
+  .fb-phone {
+    width: min(220px, 58vw);
+    transform: none !important;
+    transform-style: flat;
+  }
+
+  .fb-phone__rim {
+    padding: 7px;
+    border-radius: 37px;
+  }
+
+  .fb-phone__island,
+  .fb-phone__screen,
+  .fb-phone__caption {
+    display: none !important;
+  }
+
+  .fb-phone__mobile-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 921 / 2048;
+    border-radius: 29px;
+  }
+
+  .fb-cta-art {
+    width: min(100%, 245px);
+    max-width: 245px;
+  }
+
+  .fb-cta-art__logo {
+    max-width: 245px;
+  }
+}
+
+@keyframes fb-logo-float-mobile {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-7px); }
+}
+
 </style>
 
 <script>
