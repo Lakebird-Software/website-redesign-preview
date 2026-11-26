@@ -1,0 +1,305 @@
+<aside
+  class="lakebird-cookie-banner"
+  id="lakebird-cookie-banner"
+  aria-labelledby="lakebird-cookie-title"
+  aria-describedby="lakebird-cookie-description"
+  hidden
+>
+  <div class="lakebird-cookie-banner__content">
+    <div class="lakebird-cookie-banner__heading">
+      <span class="lakebird-cookie-banner__icon" aria-hidden="true">✦</span>
+      <h2 id="lakebird-cookie-title">Your privacy matters</h2>
+    </div>
+    <p id="lakebird-cookie-description">
+      We use cookies to understand how visitors use our website and improve your browsing experience.
+      You can choose to accept or reject optional cookies.
+    </p>
+    <a class="lakebird-cookie-banner__privacy" href="/privacy/">Privacy Policy</a>
+  </div>
+  <div class="lakebird-cookie-banner__actions">
+    <button class="lakebird-cookie-banner__accept" type="button" data-cookie-accept>
+      Accept Cookies
+    </button>
+    <button class="lakebird-cookie-banner__reject" type="button" data-cookie-reject>
+      Reject
+    </button>
+  </div>
+</aside>
+
+<style>
+  .lakebird-cookie-banner {
+    position: fixed;
+    z-index: 12000;
+    inset: auto 20px 20px auto;
+    width: min(690px, calc(100vw - 40px));
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 22px;
+    padding: 21px 22px;
+    color: #F5FAFC;
+    background: rgba(3, 25, 39, 0.94);
+    border: 1px solid rgba(142, 202, 230, 0.25);
+    border-radius: 20px;
+    box-shadow: 0 18px 60px rgba(0, 0, 0, 0.38);
+    -webkit-backdrop-filter: blur(22px);
+    backdrop-filter: blur(22px);
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 220ms ease, transform 220ms ease;
+  }
+
+  .lakebird-cookie-banner[hidden] {
+    display: none !important;
+  }
+
+  .lakebird-cookie-banner.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .lakebird-cookie-banner__heading {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 7px;
+  }
+
+  .lakebird-cookie-banner__icon {
+    display: inline-grid;
+    place-items: center;
+    width: 27px;
+    height: 27px;
+    flex: 0 0 27px;
+    border-radius: 9px;
+    color: #8ECAE6;
+    background: rgba(33, 158, 188, 0.16);
+    font-size: 15px;
+  }
+
+  .lakebird-cookie-banner__heading h2 {
+    margin: 0;
+    color: #F5FAFC;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.35;
+    letter-spacing: -0.01em;
+  }
+
+  .lakebird-cookie-banner__content p {
+    max-width: 430px;
+    margin: 0;
+    color: #B8CBD4;
+    font-size: 12.5px;
+    line-height: 1.65;
+    letter-spacing: 0;
+    word-spacing: 0.02em;
+  }
+
+  .lakebird-cookie-banner__privacy {
+    display: inline-block;
+    margin-top: 8px;
+    color: #8ECAE6;
+    font-size: 12px;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .lakebird-cookie-banner__actions {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    min-width: 142px;
+  }
+
+  .lakebird-cookie-banner__actions button {
+    min-height: 42px;
+    padding: 0 15px;
+    border-radius: 11px;
+    font: inherit;
+    font-size: 12px;
+    font-weight: 650;
+    letter-spacing: 0;
+    cursor: pointer;
+    transition: transform 160ms ease, background 160ms ease, border-color 160ms ease;
+  }
+
+  .lakebird-cookie-banner__actions button:hover {
+    transform: translateY(-1px);
+  }
+
+  .lakebird-cookie-banner__accept {
+    color: #031B29;
+    background: #8ECAE6;
+    border: 1px solid #8ECAE6;
+  }
+
+  .lakebird-cookie-banner__accept:hover {
+    background: #B1DFF1;
+    border-color: #B1DFF1;
+  }
+
+  .lakebird-cookie-banner__reject {
+    color: #E4EEF3;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(142, 202, 230, 0.35);
+  }
+
+  .lakebird-cookie-banner__reject:hover {
+    background: rgba(142, 202, 230, 0.1);
+    border-color: rgba(142, 202, 230, 0.65);
+  }
+
+  .lakebird-cookie-banner button:focus-visible,
+  .lakebird-cookie-banner a:focus-visible {
+    outline: 2px solid #FFB703;
+    outline-offset: 3px;
+  }
+
+  @media (max-width: 640px) {
+    .lakebird-cookie-banner {
+      inset: auto 10px 10px;
+      width: auto;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 14px;
+      padding: 17px;
+      border-radius: 17px;
+    }
+
+    .lakebird-cookie-banner__content p {
+      max-width: none;
+      font-size: 12px;
+    }
+
+    .lakebird-cookie-banner__actions {
+      display: grid;
+      grid-template-columns: 1fr 0.72fr;
+      min-width: 0;
+    }
+
+    .lakebird-cookie-banner__actions button {
+      min-height: 44px;
+      padding-inline: 10px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .lakebird-cookie-banner,
+    .lakebird-cookie-banner__actions button {
+      transition: none;
+    }
+  }
+</style>
+
+<script is:inline>
+  (() => {
+    const banner = document.getElementById('lakebird-cookie-banner');
+    if (!banner || banner.dataset.initialized === 'true') return;
+    banner.dataset.initialized = 'true';
+
+    const measurementId = 'G-Q075L2E4ZM';
+    const consentKey = 'lakebird-cookie-consent-v1';
+    const acceptButton = banner.querySelector('[data-cookie-accept]');
+    const rejectButton = banner.querySelector('[data-cookie-reject]');
+
+    const showBanner = () => {
+      banner.hidden = false;
+      requestAnimationFrame(() => banner.classList.add('is-visible'));
+    };
+
+    const hideBanner = () => {
+      banner.classList.remove('is-visible');
+      window.setTimeout(() => {
+        banner.hidden = true;
+      }, 230);
+    };
+
+    const loadAnalytics = () => {
+      if (window.__lakebirdAnalyticsLoaded) {
+        if (typeof window.gtag === 'function') {
+          window.gtag('consent', 'update', { analytics_storage: 'granted' });
+        }
+        return;
+      }
+
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function () {
+        window.dataLayer.push(arguments);
+      };
+      window.gtag('consent', 'default', { analytics_storage: 'granted' });
+      window.gtag('js', new Date());
+      window.gtag('config', measurementId);
+
+      const tag = document.createElement('script');
+      tag.async = true;
+      tag.src = `https://www.googletagmanager.com/gtag/js?id=${measurementId}`;
+      tag.onerror = () => {
+        window.__lakebirdAnalyticsLoaded = false;
+      };
+      document.head.appendChild(tag);
+      window.__lakebirdAnalyticsLoaded = true;
+    };
+
+    const removeAnalyticsCookies = () => {
+      document.cookie.split(';').forEach((part) => {
+        const name = part.trim().split('=')[0];
+        if (name === '_ga' || name.startsWith('_ga_')) {
+          document.cookie = `${name}=; Max-Age=0; path=/; SameSite=Lax; Secure`;
+        }
+      });
+    };
+
+    const rejectAnalytics = () => {
+      if (typeof window.gtag === 'function') {
+        window.gtag('consent', 'update', { analytics_storage: 'denied' });
+      }
+      removeAnalyticsCookies();
+    };
+
+    let savedChoice = null;
+    try {
+      savedChoice = window.localStorage.getItem(consentKey);
+    } catch {
+      savedChoice = null;
+    }
+
+    if (savedChoice === 'accepted') {
+      hideBanner();
+      loadAnalytics();
+    } else if (savedChoice === 'rejected') {
+      hideBanner();
+    } else {
+      showBanner();
+    }
+
+    acceptButton?.addEventListener('click', () => {
+      try {
+        window.localStorage.setItem(consentKey, 'accepted');
+      } catch {
+        // Analytics can still run for this visit if browser storage is unavailable.
+      }
+      hideBanner();
+      loadAnalytics();
+    });
+
+    rejectButton?.addEventListener('click', () => {
+      try {
+        window.localStorage.setItem(consentKey, 'rejected');
+      } catch {
+        // The tag remains blocked for this visit if browser storage is unavailable.
+      }
+      rejectAnalytics();
+      hideBanner();
+    });
+
+    document.addEventListener('click', (event) => {
+      const target = event.target;
+      if (!(target instanceof Element)) return;
+      const settingsLink = target.closest('[data-cookie-settings]');
+      if (!settingsLink) return;
+      event.preventDefault();
+      showBanner();
+    });
+  })();
+</script>
