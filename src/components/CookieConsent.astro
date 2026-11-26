@@ -199,9 +199,13 @@
     banner.dataset.initialized = 'true';
 
     const measurementId = 'G-Q075L2E4ZM';
+    const analyticsDisableKey = `ga-disable-${measurementId}`;
     const consentKey = 'lakebird-cookie-consent-v1';
     const acceptButton = banner.querySelector('[data-cookie-accept]');
     const rejectButton = banner.querySelector('[data-cookie-reject]');
+
+    // Keep Analytics disabled unless a saved or newly selected acceptance exists.
+    window[analyticsDisableKey] = true;
 
     const showBanner = () => {
       banner.hidden = false;
@@ -216,6 +220,9 @@
     };
 
     const loadAnalytics = () => {
+      // Google's opt-out flag must be false before Analytics can send data.
+      window[analyticsDisableKey] = false;
+
       if (window.__lakebirdAnalyticsLoaded) {
         if (typeof window.gtag === 'function') {
           window.gtag('consent', 'update', { analytics_storage: 'granted' });
@@ -229,13 +236,17 @@
       };
       window.gtag('consent', 'default', { analytics_storage: 'granted' });
       window.gtag('js', new Date());
-      window.gtag('config', measurementId);
+      window.gtag('config', measurementId, {
+        allow_google_signals: false,
+        allow_ad_personalization_signals: false
+      });
 
       const tag = document.createElement('script');
       tag.async = true;
       tag.src = `https://www.googletagmanager.com/gtag/js?id=${measurementId}`;
       tag.onerror = () => {
         window.__lakebirdAnalyticsLoaded = false;
+        window[analyticsDisableKey] = true;
       };
       document.head.appendChild(tag);
       window.__lakebirdAnalyticsLoaded = true;
@@ -251,6 +262,8 @@
     };
 
     const rejectAnalytics = () => {
+      // Stop future Analytics requests, including after a visitor revokes consent.
+      window[analyticsDisableKey] = true;
       if (typeof window.gtag === 'function') {
         window.gtag('consent', 'update', { analytics_storage: 'denied' });
       }
@@ -268,6 +281,7 @@
       hideBanner();
       loadAnalytics();
     } else if (savedChoice === 'rejected') {
+      rejectAnalytics();
       hideBanner();
     } else {
       showBanner();
@@ -287,7 +301,7 @@
       try {
         window.localStorage.setItem(consentKey, 'rejected');
       } catch {
-        // The tag remains blocked for this visit if browser storage is unavailable.
+        // The tag remains disabled for this visit if browser storage is unavailable.
       }
       rejectAnalytics();
       hideBanner();
