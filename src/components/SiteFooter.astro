@@ -4,6 +4,7 @@ import GooglePlayBadge from './GooglePlayBadge.astro';
 const base = import.meta.env.BASE_URL.endsWith('/')
   ? import.meta.env.BASE_URL
   : `${import.meta.env.BASE_URL}/`;
+const isLiveSite = import.meta.env.BASE_URL === '/';
 ---
 <footer class="site-footer" id="footer" aria-label="Lakebird Software footer">
   <div class="container site-footer__inner">
@@ -32,6 +33,7 @@ const base = import.meta.env.BASE_URL.endsWith('/')
           <a href={`${base}privacy/`}>Website privacy</a>
           <a href={`${base}privacy/finly/`}>Finly policy</a>
           <a href={`${base}privacy/gps-camera/`}>GPS Camera policy</a>
+          {isLiveSite && <a href="#cookie-preferences" data-cookie-settings>Cookie preferences</a>}
           <a aria-disabled="true" tabindex="-1">Filtra policy</a>
         </div>
       </div>
